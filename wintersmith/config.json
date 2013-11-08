@@ -1,0 +1,28 @@
+{
+  "locals": {
+    "url": "http://localhost:8080",
+    "name": "electric river",
+    "owner": "electric river",
+    "description": "electric river agency: full scope of digital and social media on one shore"
+  },
+  "plugins": [
+    "wintersmith-livereload",
+    "wintersmith-coffee"
+  ],
+  "require": {
+    "moment": "moment",
+    "_": "underscore",
+    "typogr": "typogr"
+  },
+  "jade": {
+    "pretty": true
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  },
+  "port": 1337,
+  "ignore": [
+    "sass"
+  ]
+}
