@@ -1,0 +1,8 @@
+@import "base";
+
+section.showcase {
+	> article {
+		position: relative;
+		height: 900px;
+	}
+}

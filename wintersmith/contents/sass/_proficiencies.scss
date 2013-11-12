@@ -1,0 +1,17 @@
+@import 'base';
+
+$delimeter-height: 21px;
+
+.curved-border {
+	position: relative;
+	width: 100%;
+	height: $delimeter-height;
+	margin-top: (-$delimeter-height);
+	background: url("../img/backgrounds/bg-curve-gray.png") repeat-x;
+}
+
+section.proficiencies {
+	margin-top: (-$delimeter-height);
+	background: url('../img/backgrounds/bg-scheme.png') center center no-repeat;
+	background-color: #f7f7f7;
+}

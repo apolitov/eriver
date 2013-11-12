@@ -1,4 +1,8 @@
 extends layout
+
+block prepend styles
+    link(rel='stylesheet', href='css/styles.css')
+
 block append content
     include header
 
@@ -13,6 +17,3 @@ block append content
     include sections/clients 
 
     include footer
-
-block append styles
-    link(rel='stylesheet', href='css/styles.css')

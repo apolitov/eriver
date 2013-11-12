@@ -1,0 +1,217 @@
+.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-bg-curve-gray, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-icon-chart, .figures-icon-cube, .figures-icon-devices, .figures-icon-dialog, .figures-icon-magn-glass, .figures-icon-pencil, .figures-icon-plane, .figures-icon-substrate, .figures-vignette-gray-left, .figures-vignette-gray-right, .figures-vignette-left, .figures-vignette-right, .figures-vignette-white-left, .figures-vignette-white-right {
+  background: url('../../img/figures-s498d980567.png') no-repeat;
+}
+
+.figures-arrow-down-no-hole {
+  background-position: 0 0;
+}
+
+.figures-arrow-down-with-hole {
+  background-position: 0 -111px;
+}
+
+.figures-arrow-up {
+  background-position: 0 -705px;
+}
+
+.figures-bg-curve-gray {
+  background-position: 0 -626px;
+}
+
+.figures-carousel-dots-active {
+  background-position: 0 -730px;
+}
+
+.figures-carousel-dots-inactive {
+  background-position: 0 -688px;
+}
+
+.figures-icon-chart {
+  background-position: 0 -388px;
+}
+
+.figures-icon-cube {
+  background-position: 0 -534px;
+}
+
+.figures-icon-devices {
+  background-position: 0 -647px;
+}
+
+.figures-icon-dialog {
+  background-position: 0 -430px;
+}
+
+.figures-icon-magn-glass {
+  background-position: 0 -350px;
+}
+
+.figures-icon-pencil {
+  background-position: 0 -580px;
+}
+
+.figures-icon-plane {
+  background-position: 0 -494px;
+}
+
+.figures-icon-substrate {
+  background-position: 0 -222px;
+}
+
+.figures-vignette-gray-left {
+  background-position: 0 -783px;
+}
+
+.figures-vignette-gray-right {
+  background-position: 0 -807px;
+}
+
+.figures-vignette-left {
+  background-position: 0 -747px;
+}
+
+.figures-vignette-right {
+  background-position: 0 -759px;
+}
+
+.figures-vignette-white-left {
+  background-position: 0 -771px;
+}
+
+.figures-vignette-white-right {
+  background-position: 0 -795px;
+}
+
+.brands-sprite, .brands-alfa-capital, .brands-american-eagle, .brands-bbw, .brands-bodyshop, .brands-d-and-g, .brands-justice, .brands-lasenza, .brands-lenovo, .brands-mothercare, .brands-pinkberry, .brands-starbucks {
+  background: url('../../img/brands-s9fd18cee72.png') no-repeat;
+}
+
+.brands-alfa-capital {
+  background-position: 0 -519px;
+}
+
+.brands-american-eagle {
+  background-position: 0 -147px;
+}
+
+.brands-bbw {
+  background-position: 0 0;
+}
+
+.brands-bodyshop {
+  background-position: 0 -255px;
+}
+
+.brands-d-and-g {
+  background-position: 0 -643px;
+}
+
+.brands-justice {
+  background-position: 0 -369px;
+}
+
+.brands-lasenza {
+  background-position: 0 -427px;
+}
+
+.brands-lenovo {
+  background-position: 0 -475px;
+}
+
+.brands-mothercare {
+  background-position: 0 -578px;
+}
+
+.brands-pinkberry {
+  background-position: 0 -327px;
+}
+
+.brands-starbucks {
+  background-position: 0 -76px;
+}
+
+@font-face {
+  font-family: "PFSquare Light";
+  src: url('../fonts/eot("PFSquareSansPro_B_0.eot")');
+  src: url('../fonts/eot("PFSquareSansPro_B_0.eot")?#iefix') format('eot'), url('../fonts/PFSquareSansPro_B_0.woff') format('woff'), url('../fonts/PFSquareSansPro_B_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "PFSquare Regular";
+  src: url('../fonts/eot("PFSquareSansPro_5_0.eot")');
+  src: url('../fonts/eot("PFSquareSansPro_5_0.eot")?#iefix') format('eot'), url('../fonts/PFSquareSansPro_5_0.woff') format('woff'), url('../fonts/PFSquareSansPro_5_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "PFSquare Medium";
+  src: url('../fonts/eot("PFSquareSansPro_9_0.eot")');
+  src: url('../fonts/eot("PFSquareSansPro_9_0.eot")?#iefix') format('eot'), url('../fonts/PFSquareSansPro_9_0.woff') format('woff'), url('../fonts/PFSquareSansPro_9_0.ttf') format('truetype');
+}
+
+a {
+  text-decoration: none;
+}
+
+section.showcase > article.lenovo .promo {
+  background: url("../img/showcase/lenovo/bg.jpg") no-repeat center center;
+  background-attachment: fixed;
+  background-size: 100% auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=$background-url, sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(../img/showcase/lenovo/bg.jpg, sizingMethod='scale')";
+  height: 666px;
+}
+section.showcase > article.lenovo figure {
+  position: absolute;
+  bottom: 40px;
+  left: 85px;
+  white-space: nowrap;
+}
+section.showcase > article.lenovo figure img {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  margin-top: 180px;
+}
+section.showcase > article.lenovo figure figcaption {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  margin: 230px 0 0 30px;
+}
+section.showcase > article.lenovo figure figcaption h3 {
+  font-family: "PFSquare Regular", Arial, sans-serif;
+  font-size: 2.2em;
+  background: #081522;
+  color: white;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding: 0;
+  margin: 0 0 0.8em 0;
+  line-height: 1em;
+  padding: 0.25em 0.25em 0em 0.25em;
+}
+section.showcase > article.lenovo figure figcaption p {
+  margin: 0.3em 0 0 0;
+}
+section.showcase > article.lenovo figure figcaption p span {
+  font-family: "PFSquare Regular", Arial, sans-serif;
+  padding: 0.3em 0.3em 0 0.3em;
+  font-size: 1.2em;
+  color: #081522;
+  background-color: #f6f6f6;
+}
+section.showcase > article.lenovo figure figcaption p span.highlighted {
+  font-family: "PFSquare Medium", Arial, sans-serif;
+  color: white;
+  background-color: #2da4dd;
+}

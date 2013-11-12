@@ -1,0 +1,60 @@
+@import 'base';
+
+$dark-blue: #081522;
+
+section.showcase > article.lenovo {
+
+	.promo {
+		@include cover-background('../img/showcase/lenovo/bg.jpg', fixed);
+		height: 666px;
+	}
+
+	figure {
+		position: absolute;
+		bottom: 40px;
+		left: 85px;
+		white-space: nowrap;
+
+		img {
+			@include inline-block;
+			margin-top: 180px;
+		}
+
+		figcaption {
+			@include inline-block;
+			margin: 230px 0 0 30px;
+
+			h3 {
+				@include PFSquareFont('Regular');
+				font-size: 2.2em;
+				background: $dark-blue;
+				color: white;
+				text-transform: uppercase;
+				font-weight: normal;
+				padding: 0;
+				margin: 0 0 0.8em 0;
+				line-height: 1em;
+				padding: 0.25em 0.25em 0em 0.25em;
+			}
+
+			p {
+				margin: 0.3em 0 0 0;
+
+				span {
+					@include PFSquareFont('Regular');					
+					padding: 0.3em 0.3em 0 0.3em;
+					font-size: 1.2em;
+					color: $dark-blue;
+					background-color: #f6f6f6;
+
+					&.highlighted {
+						@include PFSquareFont('Medium');						
+						color: white;
+						background-color: #2da4dd;
+					}
+				}
+			}
+		}
+
+	}
+}

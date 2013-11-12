@@ -4,11 +4,11 @@ $top-menu-background-color: #091523;
 $top-menu-color: #cdcece;
 
 body > header {
+	@include PFSquareFont('Light');
 	width: 100%;
 	height: $top-menu-height;
 	background: $top-menu-background-color;
 	color: $top-menu-color;
-	font-family: "PFSquare Light", Arial;
 
 	.logo, nav {
 		@include inline-block;

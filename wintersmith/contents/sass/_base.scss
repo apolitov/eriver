@@ -27,10 +27,22 @@ $top-menu-height: 70px;
 @include font-face("PFSquare Light", font-files("PFSquareSansPro_B_0.woff",
 												"PFSquareSansPro_B_0.ttf"),
 									 eot("PFSquareSansPro_B_0.eot"));
+@include font-face("PFSquare Regular", font-files("PFSquareSansPro_5_0.woff",
+												"PFSquareSansPro_5_0.ttf"),
+									 eot("PFSquareSansPro_5_0.eot"));
+@include font-face("PFSquare Medium", font-files("PFSquareSansPro_9_0.woff",
+												"PFSquareSansPro_9_0.ttf"),
+									 eot("PFSquareSansPro_9_0.eot"));
 
 // Mixins
-@mixin cover-background($background-url) {
-	background: url($background-url) no-repeat center center fixed; 
+@mixin PFSquareFont($type) {
+	font-family: "PFSquare " + $type, Arial, sans-serif;
+}
+
+@mixin cover-background($background-url, $attachment: scroll) {
+	background: url($background-url) no-repeat center center;
+	background-attachment: $attachment;
+	background-size: 100% auto;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
