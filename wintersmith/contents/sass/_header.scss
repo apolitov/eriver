@@ -1,0 +1,63 @@
+@import "base";
+
+$top-menu-background-color: #091523;
+$top-menu-color: #cdcece;
+
+body > header {
+	width: 100%;
+	height: $top-menu-height;
+	background: $top-menu-background-color;
+	color: $top-menu-color;
+	font-family: "PFSquare Light", Arial;
+
+	.logo, nav {
+		@include inline-block;
+		height: 100%;
+	}
+
+	.logo {
+		@include column(3);
+		background: url("../img/logo/logo-small.png") right center no-repeat;
+	}
+
+	a {
+		color: $top-menu-color;
+
+		&:hover, &:focus, &.active {
+			color: #2da4dd;
+		}
+	}
+
+	nav {
+		@include column(7, true);
+		text-align: right;		
+
+		ul {
+			$gap: 1em;
+
+			@include inline-block;
+			@include horizontal-list($gap);
+			font-size: 1em;
+
+			li {
+				line-height: $top-menu-height;
+			}
+
+			&.language {
+				@include horizontal-list(0em);
+				margin: 0 3*$gap 0 3*$gap;
+
+				li:after {
+					display: inline;
+					content: "|";
+					margin-left: 0.3em;
+					margin-right: 0.3em;
+				}
+
+				li:last-child:after {
+					content: "";
+				}
+			}
+		}
+	}
+}

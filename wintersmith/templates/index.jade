@@ -1,18 +1,18 @@
 extends layout
 block append content
+    include header
 
-  include header
-  block append styles
-    link(rel='stylesheet', href='css/header.css')
+    include sections/welcome
 
-  include sections/welcome
+    include sections/showcase
 
-  include sections/showcase
+    include sections/proficiencies
 
-  include sections/proficiencies
+    include sections/about
 
-  include sections/about
+    include sections/clients 
 
-  include sections/clients 
+    include footer
 
-  include footer
+block append styles
+    link(rel='stylesheet', href='css/styles.css')

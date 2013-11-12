@@ -1,0 +1,46 @@
+@import "base";
+
+section.welcome {
+	$gap: 3em;
+
+	@include cover-background("../img/backgrounds/bg-underwater.jpg");
+	position: relative;
+	width: 100%;
+	min-height: 898px;
+	text-align: center;
+
+	.hero {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		bottom: 2*$gap;
+	}
+
+	.logo {
+		background: url("../img/logo/logo-big.png") center center no-repeat;
+		height: 183px;
+		margin: 0 0 2*$gap 0;		
+	}
+
+	.message {
+		text-transform: uppercase;
+
+		font-size: 22px;
+		font-family: "PFSquare Light", Arial;
+
+		color: white;
+
+		margin: 0 0 $gap 0;
+
+		p {
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	.scroll-down {
+		@include inline-block;
+		width: 71px;
+		height: 111px;
+	}
+}

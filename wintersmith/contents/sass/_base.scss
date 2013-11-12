@@ -1,2 +1,47 @@
-// Colors
-$menu-color: #f00;
+// Global variables
+	// Grid
+$blueprint_grid_columns: 10;
+$blueprint_grid_width: 10%;
+$blueprint_grid_margin: 0%;
+	// Fonts
+$base-font-size: 14px;
+	// Variables
+$top-menu-height: 70px;
+
+// Dependencies
+@import "compass/css3/font-face";
+@import "compass/css3/inline-block";
+@import "compass/typography/lists/horizontal-list";
+@import "compass/utilities/sprites";
+@import "blueprint/grid";
+
+// Sprites
+	// small images
+@import "figures/*.png";
+@include all-figures-sprites;
+	// small brands logotypes
+@import "brands/*.png";
+@include all-brands-sprites;
+
+// Fonts
+@include font-face("PFSquare Light", font-files("PFSquareSansPro_B_0.woff",
+												"PFSquareSansPro_B_0.ttf"),
+									 eot("PFSquareSansPro_B_0.eot"));
+
+// Mixins
+@mixin cover-background($background-url) {
+	background: url($background-url) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	// IE support
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=$background-url, sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(" + $background-url + ", sizingMethod='scale')";
+}
+
+// Global styles
+a {
+	text-decoration: none;
+}
