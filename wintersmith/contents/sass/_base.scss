@@ -7,20 +7,26 @@ $blueprint_grid_margin: 0%;
 $base-font-size: 14px;
 	// Variables
 $top-menu-height: 70px;
+	// Colors
+$dark-blue: #081522;
 
 // Dependencies
 @import "compass/css3/font-face";
 @import "compass/css3/inline-block";
 @import "compass/typography/lists/horizontal-list";
+@import "compass/typography/lists/inline-block-list"; 
+@import "compass/typography/lists/bullets";
 @import "compass/utilities/sprites";
 @import "blueprint/grid";
 
 // Sprites
 	// small images
 @import "figures/*.png";
+$figures-sprite-dimensions: true;
 @include all-figures-sprites;
 	// small brands logotypes
 @import "brands/*.png";
+$brands-sprite-dimensions: true;
 @include all-brands-sprites;
 
 // Fonts
@@ -51,6 +57,50 @@ $top-menu-height: 70px;
 	// IE support
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=$background-url, sizingMethod='scale');
 	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(" + $background-url + ", sizingMethod='scale')";
+}
+
+@mixin section-header($color, $background-color, $additional-elements: false) {
+	@include inline-block;
+	@include PFSquareFont('Regular');
+	position: relative;
+	color: $color;
+	font-size: 2.6em;
+	background: $dark-blue;
+	font-weight: normal;
+	text-transform: uppercase;
+	margin: 0 0 0.8em 0;
+	line-height: 1em;
+	padding: 0.25em 0.25em 0em 0.25em;
+
+	// additional elements are those mustaches at sides of header
+	@if ($additional-elements) {
+
+		$width: 40px;
+		$height: 12px;
+
+		// set required element class here
+		@if ($additional-elements == 'dark') {
+			&:before { @extend .figures-vignette-left };
+			&:after { @extend .figures-vignette-right };
+		}
+
+		&:before {
+			left: (-$width);
+		}
+
+		&:after {
+			right: (-$width);
+		}
+
+		&:before, &:after {
+				position: absolute;
+				top: 50%;
+				margin-top: (-$height/2);
+				content: "";
+				width: $width;
+				height: $height;
+		}
+	}
 }
 
 // Global styles

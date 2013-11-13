@@ -1,5 +1,5 @@
-.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-bg-curve-gray, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-icon-chart, .figures-icon-cube, .figures-icon-devices, .figures-icon-dialog, .figures-icon-magn-glass, .figures-icon-pencil, .figures-icon-plane, .figures-icon-substrate, .figures-vignette-gray-left, .figures-vignette-gray-right, .figures-vignette-left, .figures-vignette-right, .figures-vignette-white-left, .figures-vignette-white-right {
-  background: url('../../img/figures-s498d980567.png') no-repeat;
+.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-icon-chart, .figures-icon-cube, .figures-icon-devices, .figures-icon-dialog, .figures-icon-magn-glass, .figures-icon-pencil, .figures-icon-plane, .figures-icon-substrate, .figures-vignette-gray-left, .figures-vignette-gray-right, .figures-vignette-left, .figures-vignette-right, .figures-vignette-white-left, .figures-vignette-white-right {
+  background: url('../../img/figures-s7ccf150643.png') no-repeat;
 }
 
 .figures-arrow-down-no-hole {
@@ -11,19 +11,15 @@
 }
 
 .figures-arrow-up {
-  background-position: 0 -705px;
-}
-
-.figures-bg-curve-gray {
-  background-position: 0 -626px;
+  background-position: 0 -684px;
 }
 
 .figures-carousel-dots-active {
-  background-position: 0 -730px;
+  background-position: 0 -709px;
 }
 
 .figures-carousel-dots-inactive {
-  background-position: 0 -688px;
+  background-position: 0 -667px;
 }
 
 .figures-icon-chart {
@@ -35,7 +31,7 @@
 }
 
 .figures-icon-devices {
-  background-position: 0 -647px;
+  background-position: 0 -626px;
 }
 
 .figures-icon-dialog {
@@ -59,27 +55,27 @@
 }
 
 .figures-vignette-gray-left {
-  background-position: 0 -783px;
+  background-position: 0 -762px;
 }
 
 .figures-vignette-gray-right {
-  background-position: 0 -807px;
+  background-position: 0 -786px;
 }
 
 .figures-vignette-left {
-  background-position: 0 -747px;
+  background-position: 0 -726px;
 }
 
 .figures-vignette-right {
-  background-position: 0 -759px;
+  background-position: 0 -738px;
 }
 
 .figures-vignette-white-left {
-  background-position: 0 -771px;
+  background-position: 0 -750px;
 }
 
 .figures-vignette-white-right {
-  background-position: 0 -795px;
+  background-position: 0 -774px;
 }
 
 .brands-sprite, .brands-alfa-capital, .brands-american-eagle, .brands-bbw, .brands-bodyshop, .brands-d-and-g, .brands-justice, .brands-lasenza, .brands-lenovo, .brands-mothercare, .brands-pinkberry, .brands-starbucks {
@@ -166,7 +162,7 @@ section.showcase > article.lenovo .promo {
 }
 section.showcase > article.lenovo figure {
   position: absolute;
-  bottom: 40px;
+  bottom: 50px;
   left: 85px;
   white-space: nowrap;
 }

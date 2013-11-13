@@ -1,81 +1,113 @@
-.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-icon-chart, .figures-icon-cube, .figures-icon-devices, .figures-icon-dialog, .figures-icon-magn-glass, .figures-icon-pencil, .figures-icon-plane, .figures-icon-substrate, .figures-vignette-gray-left, .figures-vignette-gray-right, .figures-vignette-left, .figures-vignette-right, .figures-vignette-white-left, .figures-vignette-white-right {
-  background: url('../img/figures-s7ccf150643.png') no-repeat;
+.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-vignette-gray-left, .figures-vignette-gray-right, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, .figures-vignette-white-right {
+  background: url('../img/figures-sf2f49c6590.png') no-repeat;
 }
 
 .figures-arrow-down-no-hole {
   background-position: 0 0;
+  height: 111px;
+  width: 71px;
 }
 
 .figures-arrow-down-with-hole {
-  background-position: 0 -111px;
+  background-position: 0 -997px;
+  height: 111px;
+  width: 71px;
 }
 
 .figures-arrow-up {
-  background-position: 0 -684px;
+  background-position: 0 -1137px;
+  height: 25px;
+  width: 22px;
 }
 
 .figures-carousel-dots-active {
-  background-position: 0 -709px;
+  background-position: 0 -1162px;
+  height: 17px;
+  width: 18px;
 }
 
 .figures-carousel-dots-inactive {
-  background-position: 0 -667px;
+  background-position: 0 -1108px;
+  height: 17px;
+  width: 18px;
 }
 
-.figures-icon-chart {
-  background-position: 0 -388px;
+.figures-item-chart {
+  background-position: 0 -111px;
+  height: 127px;
+  width: 100px;
 }
 
-.figures-icon-cube {
-  background-position: 0 -534px;
+.figures-item-cube {
+  background-position: 0 -238px;
+  height: 127px;
+  width: 100px;
 }
 
-.figures-icon-devices {
-  background-position: 0 -626px;
+.figures-item-devices {
+  background-position: 0 -872px;
+  height: 125px;
+  width: 100px;
 }
 
-.figures-icon-dialog {
-  background-position: 0 -430px;
+.figures-item-dialog {
+  background-position: 0 -746px;
+  height: 126px;
+  width: 100px;
 }
 
-.figures-icon-magn-glass {
-  background-position: 0 -350px;
+.figures-item-glass {
+  background-position: 0 -365px;
+  height: 127px;
+  width: 100px;
 }
 
-.figures-icon-pencil {
-  background-position: 0 -580px;
+.figures-item-pencil {
+  background-position: 0 -618px;
+  height: 128px;
+  width: 100px;
 }
 
-.figures-icon-plane {
-  background-position: 0 -494px;
-}
-
-.figures-icon-substrate {
-  background-position: 0 -222px;
+.figures-item-plane {
+  background-position: 0 -492px;
+  height: 126px;
+  width: 100px;
 }
 
 .figures-vignette-gray-left {
-  background-position: 0 -762px;
+  background-position: 0 -1203px;
+  height: 12px;
+  width: 40px;
 }
 
 .figures-vignette-gray-right {
-  background-position: 0 -786px;
+  background-position: 0 -1227px;
+  height: 12px;
+  width: 40px;
 }
 
-.figures-vignette-left {
-  background-position: 0 -726px;
+.figures-vignette-left, section.proficiencies h2:before {
+  background-position: 0 -1179px;
+  height: 12px;
+  width: 41px;
 }
 
-.figures-vignette-right {
-  background-position: 0 -738px;
+.figures-vignette-right, section.proficiencies h2:after {
+  background-position: 0 -1125px;
+  height: 12px;
+  width: 40px;
 }
 
 .figures-vignette-white-left {
-  background-position: 0 -750px;
+  background-position: 0 -1191px;
+  height: 12px;
+  width: 50px;
 }
 
 .figures-vignette-white-right {
-  background-position: 0 -774px;
+  background-position: 0 -1215px;
+  height: 12px;
+  width: 50px;
 }
 
 .brands-sprite, .brands-alfa-capital, .brands-american-eagle, .brands-bbw, .brands-bodyshop, .brands-d-and-g, .brands-justice, .brands-lasenza, .brands-lenovo, .brands-mothercare, .brands-pinkberry, .brands-starbucks {
@@ -84,46 +116,68 @@
 
 .brands-alfa-capital {
   background-position: 0 -519px;
+  height: 59px;
+  width: 130px;
 }
 
 .brands-american-eagle {
   background-position: 0 -147px;
+  height: 108px;
+  width: 99px;
 }
 
 .brands-bbw {
   background-position: 0 0;
+  height: 76px;
+  width: 89px;
 }
 
 .brands-bodyshop {
   background-position: 0 -255px;
+  height: 72px;
+  width: 76px;
 }
 
 .brands-d-and-g {
   background-position: 0 -643px;
+  height: 16px;
+  width: 157px;
 }
 
 .brands-justice {
   background-position: 0 -369px;
+  height: 58px;
+  width: 90px;
 }
 
 .brands-lasenza {
   background-position: 0 -427px;
+  height: 48px;
+  width: 132px;
 }
 
 .brands-lenovo {
   background-position: 0 -475px;
+  height: 44px;
+  width: 134px;
 }
 
 .brands-mothercare {
   background-position: 0 -578px;
+  height: 65px;
+  width: 85px;
 }
 
 .brands-pinkberry {
   background-position: 0 -327px;
+  height: 42px;
+  width: 158px;
 }
 
 .brands-starbucks {
   background-position: 0 -76px;
+  height: 71px;
+  width: 71px;
 }
 
 @font-face {
@@ -263,84 +317,116 @@ body > header nav ul.language li:last-child:after {
   content: "";
 }
 
-.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-icon-chart, .figures-icon-cube, .figures-icon-devices, .figures-icon-dialog, .figures-icon-magn-glass, .figures-icon-pencil, .figures-icon-plane, .figures-icon-substrate, .figures-vignette-gray-left, .figures-vignette-gray-right, .figures-vignette-left, .figures-vignette-right, .figures-vignette-white-left, .figures-vignette-white-right {
-  background: url('../img/figures-s7ccf150643.png') no-repeat;
+.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-vignette-gray-left, .figures-vignette-gray-right, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, .figures-vignette-white-right {
+  background: url('../img/figures-sf2f49c6590.png') no-repeat;
 }
 
 .figures-arrow-down-no-hole {
   background-position: 0 0;
+  height: 111px;
+  width: 71px;
 }
 
 .figures-arrow-down-with-hole {
-  background-position: 0 -111px;
+  background-position: 0 -997px;
+  height: 111px;
+  width: 71px;
 }
 
 .figures-arrow-up {
-  background-position: 0 -684px;
+  background-position: 0 -1137px;
+  height: 25px;
+  width: 22px;
 }
 
 .figures-carousel-dots-active {
-  background-position: 0 -709px;
+  background-position: 0 -1162px;
+  height: 17px;
+  width: 18px;
 }
 
 .figures-carousel-dots-inactive {
-  background-position: 0 -667px;
+  background-position: 0 -1108px;
+  height: 17px;
+  width: 18px;
 }
 
-.figures-icon-chart {
-  background-position: 0 -388px;
+.figures-item-chart {
+  background-position: 0 -111px;
+  height: 127px;
+  width: 100px;
 }
 
-.figures-icon-cube {
-  background-position: 0 -534px;
+.figures-item-cube {
+  background-position: 0 -238px;
+  height: 127px;
+  width: 100px;
 }
 
-.figures-icon-devices {
-  background-position: 0 -626px;
+.figures-item-devices {
+  background-position: 0 -872px;
+  height: 125px;
+  width: 100px;
 }
 
-.figures-icon-dialog {
-  background-position: 0 -430px;
+.figures-item-dialog {
+  background-position: 0 -746px;
+  height: 126px;
+  width: 100px;
 }
 
-.figures-icon-magn-glass {
-  background-position: 0 -350px;
+.figures-item-glass {
+  background-position: 0 -365px;
+  height: 127px;
+  width: 100px;
 }
 
-.figures-icon-pencil {
-  background-position: 0 -580px;
+.figures-item-pencil {
+  background-position: 0 -618px;
+  height: 128px;
+  width: 100px;
 }
 
-.figures-icon-plane {
-  background-position: 0 -494px;
-}
-
-.figures-icon-substrate {
-  background-position: 0 -222px;
+.figures-item-plane {
+  background-position: 0 -492px;
+  height: 126px;
+  width: 100px;
 }
 
 .figures-vignette-gray-left {
-  background-position: 0 -762px;
+  background-position: 0 -1203px;
+  height: 12px;
+  width: 40px;
 }
 
 .figures-vignette-gray-right {
-  background-position: 0 -786px;
+  background-position: 0 -1227px;
+  height: 12px;
+  width: 40px;
 }
 
-.figures-vignette-left {
-  background-position: 0 -726px;
+.figures-vignette-left, section.proficiencies h2:before {
+  background-position: 0 -1179px;
+  height: 12px;
+  width: 41px;
 }
 
-.figures-vignette-right {
-  background-position: 0 -738px;
+.figures-vignette-right, section.proficiencies h2:after {
+  background-position: 0 -1125px;
+  height: 12px;
+  width: 40px;
 }
 
 .figures-vignette-white-left {
-  background-position: 0 -750px;
+  background-position: 0 -1191px;
+  height: 12px;
+  width: 50px;
 }
 
 .figures-vignette-white-right {
-  background-position: 0 -774px;
+  background-position: 0 -1215px;
+  height: 12px;
+  width: 50px;
 }
 
 .brands-sprite, .brands-alfa-capital, .brands-american-eagle, .brands-bbw, .brands-bodyshop, .brands-d-and-g, .brands-justice, .brands-lasenza, .brands-lenovo, .brands-mothercare, .brands-pinkberry, .brands-starbucks {
@@ -349,46 +435,68 @@ body > header nav ul.language li:last-child:after {
 
 .brands-alfa-capital {
   background-position: 0 -519px;
+  height: 59px;
+  width: 130px;
 }
 
 .brands-american-eagle {
   background-position: 0 -147px;
+  height: 108px;
+  width: 99px;
 }
 
 .brands-bbw {
   background-position: 0 0;
+  height: 76px;
+  width: 89px;
 }
 
 .brands-bodyshop {
   background-position: 0 -255px;
+  height: 72px;
+  width: 76px;
 }
 
 .brands-d-and-g {
   background-position: 0 -643px;
+  height: 16px;
+  width: 157px;
 }
 
 .brands-justice {
   background-position: 0 -369px;
+  height: 58px;
+  width: 90px;
 }
 
 .brands-lasenza {
   background-position: 0 -427px;
+  height: 48px;
+  width: 132px;
 }
 
 .brands-lenovo {
   background-position: 0 -475px;
+  height: 44px;
+  width: 134px;
 }
 
 .brands-mothercare {
   background-position: 0 -578px;
+  height: 65px;
+  width: 85px;
 }
 
 .brands-pinkberry {
   background-position: 0 -327px;
+  height: 42px;
+  width: 158px;
 }
 
 .brands-starbucks {
   background-position: 0 -76px;
+  height: 71px;
+  width: 71px;
 }
 
 @font-face {
@@ -461,84 +569,116 @@ section.welcome .scroll-down {
   height: 111px;
 }
 
-.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-icon-chart, .figures-icon-cube, .figures-icon-devices, .figures-icon-dialog, .figures-icon-magn-glass, .figures-icon-pencil, .figures-icon-plane, .figures-icon-substrate, .figures-vignette-gray-left, .figures-vignette-gray-right, .figures-vignette-left, .figures-vignette-right, .figures-vignette-white-left, .figures-vignette-white-right {
-  background: url('../img/figures-s7ccf150643.png') no-repeat;
+.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-vignette-gray-left, .figures-vignette-gray-right, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, .figures-vignette-white-right {
+  background: url('../img/figures-sf2f49c6590.png') no-repeat;
 }
 
 .figures-arrow-down-no-hole {
   background-position: 0 0;
+  height: 111px;
+  width: 71px;
 }
 
 .figures-arrow-down-with-hole {
-  background-position: 0 -111px;
+  background-position: 0 -997px;
+  height: 111px;
+  width: 71px;
 }
 
 .figures-arrow-up {
-  background-position: 0 -684px;
+  background-position: 0 -1137px;
+  height: 25px;
+  width: 22px;
 }
 
 .figures-carousel-dots-active {
-  background-position: 0 -709px;
+  background-position: 0 -1162px;
+  height: 17px;
+  width: 18px;
 }
 
 .figures-carousel-dots-inactive {
-  background-position: 0 -667px;
+  background-position: 0 -1108px;
+  height: 17px;
+  width: 18px;
 }
 
-.figures-icon-chart {
-  background-position: 0 -388px;
+.figures-item-chart {
+  background-position: 0 -111px;
+  height: 127px;
+  width: 100px;
 }
 
-.figures-icon-cube {
-  background-position: 0 -534px;
+.figures-item-cube {
+  background-position: 0 -238px;
+  height: 127px;
+  width: 100px;
 }
 
-.figures-icon-devices {
-  background-position: 0 -626px;
+.figures-item-devices {
+  background-position: 0 -872px;
+  height: 125px;
+  width: 100px;
 }
 
-.figures-icon-dialog {
-  background-position: 0 -430px;
+.figures-item-dialog {
+  background-position: 0 -746px;
+  height: 126px;
+  width: 100px;
 }
 
-.figures-icon-magn-glass {
-  background-position: 0 -350px;
+.figures-item-glass {
+  background-position: 0 -365px;
+  height: 127px;
+  width: 100px;
 }
 
-.figures-icon-pencil {
-  background-position: 0 -580px;
+.figures-item-pencil {
+  background-position: 0 -618px;
+  height: 128px;
+  width: 100px;
 }
 
-.figures-icon-plane {
-  background-position: 0 -494px;
-}
-
-.figures-icon-substrate {
-  background-position: 0 -222px;
+.figures-item-plane {
+  background-position: 0 -492px;
+  height: 126px;
+  width: 100px;
 }
 
 .figures-vignette-gray-left {
-  background-position: 0 -762px;
+  background-position: 0 -1203px;
+  height: 12px;
+  width: 40px;
 }
 
 .figures-vignette-gray-right {
-  background-position: 0 -786px;
+  background-position: 0 -1227px;
+  height: 12px;
+  width: 40px;
 }
 
-.figures-vignette-left {
-  background-position: 0 -726px;
+.figures-vignette-left, section.proficiencies h2:before {
+  background-position: 0 -1179px;
+  height: 12px;
+  width: 41px;
 }
 
-.figures-vignette-right {
-  background-position: 0 -738px;
+.figures-vignette-right, section.proficiencies h2:after {
+  background-position: 0 -1125px;
+  height: 12px;
+  width: 40px;
 }
 
 .figures-vignette-white-left {
-  background-position: 0 -750px;
+  background-position: 0 -1191px;
+  height: 12px;
+  width: 50px;
 }
 
 .figures-vignette-white-right {
-  background-position: 0 -774px;
+  background-position: 0 -1215px;
+  height: 12px;
+  width: 50px;
 }
 
 .brands-sprite, .brands-alfa-capital, .brands-american-eagle, .brands-bbw, .brands-bodyshop, .brands-d-and-g, .brands-justice, .brands-lasenza, .brands-lenovo, .brands-mothercare, .brands-pinkberry, .brands-starbucks {
@@ -547,46 +687,68 @@ section.welcome .scroll-down {
 
 .brands-alfa-capital {
   background-position: 0 -519px;
+  height: 59px;
+  width: 130px;
 }
 
 .brands-american-eagle {
   background-position: 0 -147px;
+  height: 108px;
+  width: 99px;
 }
 
 .brands-bbw {
   background-position: 0 0;
+  height: 76px;
+  width: 89px;
 }
 
 .brands-bodyshop {
   background-position: 0 -255px;
+  height: 72px;
+  width: 76px;
 }
 
 .brands-d-and-g {
   background-position: 0 -643px;
+  height: 16px;
+  width: 157px;
 }
 
 .brands-justice {
   background-position: 0 -369px;
+  height: 58px;
+  width: 90px;
 }
 
 .brands-lasenza {
   background-position: 0 -427px;
+  height: 48px;
+  width: 132px;
 }
 
 .brands-lenovo {
   background-position: 0 -475px;
+  height: 44px;
+  width: 134px;
 }
 
 .brands-mothercare {
   background-position: 0 -578px;
+  height: 65px;
+  width: 85px;
 }
 
 .brands-pinkberry {
   background-position: 0 -327px;
+  height: 42px;
+  width: 158px;
 }
 
 .brands-starbucks {
   background-position: 0 -76px;
+  height: 71px;
+  width: 71px;
 }
 
 @font-face {
@@ -616,84 +778,116 @@ section.showcase > article {
   height: 900px;
 }
 
-.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-icon-chart, .figures-icon-cube, .figures-icon-devices, .figures-icon-dialog, .figures-icon-magn-glass, .figures-icon-pencil, .figures-icon-plane, .figures-icon-substrate, .figures-vignette-gray-left, .figures-vignette-gray-right, .figures-vignette-left, .figures-vignette-right, .figures-vignette-white-left, .figures-vignette-white-right {
-  background: url('../img/figures-s7ccf150643.png') no-repeat;
+.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-vignette-gray-left, .figures-vignette-gray-right, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, .figures-vignette-white-right {
+  background: url('../img/figures-sf2f49c6590.png') no-repeat;
 }
 
 .figures-arrow-down-no-hole {
   background-position: 0 0;
+  height: 111px;
+  width: 71px;
 }
 
 .figures-arrow-down-with-hole {
-  background-position: 0 -111px;
+  background-position: 0 -997px;
+  height: 111px;
+  width: 71px;
 }
 
 .figures-arrow-up {
-  background-position: 0 -684px;
+  background-position: 0 -1137px;
+  height: 25px;
+  width: 22px;
 }
 
 .figures-carousel-dots-active {
-  background-position: 0 -709px;
+  background-position: 0 -1162px;
+  height: 17px;
+  width: 18px;
 }
 
 .figures-carousel-dots-inactive {
-  background-position: 0 -667px;
+  background-position: 0 -1108px;
+  height: 17px;
+  width: 18px;
 }
 
-.figures-icon-chart {
-  background-position: 0 -388px;
+.figures-item-chart {
+  background-position: 0 -111px;
+  height: 127px;
+  width: 100px;
 }
 
-.figures-icon-cube {
-  background-position: 0 -534px;
+.figures-item-cube {
+  background-position: 0 -238px;
+  height: 127px;
+  width: 100px;
 }
 
-.figures-icon-devices {
-  background-position: 0 -626px;
+.figures-item-devices {
+  background-position: 0 -872px;
+  height: 125px;
+  width: 100px;
 }
 
-.figures-icon-dialog {
-  background-position: 0 -430px;
+.figures-item-dialog {
+  background-position: 0 -746px;
+  height: 126px;
+  width: 100px;
 }
 
-.figures-icon-magn-glass {
-  background-position: 0 -350px;
+.figures-item-glass {
+  background-position: 0 -365px;
+  height: 127px;
+  width: 100px;
 }
 
-.figures-icon-pencil {
-  background-position: 0 -580px;
+.figures-item-pencil {
+  background-position: 0 -618px;
+  height: 128px;
+  width: 100px;
 }
 
-.figures-icon-plane {
-  background-position: 0 -494px;
-}
-
-.figures-icon-substrate {
-  background-position: 0 -222px;
+.figures-item-plane {
+  background-position: 0 -492px;
+  height: 126px;
+  width: 100px;
 }
 
 .figures-vignette-gray-left {
-  background-position: 0 -762px;
+  background-position: 0 -1203px;
+  height: 12px;
+  width: 40px;
 }
 
 .figures-vignette-gray-right {
-  background-position: 0 -786px;
+  background-position: 0 -1227px;
+  height: 12px;
+  width: 40px;
 }
 
-.figures-vignette-left {
-  background-position: 0 -726px;
+.figures-vignette-left, section.proficiencies h2:before {
+  background-position: 0 -1179px;
+  height: 12px;
+  width: 41px;
 }
 
-.figures-vignette-right {
-  background-position: 0 -738px;
+.figures-vignette-right, section.proficiencies h2:after {
+  background-position: 0 -1125px;
+  height: 12px;
+  width: 40px;
 }
 
 .figures-vignette-white-left {
-  background-position: 0 -750px;
+  background-position: 0 -1191px;
+  height: 12px;
+  width: 50px;
 }
 
 .figures-vignette-white-right {
-  background-position: 0 -774px;
+  background-position: 0 -1215px;
+  height: 12px;
+  width: 50px;
 }
 
 .brands-sprite, .brands-alfa-capital, .brands-american-eagle, .brands-bbw, .brands-bodyshop, .brands-d-and-g, .brands-justice, .brands-lasenza, .brands-lenovo, .brands-mothercare, .brands-pinkberry, .brands-starbucks {
@@ -702,46 +896,68 @@ section.showcase > article {
 
 .brands-alfa-capital {
   background-position: 0 -519px;
+  height: 59px;
+  width: 130px;
 }
 
 .brands-american-eagle {
   background-position: 0 -147px;
+  height: 108px;
+  width: 99px;
 }
 
 .brands-bbw {
   background-position: 0 0;
+  height: 76px;
+  width: 89px;
 }
 
 .brands-bodyshop {
   background-position: 0 -255px;
+  height: 72px;
+  width: 76px;
 }
 
 .brands-d-and-g {
   background-position: 0 -643px;
+  height: 16px;
+  width: 157px;
 }
 
 .brands-justice {
   background-position: 0 -369px;
+  height: 58px;
+  width: 90px;
 }
 
 .brands-lasenza {
   background-position: 0 -427px;
+  height: 48px;
+  width: 132px;
 }
 
 .brands-lenovo {
   background-position: 0 -475px;
+  height: 44px;
+  width: 134px;
 }
 
 .brands-mothercare {
   background-position: 0 -578px;
+  height: 65px;
+  width: 85px;
 }
 
 .brands-pinkberry {
   background-position: 0 -327px;
+  height: 42px;
+  width: 158px;
 }
 
 .brands-starbucks {
   background-position: 0 -76px;
+  height: 71px;
+  width: 71px;
 }
 
 @font-face {
@@ -775,89 +991,222 @@ a {
 }
 
 section.proficiencies {
-  margin-top: -21px;
-  background: url("../img/backgrounds/bg-scheme.png") center center no-repeat;
+  background: url("../img/backgrounds/bg-scheme.png") no-repeat center center;
+  background-attachment: fixed;
+  background-size: 100% auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=$background-url, sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(../img/backgrounds/bg-scheme.png, sizingMethod='scale')";
   background-color: #f7f7f7;
+  text-align: center;
+  padding: 100px 50px 40px 50px;
+}
+section.proficiencies h2 {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  font-family: "PFSquare Regular", Arial, sans-serif;
+  position: relative;
+  color: whitesmoke;
+  font-size: 2.6em;
+  background: #081522;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0 0 0.8em 0;
+  line-height: 1em;
+  padding: 0.25em 0.25em 0em 0.25em;
+}
+section.proficiencies h2:before {
+  left: -40px;
+}
+section.proficiencies h2:after {
+  right: -40px;
+}
+section.proficiencies h2:before, section.proficiencies h2:after {
+  position: absolute;
+  top: 50%;
+  margin-top: -6px;
+  content: "";
+  width: 40px;
+  height: 12px;
+}
+section.proficiencies > ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+  position: relative;
+  width: 1110px;
+  margin: 70px auto 0 auto;
+  white-space: normal;
+}
+section.proficiencies > ul > li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  white-space: nowrap;
+  font-family: "PFSquare Regular", Arial, sans-serif;
+  box-sizing: border-box;
+  width: 370px;
+  height: auto;
+  vertical-align: top;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 50px;
+}
+section.proficiencies > ul > li h3, section.proficiencies > ul > li ul {
+  padding: 0 0 0 14px;
+}
+section.proficiencies > ul > li h3 {
+  text-transform: uppercase;
+}
+section.proficiencies > ul > li ul {
+  list-style: none;
+}
+section.proficiencies > ul > li ul li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+}
+section.proficiencies > ul > li ul.pipe-separated {
+  white-space: normal;
+}
+section.proficiencies > ul > li ul.pipe-separated li {
+  display: inline;
+}
+section.proficiencies > ul > li ul.pipe-separated li:first-child:before {
+  content: "";
+}
+section.proficiencies > ul > li ul.pipe-separated li:last-child:before {
+  content: "";
+}
+section.proficiencies > ul > li ul.pipe-separated li:before {
+  content: "| ";
 }
 
-.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-icon-chart, .figures-icon-cube, .figures-icon-devices, .figures-icon-dialog, .figures-icon-magn-glass, .figures-icon-pencil, .figures-icon-plane, .figures-icon-substrate, .figures-vignette-gray-left, .figures-vignette-gray-right, .figures-vignette-left, .figures-vignette-right, .figures-vignette-white-left, .figures-vignette-white-right {
-  background: url('../img/figures-s7ccf150643.png') no-repeat;
+.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-vignette-gray-left, .figures-vignette-gray-right, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, .figures-vignette-white-right {
+  background: url('../img/figures-sf2f49c6590.png') no-repeat;
 }
 
 .figures-arrow-down-no-hole {
   background-position: 0 0;
+  height: 111px;
+  width: 71px;
 }
 
 .figures-arrow-down-with-hole {
-  background-position: 0 -111px;
+  background-position: 0 -997px;
+  height: 111px;
+  width: 71px;
 }
 
 .figures-arrow-up {
-  background-position: 0 -684px;
+  background-position: 0 -1137px;
+  height: 25px;
+  width: 22px;
 }
 
 .figures-carousel-dots-active {
-  background-position: 0 -709px;
+  background-position: 0 -1162px;
+  height: 17px;
+  width: 18px;
 }
 
 .figures-carousel-dots-inactive {
-  background-position: 0 -667px;
+  background-position: 0 -1108px;
+  height: 17px;
+  width: 18px;
 }
 
-.figures-icon-chart {
-  background-position: 0 -388px;
+.figures-item-chart {
+  background-position: 0 -111px;
+  height: 127px;
+  width: 100px;
 }
 
-.figures-icon-cube {
-  background-position: 0 -534px;
+.figures-item-cube {
+  background-position: 0 -238px;
+  height: 127px;
+  width: 100px;
 }
 
-.figures-icon-devices {
-  background-position: 0 -626px;
+.figures-item-devices {
+  background-position: 0 -872px;
+  height: 125px;
+  width: 100px;
 }
 
-.figures-icon-dialog {
-  background-position: 0 -430px;
+.figures-item-dialog {
+  background-position: 0 -746px;
+  height: 126px;
+  width: 100px;
 }
 
-.figures-icon-magn-glass {
-  background-position: 0 -350px;
+.figures-item-glass {
+  background-position: 0 -365px;
+  height: 127px;
+  width: 100px;
 }
 
-.figures-icon-pencil {
-  background-position: 0 -580px;
+.figures-item-pencil {
+  background-position: 0 -618px;
+  height: 128px;
+  width: 100px;
 }
 
-.figures-icon-plane {
-  background-position: 0 -494px;
-}
-
-.figures-icon-substrate {
-  background-position: 0 -222px;
+.figures-item-plane {
+  background-position: 0 -492px;
+  height: 126px;
+  width: 100px;
 }
 
 .figures-vignette-gray-left {
-  background-position: 0 -762px;
+  background-position: 0 -1203px;
+  height: 12px;
+  width: 40px;
 }
 
 .figures-vignette-gray-right {
-  background-position: 0 -786px;
+  background-position: 0 -1227px;
+  height: 12px;
+  width: 40px;
 }
 
-.figures-vignette-left {
-  background-position: 0 -726px;
+.figures-vignette-left, section.proficiencies h2:before {
+  background-position: 0 -1179px;
+  height: 12px;
+  width: 41px;
 }
 
-.figures-vignette-right {
-  background-position: 0 -738px;
+.figures-vignette-right, section.proficiencies h2:after {
+  background-position: 0 -1125px;
+  height: 12px;
+  width: 40px;
 }
 
 .figures-vignette-white-left {
-  background-position: 0 -750px;
+  background-position: 0 -1191px;
+  height: 12px;
+  width: 50px;
 }
 
 .figures-vignette-white-right {
-  background-position: 0 -774px;
+  background-position: 0 -1215px;
+  height: 12px;
+  width: 50px;
 }
 
 .brands-sprite, .brands-alfa-capital, .brands-american-eagle, .brands-bbw, .brands-bodyshop, .brands-d-and-g, .brands-justice, .brands-lasenza, .brands-lenovo, .brands-mothercare, .brands-pinkberry, .brands-starbucks {
@@ -866,46 +1215,68 @@ section.proficiencies {
 
 .brands-alfa-capital {
   background-position: 0 -519px;
+  height: 59px;
+  width: 130px;
 }
 
 .brands-american-eagle {
   background-position: 0 -147px;
+  height: 108px;
+  width: 99px;
 }
 
 .brands-bbw {
   background-position: 0 0;
+  height: 76px;
+  width: 89px;
 }
 
 .brands-bodyshop {
   background-position: 0 -255px;
+  height: 72px;
+  width: 76px;
 }
 
 .brands-d-and-g {
   background-position: 0 -643px;
+  height: 16px;
+  width: 157px;
 }
 
 .brands-justice {
   background-position: 0 -369px;
+  height: 58px;
+  width: 90px;
 }
 
 .brands-lasenza {
   background-position: 0 -427px;
+  height: 48px;
+  width: 132px;
 }
 
 .brands-lenovo {
   background-position: 0 -475px;
+  height: 44px;
+  width: 134px;
 }
 
 .brands-mothercare {
   background-position: 0 -578px;
+  height: 65px;
+  width: 85px;
 }
 
 .brands-pinkberry {
   background-position: 0 -327px;
+  height: 42px;
+  width: 158px;
 }
 
 .brands-starbucks {
   background-position: 0 -76px;
+  height: 71px;
+  width: 71px;
 }
 
 @font-face {
@@ -968,13 +1339,13 @@ section.showcase > article.lenovo figure figcaption {
 }
 section.showcase > article.lenovo figure figcaption h3 {
   font-family: "PFSquare Regular", Arial, sans-serif;
-  font-size: 2.2em;
+  font-size: 2.4em;
   background: #081522;
   color: white;
   text-transform: uppercase;
   font-weight: normal;
   padding: 0;
-  margin: 0 0 0.8em 0;
+  margin: 0 0 0.6em 0;
   line-height: 1em;
   padding: 0.25em 0.25em 0em 0.25em;
 }

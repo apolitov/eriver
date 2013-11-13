@@ -1,7 +1,5 @@
 @import 'base';
 
-$dark-blue: #081522;
-
 section.showcase > article.lenovo {
 
 	.promo {
@@ -26,13 +24,13 @@ section.showcase > article.lenovo {
 
 			h3 {
 				@include PFSquareFont('Regular');
-				font-size: 2.2em;
+				font-size: 2.4em;
 				background: $dark-blue;
 				color: white;
 				text-transform: uppercase;
 				font-weight: normal;
 				padding: 0;
-				margin: 0 0 0.8em 0;
+				margin: 0 0 0.6em 0;
 				line-height: 1em;
 				padding: 0.25em 0.25em 0em 0.25em;
 			}

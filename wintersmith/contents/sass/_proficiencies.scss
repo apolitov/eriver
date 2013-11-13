@@ -11,7 +11,67 @@ $delimeter-height: 21px;
 }
 
 section.proficiencies {
-	margin-top: (-$delimeter-height);
-	background: url('../img/backgrounds/bg-scheme.png') center center no-repeat;
+	@include cover-background('../img/backgrounds/bg-scheme.png', fixed);	
 	background-color: #f7f7f7;
+	text-align: center;
+	padding: 100px 50px 40px 50px;
+
+	h2 {
+		@include section-header(#f5f5f5, $dark-blue, 'dark');
+	}
+
+	> ul {
+		$item-width: 370px;		
+
+		@include inline-block-list-container;
+		position: relative;
+		// 3 column list
+		width: 3 * $item-width;
+		margin: 70px auto 0 auto;
+		white-space: normal;
+
+		> li {
+			@include inline-block-list-item;
+			@include PFSquareFont("Regular");
+			box-sizing: border-box;
+			width: $item-width;
+			height: auto;
+			vertical-align: top;
+			text-align: left;
+			margin: 0;
+			margin-bottom: 50px;
+
+			h3, ul {
+				padding: 0 0 0 14px;
+			}
+
+			h3 {
+				text-transform: uppercase;
+			}
+
+			ul {
+				@include no-bullets;
+			}
+
+			ul.pipe-separated {
+				white-space: normal;
+
+				li {
+					display: inline;
+
+					&:first-child:before {
+						content: "";
+					}
+
+					&:last-child:before {
+						content: "";
+					}
+
+					&:before {
+						content: "| ";
+					}
+				}
+			}
+		}
+	}
 }
