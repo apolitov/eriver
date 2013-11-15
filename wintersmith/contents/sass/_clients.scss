@@ -1,0 +1,77 @@
+@import "base";
+
+section.clients {
+	$light-gray: #f3f3f4;
+	$dark-gray: #8c8c8c;
+
+	@include cover-background('../img/backgrounds/bg-drops.jpg', fixed);
+
+	text-align: center;
+	padding: 100px 0 80px 0;
+
+	h2 {
+		@include section-header($light-gray, $dark-gray, 'gray');
+		margin-bottom: 3em;
+	}
+
+	ul {
+		$element-height: 95px;
+		$element-width: 140px;
+		$element-margin: 40px;
+		$max-element-in-row: 5;		
+		$list-max-width: $max-element-in-row * ($element-width + 2*$element-margin);
+
+		@include inline-block-list-container;
+		@include opacity(0.6);
+		display: block;
+		position: relative;
+		max-width: $list-max-width;
+		margin: 0 auto;
+		text-align: center;
+
+		li {
+			@include inline-block-list-item;
+			margin: $element-margin;
+			height: $element-height;
+			width: $element-width;
+			text-align: center;
+
+			&.separator {
+				width: 100%;
+				background: url("../img/backgrounds/shadow-brands.png") no-repeat center top;
+				height: 36px;
+				margin-bottom: 0;
+			}
+
+			span {
+				@include inline-block;
+			}
+
+			// BEWARE: rocket science!
+			// -----------------------
+			// Feel free to rewrite following style
+			// since it affects only shadows at brand list
+			// -----------------------
+			// Following lines adds shadow via adding :before
+			// pseudoelement to required nth-child
+
+			// Be sure to increase this magic number if
+			// there are too many partners
+			$max-num-of-rows: 5;
+			@for $i from 0 through $max-num-of-rows {
+				$first-element-in-row: $i * $max-element-in-row + 1;
+				&:nth-child(#{$first-element-in-row}){				
+					&:before {
+						content: " ";
+						width: 100%;
+						height: 36px;
+						position: absolute;
+						left: 0;
+						top: $i * ($element-height + 2 * $element-margin) ;
+						background: url("../img/backgrounds/shadow-brands.png") no-repeat center top;
+					}
+				}
+			}
+		}
+	}
+}

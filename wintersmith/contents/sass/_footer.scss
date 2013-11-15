@@ -1,0 +1,138 @@
+$light-gray: #d2d2d2;
+$columns-padding: 70px;
+$link-color: #2da4dd;
+
+$article-contact-width: 230px;
+$article-feedback-width: 300px;
+$article-hire-width: 170px;
+
+$footer-bottom-margin: 50px;
+
+footer {
+	background: url("../img/backgrounds/bg-blue-noise.png");
+	background-repeat: repeat;
+	text-align: center;
+	color: $light-gray;
+	font-size: $base-font-size;
+	line-height: 1.6em;
+	position: relative;
+	white-space: no-wrap;
+
+	address {
+		font-style: normal;
+	}
+
+	h4 {
+		text-transform: uppercase;
+		color: #258EC5;
+		font-size: 0.9em;
+		margin-bottom: 2em;
+	}
+
+	p {
+		margin-bottom: 2.7em;
+	}
+
+	article {
+		@include inline-block;
+		@include box-sizing(content-box);
+		position: relative;
+		padding: 0px $columns-padding;
+		margin: 30px 0 $footer-bottom-margin 0;
+		text-align: left;
+		vertical-align: top;
+	}
+
+	article.contacts {
+		width: $article-contact-width;
+
+		ul {
+			@include no-bullets;
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	article.feedback {
+		width: $article-feedback-width;
+
+		$border-color: #1b3b58;
+
+		border-left: 1px solid $border-color;
+		border-right: 1px solid $border-color;
+
+		form {
+			position: relative;
+			$radius: 4px;
+			$offsets: 0.8em;
+			margin: 0;
+			padding: 0;
+
+			input, textarea {
+				@include border-radius($radius);
+				@include box-sizing(border-box);
+				border: none;
+				outline: none;
+				background: #1b3b58;
+				padding: $offsets;
+				margin-bottom: $offsets;
+				width: 100%;
+				color: $light-gray;
+			}
+
+			button {
+				@include border-radius($radius);
+				display: block;
+				float: right;
+				border: none;
+				outline: none;
+				background: #258ec5;
+				padding: $offsets;
+				margin: $offsets 0 0 0;
+			}
+		}
+	}
+
+	article.hire {
+		width: $article-hire-width;
+	}
+
+	div.figures-scroll-up {
+		@include inline-block;
+		position: absolute;
+		bottom: $footer-bottom-margin;
+
+		// BEWARE: rocket science!
+		// -----------------------
+		// Feel free to rewrite following style
+		// since it affects only scroll-up button at footer
+		// -----------------------
+		// Scroll-up button must be position at bottom of
+		// footer and at start the last column (including padding)
+		$x: $article-contact-width + $article-feedback-width + $article-hire-width;
+		//   |		<------x------>		|
+		//   |      111 2222222 333		|
+		//   |							|
+
+		$y: $x/2 - $article-hire-width;
+		//   |			  <-y->			|
+		//   |      111 2222222 333		|
+		//   |			  |50%			|
+
+		$el-offset: $y + 2*$columns-padding;
+		//   |			  <-y->|2*padding
+		//   |      111 2222222 333		|
+		//   |			  |<-o->   		|
+
+		margin-left: $el-offset;
+		left: 50%;
+	}
+
+	a {
+		color: $link-color;
+
+		&:hover, &:focus, &.active {
+			color: $link-color;
+		}
+	}
+}

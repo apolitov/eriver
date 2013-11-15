@@ -11,13 +11,15 @@ $top-menu-height: 70px;
 $dark-blue: #081522;
 
 // Dependencies
-@import "compass/css3/font-face";
 @import "compass/css3/inline-block";
 @import "compass/typography/lists/horizontal-list";
 @import "compass/typography/lists/inline-block-list"; 
 @import "compass/typography/lists/bullets";
 @import "compass/utilities/sprites";
 @import "blueprint/grid";
+@import "compass/css3/opacity";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-sizing";
 
 // Sprites
 	// small images
@@ -28,21 +30,29 @@ $figures-sprite-dimensions: true;
 @import "brands/*.png";
 $brands-sprite-dimensions: true;
 @include all-brands-sprites;
+	// bubbles at welcome screen
+@import "bubbles/*.png";
+$bubbles-sprite-dimensions: true;
+@include all-bubbles-sprites;
 
 // Fonts
-@include font-face("PFSquare Light", font-files("PFSquareSansPro_B_0.woff",
-												"PFSquareSansPro_B_0.ttf"),
-									 eot("PFSquareSansPro_B_0.eot"));
-@include font-face("PFSquare Regular", font-files("PFSquareSansPro_5_0.woff",
-												"PFSquareSansPro_5_0.ttf"),
-									 eot("PFSquareSansPro_5_0.eot"));
-@include font-face("PFSquare Medium", font-files("PFSquareSansPro_9_0.woff",
-												"PFSquareSansPro_9_0.ttf"),
-									 eot("PFSquareSansPro_9_0.eot"));
+@font-face {font-family: 'PFSquareSansPro-BoldItalic';src: url('fonts/29062D_0_0.eot');src: url('fonts/29062D_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/29062D_0_0.woff') format('woff'),url('fonts/29062D_0_0.ttf') format('truetype'),url('fonts/29062D_0_0.svg#wf') format('svg');}
+@font-face {font-family: 'PFSquareSansPro-ThinItalic';src: url('fonts/29062D_1_0.eot');src: url('fonts/29062D_1_0.eot?#iefix') format('embedded-opentype'),url('fonts/29062D_1_0.woff') format('woff'),url('fonts/29062D_1_0.ttf') format('truetype'),url('fonts/29062D_1_0.svg#wf') format('svg');}
+@font-face {font-family: 'PFSquareSansPro-Italic';src: url('fonts/29062D_2_0.eot');src: url('fonts/29062D_2_0.eot?#iefix') format('embedded-opentype'),url('fonts/29062D_2_0.woff') format('woff'),url('fonts/29062D_2_0.ttf') format('truetype'),url('fonts/29062D_2_0.svg#wf') format('svg');}
+@font-face {font-family: 'PFSquareSansPro-Thin';src: url('fonts/29062D_3_0.eot');src: url('fonts/29062D_3_0.eot?#iefix') format('embedded-opentype'),url('fonts/29062D_3_0.woff') format('woff'),url('fonts/29062D_3_0.ttf') format('truetype'),url('fonts/29062D_3_0.svg#wf') format('svg');}
+@font-face {font-family: 'PFSquareSansPro-Bold';src: url('fonts/29062D_4_0.eot');src: url('fonts/29062D_4_0.eot?#iefix') format('embedded-opentype'),url('fonts/29062D_4_0.woff') format('woff'),url('fonts/29062D_4_0.ttf') format('truetype'),url('fonts/29062D_4_0.svg#wf') format('svg');}
+@font-face {font-family: 'PFSquareSansPro-Regular';src: url('fonts/29062D_5_0.eot');src: url('fonts/29062D_5_0.eot?#iefix') format('embedded-opentype'),url('fonts/29062D_5_0.woff') format('woff'),url('fonts/29062D_5_0.ttf') format('truetype'),url('fonts/29062D_5_0.svg#wf') format('svg');}
+@font-face {font-family: 'PFSquareSansPro-ExtraBlackItalic';src: url('fonts/29062D_6_0.eot');src: url('fonts/29062D_6_0.eot?#iefix') format('embedded-opentype'),url('fonts/29062D_6_0.woff') format('woff'),url('fonts/29062D_6_0.ttf') format('truetype'),url('fonts/29062D_6_0.svg#wf') format('svg');}
+@font-face {font-family: 'PFSquareSansPro-LightItalic';src: url('fonts/29062D_7_0.eot');src: url('fonts/29062D_7_0.eot?#iefix') format('embedded-opentype'),url('fonts/29062D_7_0.woff') format('woff'),url('fonts/29062D_7_0.ttf') format('truetype'),url('fonts/29062D_7_0.svg#wf') format('svg');}
+@font-face {font-family: 'PFSquareSansPro-ExtraBlack';src: url('fonts/29062D_8_0.eot');src: url('fonts/29062D_8_0.eot?#iefix') format('embedded-opentype'),url('fonts/29062D_8_0.woff') format('woff'),url('fonts/29062D_8_0.ttf') format('truetype'),url('fonts/29062D_8_0.svg#wf') format('svg');}
+@font-face {font-family: 'PFSquareSansPro-Medium';src: url('fonts/29062D_9_0.eot');src: url('fonts/29062D_9_0.eot?#iefix') format('embedded-opentype'),url('fonts/29062D_9_0.woff') format('woff'),url('fonts/29062D_9_0.ttf') format('truetype'),url('fonts/29062D_9_0.svg#wf') format('svg');}
+@font-face {font-family: 'PFSquareSansPro-MediumItalic';src: url('fonts/29062D_A_0.eot');src: url('fonts/29062D_A_0.eot?#iefix') format('embedded-opentype'),url('fonts/29062D_A_0.woff') format('woff'),url('fonts/29062D_A_0.ttf') format('truetype'),url('fonts/29062D_A_0.svg#wf') format('svg');}
+@font-face {font-family: 'PFSquareSansPro-Light';src: url('fonts/29062D_B_0.eot');src: url('fonts/29062D_B_0.eot?#iefix') format('embedded-opentype'),url('fonts/29062D_B_0.woff') format('woff'),url('fonts/29062D_B_0.ttf') format('truetype'),url('fonts/29062D_B_0.svg#wf') format('svg');}
+ 
 
 // Mixins
 @mixin PFSquareFont($type) {
-	font-family: "PFSquare " + $type, Arial, sans-serif;
+	font-family: "PFSquareSansPro-" + $type, Arial, sans-serif;
 }
 
 @mixin cover-background($background-url, $attachment: scroll) {
@@ -65,12 +75,13 @@ $brands-sprite-dimensions: true;
 	position: relative;
 	color: $color;
 	font-size: 2.6em;
-	background: $dark-blue;
+	background: $background-color;
 	font-weight: normal;
 	text-transform: uppercase;
 	margin: 0 0 0.8em 0;
-	line-height: 1em;
 	padding: 0.25em 0.25em 0em 0.25em;
+	line-height: 1em;
+	letter-spacing: 0.05em;
 
 	// additional elements are those mustaches at sides of header
 	@if ($additional-elements) {
@@ -82,6 +93,16 @@ $brands-sprite-dimensions: true;
 		@if ($additional-elements == 'dark') {
 			&:before { @extend .figures-vignette-left };
 			&:after { @extend .figures-vignette-right };
+		}
+
+		@if ($additional-elements == 'white') {
+			&:before { @extend .figures-vignette-white-left };
+			&:after { @extend .figures-vignette-white-right };
+		}
+
+		@if ($additional-elements == 'gray') {
+			&:before { @extend .figures-vignette-gray-left };
+			&:after { @extend .figures-vignette-gray-right };
 		}
 
 		&:before {
@@ -101,6 +122,23 @@ $brands-sprite-dimensions: true;
 				height: $height;
 		}
 	}
+}
+
+// Credits to Nicolas Gallagher micro clearfix
+@mixin clearfix() {
+    /* For IE 6/7 (trigger hasLayout) */
+    *zoom:1;
+
+	/* For modern browsers */
+    &:before,
+    &:after {
+        content:"";
+        display:table;
+    }
+
+    &:after {
+        clear:both;
+    }
 }
 
 // Global styles

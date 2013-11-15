@@ -1,6 +1,6 @@
 @import 'base';
 
-$delimeter-height: 21px;
+$delimeter-height: 20px;
 
 .curved-border {
 	position: relative;
@@ -24,11 +24,14 @@ section.proficiencies {
 		$item-width: 370px;		
 
 		@include inline-block-list-container;
+		display: block;
 		position: relative;
 		// 3 column list
-		width: 3 * $item-width;
+		max-width: 3 * $item-width;
 		margin: 70px auto 0 auto;
 		white-space: normal;
+		// intend sets block to visual center (not actual)
+		padding-left: 10em;
 
 		> li {
 			@include inline-block-list-item;

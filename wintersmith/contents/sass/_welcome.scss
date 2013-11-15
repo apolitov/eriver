@@ -14,6 +14,7 @@ section.welcome {
 		position: absolute;
 		left: 0;
 		bottom: 2*$gap;
+		z-index: 20;
 	}
 
 	.logo {
@@ -42,5 +43,44 @@ section.welcome {
 		@include inline-block;
 		width: 71px;
 		height: 111px;
+	}
+
+	.bubbles {
+		z-index: 10;
+
+		&, > div {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.back, .front., .focused {
+		}
+
+		.back {
+			.left {
+			}
+
+			.right {
+			}
+		}
+
+		.front {
+			.left {
+			}
+
+			.right {
+			}
+		}
+
+		.focused {
+			.left {
+			}
+
+			.right {
+			}
+		}
 	}
 }
