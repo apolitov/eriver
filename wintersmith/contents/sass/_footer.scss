@@ -97,7 +97,7 @@ footer {
 		width: $article-hire-width;
 	}
 
-	div.figures-scroll-up {
+	.figures-scroll-up {
 		@include inline-block;
 		position: absolute;
 		bottom: $footer-bottom-margin;

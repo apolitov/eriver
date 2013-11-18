@@ -6,8 +6,10 @@ section.welcome {
 	@include cover-background("../img/backgrounds/bg-underwater.jpg", fixed);
 	position: relative;
 	width: 100%;
-	min-height: 898px;
+	min-height: 700px;
 	text-align: center;
+	// compensate fixed header
+	margin-top: $top-menu-height;
 
 	.hero {
 		width: 100%;
@@ -47,19 +49,48 @@ section.welcome {
 
 	.bubbles {
 		z-index: 10;
+		overflow: hidden;
 
 		&, > div {
 			position: absolute;
 			left: 0;
-			top: 0;
+			bottom: 0;
 			width: 100%;
 			height: 100%;
 		}
 
-		.back, .front., .focused {
+		.left {
+			position: absolute;
+			bottom: 0;
+			left: -5%;
+		}
+
+		.right {
+			position: absolute;
+			bottom: 0;
+			right: -5%;
+		}
+
+		.back, .front, .focused{
+					@include transition(bottom 1.0s ease-out);
+			img {
+				width: 40%;
+			}
 		}
 
 		.back {
+			z-index: 11;
+			bottom: 0;
+
+			img {
+				bottom: -20%;
+			}
+		}
+
+
+		.focused {
+			z-index: 12;
+
 			.left {
 			}
 
@@ -68,14 +99,8 @@ section.welcome {
 		}
 
 		.front {
-			.left {
-			}
+			z-index: 13;
 
-			.right {
-			}
-		}
-
-		.focused {
 			.left {
 			}
 

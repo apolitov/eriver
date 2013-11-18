@@ -1,18 +1,18 @@
-section.welcome
+section.welcome#welcome
 	div.hero
 		div.logo
 		div.message
 			p Full scope of digital
 			p and social media
 			p on one shore
-		div.scroll-down.figures-arrow-down-with-hole
+		a.scroll-down.figures-arrow-down-with-hole(href='#showcase')
 	div.bubbles
 		div.back
-			div.right.bubbles-back-right
-			div.left.bubbles-back-left
-		div.front
-			div.right.bubbles-front-right
-			div.left.bubbles-front-left
+			img(src="img/bubbles/back-left.png", class="left");
+			img(src="img/bubbles/back-right.png" class="right");
 		div.focused
-			div.right.bubbles-focus-right
-			div.left.bubbles-focus-right
+			img(src="img/bubbles/focus-left.png", class="left");
+			img(src="img/bubbles/focus-right.png" class="right");
+		div.front
+			img(src="img/bubbles/front-left.png", class="left");
+			img(src="img/bubbles/front-right.png" class="right");

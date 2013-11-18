@@ -20,6 +20,7 @@ $dark-blue: #081522;
 @import "compass/css3/opacity";
 @import "compass/css3/border-radius";
 @import "compass/css3/box-sizing";
+@import "compass/css3/transition";
 
 // Sprites
 	// small images
@@ -30,10 +31,6 @@ $figures-sprite-dimensions: true;
 @import "brands/*.png";
 $brands-sprite-dimensions: true;
 @include all-brands-sprites;
-	// bubbles at welcome screen
-@import "bubbles/*.png";
-$bubbles-sprite-dimensions: true;
-@include all-bubbles-sprites;
 
 // Fonts
 @font-face {font-family: 'PFSquareSansPro-BoldItalic';src: url('fonts/29062D_0_0.eot');src: url('fonts/29062D_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/29062D_0_0.woff') format('woff'),url('fonts/29062D_0_0.ttf') format('truetype'),url('fonts/29062D_0_0.svg#wf') format('svg');}
@@ -143,5 +140,6 @@ $bubbles-sprite-dimensions: true;
 
 // Global styles
 a {
+	@include transition(color 0.3s ease-out);
 	text-decoration: none;
 }
