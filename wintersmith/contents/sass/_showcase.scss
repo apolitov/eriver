@@ -1,8 +1,71 @@
 @import "base";
 
 section.showcase {
-	> article {
+	$height: 900px;
+	$height-small: 1200px;
+
+	position: relative;
+	height: $height;
+	overflow: hidden;
+
+	@include respond-to(small-screen) { 
+		height: $height-small;
+	}
+
+	> div {
+		height: 100%;
+	}
+
+	.showcase-item {
 		position: relative;
-		height: 900px;
+		height: $height;
+
+		@include respond-to(small-screen) { 
+			height: $height-small;
+		}
+	}
+
+	// Fotorama carousel specific styles
+	$dot-diameter: 16px;
+	.fotorama__nav-wrap {
+		position: absolute;
+		bottom: 160px;
+		left: 0;
+		width: 100%;
+
+		@include respond-to(small-screen) { 
+			display: none;
+		}
+	}
+
+	.fotorama__nav-wrap,
+	.fotorama__nav .fotorama__nav--dots,
+	.fotorama__nav--dots .fotorama__nav__frame {
+		height: $dot-diameter*2;
+	}
+
+	.fotorama__nav--dots .fotorama__nav__frame {
+		width: $dot-diameter*1.7;
+	}
+
+	.fotorama__nav__frame.fotorama__active .fotorama__dot,
+	.fotorama__dot {
+		width: $dot-diameter;
+		height: $dot-diameter;
+		border-radius: $dot-diameter;
+		border: none;
+		background-color: #868686;
+	}
+	
+	.fotorama__dot {
+		background-color: #868686;	
+	}
+
+	.fotorama__nav__frame.fotorama__active .fotorama__dot {
+		background-color: #4d4d4d;
+	}
+
+	.fotorama__stage {
+		height: 100%;
 	}
 }

@@ -1,5 +1,5 @@
-.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-scroll-up, .figures-vignette-gray-left, section.clients h2:before, .figures-vignette-gray-right, section.clients h2:after, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, section.about div.message h2:before, .figures-vignette-white-right, section.about div.message h2:after {
-  background: url('../img/figures-s58143213f7.png') no-repeat;
+.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-menu, .figures-scroll-up, .figures-vignette-gray-left, section.clients h2:before, .figures-vignette-gray-right, section.clients h2:after, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, section.about div.message h2:before, .figures-vignette-white-right, section.about div.message h2:after {
+  background: url('../img/figures-s9914d9ecdc.png') no-repeat;
 }
 
 .figures-arrow-down-no-hole {
@@ -74,6 +74,12 @@
   width: 100px;
 }
 
+.figures-menu {
+  background-position: 0 -1310px;
+  height: 44px;
+  width: 68px;
+}
+
 .figures-scroll-up {
   background-position: 0 -1108px;
   height: 71px;
@@ -114,6 +120,28 @@
   background-position: 0 -1286px;
   height: 12px;
   width: 50px;
+}
+
+.figures-small-sprite, .figures-small-item-cube, .figures-small-item-devices, .figures-small-item-dialog {
+  background: url('../img/figures-small-sdf18143541.png') no-repeat;
+}
+
+.figures-small-item-cube {
+  background-position: 0 -64px;
+  height: 46px;
+  width: 44px;
+}
+
+.figures-small-item-devices {
+  background-position: 0 -110px;
+  height: 41px;
+  width: 55px;
+}
+
+.figures-small-item-dialog {
+  background-position: 0 0;
+  height: 64px;
+  width: 67px;
 }
 
 .brands-sprite, .brands-alfa-capital, .brands-american-eagle, .brands-bbw, .brands-bodyshop, .brands-d-and-g, .brands-justice, .brands-lasenza, .brands-lenovo, .brands-mothercare, .brands-pinkberry, .brands-starbucks {
@@ -266,18 +294,42 @@ a {
   text-decoration: none;
 }
 
+body {
+  min-width: 1000px;
+}
+@media only screen and (max-width: 1136px) {
+  body {
+    font-size: 2em;
+  }
+}
+
+html.touch * {
+  background-attachment: scroll !important;
+}
+
 body > header {
   font-family: "PFSquareSansPro-Light", Arial, sans-serif;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
+  min-width: 1000px;
   width: 100%;
+  min-width: 1000px;
   height: 70px;
   background: #091523;
   color: #cdcece;
+  line-height: 70px;
 }
-body > header .logo, body > header nav {
+@media only screen and (max-width: 1136px) {
+  body > header {
+    position: relative;
+    height: 100px;
+    line-height: 100px;
+    font-size: 1.5em;
+  }
+}
+body > header .logo, body > header nav, body > header .collapsed-menu {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -285,6 +337,30 @@ body > header .logo, body > header nav {
   zoom: 1;
   *display: inline;
   height: 100%;
+}
+body > header .collapsed-menu {
+  display: none;
+}
+body > header .collapsed-menu .figures-menu {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  vertical-align: middle;
+  margin-left: 30px;
+}
+@media only screen and (max-width: 1136px) {
+  body > header .collapsed-menu {
+    display: inline;
+    float: left;
+    margin-right: 0%;
+    width: 50%;
+  }
+  * html body > header .collapsed-menu {
+    overflow-x: hidden;
+  }
 }
 body > header .logo {
   display: inline;
@@ -295,6 +371,11 @@ body > header .logo {
 }
 * html body > header .logo {
   overflow-x: hidden;
+}
+@media only screen and (max-width: 1136px) {
+  body > header .logo {
+    display: none;
+  }
 }
 body > header a {
   color: #cdcece;
@@ -312,6 +393,17 @@ body > header nav {
 * html body > header nav {
   overflow-x: hidden;
 }
+@media only screen and (max-width: 1136px) {
+  body > header nav {
+    display: inline;
+    float: left;
+    margin-right: 0;
+    width: 50%;
+  }
+  * html body > header nav {
+    overflow-x: hidden;
+  }
+}
 body > header nav ul {
   display: -moz-inline-stack;
   display: inline-block;
@@ -325,7 +417,6 @@ body > header nav ul {
   /* For IE 6/7 (trigger hasLayout) */
   *zoom: 1;
   /* For modern browsers */
-  font-size: 1em;
 }
 body > header nav ul:before, body > header nav ul:after {
   content: "";
@@ -353,8 +444,10 @@ body > header nav ul li:last-child {
 body > header nav ul li.last {
   padding-right: 0;
 }
-body > header nav ul li {
-  line-height: 70px;
+@media only screen and (max-width: 1136px) {
+  body > header nav ul {
+    display: none;
+  }
 }
 body > header nav ul.language {
   margin: 0;
@@ -391,6 +484,17 @@ body > header nav ul.language li:last-child {
 body > header nav ul.language li.last {
   padding-right: 0;
 }
+@media only screen and (max-width: 1136px) {
+  body > header nav ul.language {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    margin: 0 30px 0 0;
+  }
+}
 body > header nav ul.language li:after {
   display: inline;
   content: "|";
@@ -401,8 +505,8 @@ body > header nav ul.language li:last-child:after {
   content: "";
 }
 
-.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-scroll-up, .figures-vignette-gray-left, section.clients h2:before, .figures-vignette-gray-right, section.clients h2:after, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, section.about div.message h2:before, .figures-vignette-white-right, section.about div.message h2:after {
-  background: url('../img/figures-s58143213f7.png') no-repeat;
+.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-menu, .figures-scroll-up, .figures-vignette-gray-left, section.clients h2:before, .figures-vignette-gray-right, section.clients h2:after, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, section.about div.message h2:before, .figures-vignette-white-right, section.about div.message h2:after {
+  background: url('../img/figures-s9914d9ecdc.png') no-repeat;
 }
 
 .figures-arrow-down-no-hole {
@@ -477,6 +581,12 @@ body > header nav ul.language li:last-child:after {
   width: 100px;
 }
 
+.figures-menu {
+  background-position: 0 -1310px;
+  height: 44px;
+  width: 68px;
+}
+
 .figures-scroll-up {
   background-position: 0 -1108px;
   height: 71px;
@@ -517,6 +627,28 @@ body > header nav ul.language li:last-child:after {
   background-position: 0 -1286px;
   height: 12px;
   width: 50px;
+}
+
+.figures-small-sprite, .figures-small-item-cube, .figures-small-item-devices, .figures-small-item-dialog {
+  background: url('../img/figures-small-sdf18143541.png') no-repeat;
+}
+
+.figures-small-item-cube {
+  background-position: 0 -64px;
+  height: 46px;
+  width: 44px;
+}
+
+.figures-small-item-devices {
+  background-position: 0 -110px;
+  height: 41px;
+  width: 55px;
+}
+
+.figures-small-item-dialog {
+  background-position: 0 0;
+  height: 64px;
+  width: 67px;
 }
 
 .brands-sprite, .brands-alfa-capital, .brands-american-eagle, .brands-bbw, .brands-bodyshop, .brands-d-and-g, .brands-justice, .brands-lasenza, .brands-lenovo, .brands-mothercare, .brands-pinkberry, .brands-starbucks {
@@ -669,9 +801,25 @@ a {
   text-decoration: none;
 }
 
+body {
+  min-width: 1000px;
+}
+@media only screen and (max-width: 1136px) {
+  body {
+    font-size: 2em;
+  }
+}
+
+html.touch * {
+  background-attachment: scroll !important;
+}
+
 section.welcome {
   background: url("../img/backgrounds/bg-underwater.jpg") no-repeat center center;
   background-attachment: fixed;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -o-background-size: 100% auto;
   background-size: 100% auto;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -681,9 +829,14 @@ section.welcome {
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(../img/backgrounds/bg-underwater.jpg, sizingMethod='scale')";
   position: relative;
   width: 100%;
-  min-height: 700px;
+  min-height: 800px;
   text-align: center;
   margin-top: 70px;
+}
+@media only screen and (max-width: 1136px) {
+  section.welcome {
+    margin-top: 0;
+  }
 }
 section.welcome .hero {
   width: 100%;
@@ -692,17 +845,32 @@ section.welcome .hero {
   bottom: 6em;
   z-index: 20;
 }
+@media only screen and (max-width: 1136px) {
+  section.welcome .hero {
+    bottom: 1.5em;
+  }
+}
 section.welcome .logo {
   background: url("../img/logo/logo-big.png") center center no-repeat;
   height: 183px;
   margin: 0 0 6em 0;
 }
+@media only screen and (max-width: 1136px) {
+  section.welcome .logo {
+    margin-bottom: 3em;
+  }
+}
 section.welcome .message {
   font-family: "PFSquareSansPro-Light", Arial, sans-serif;
   text-transform: uppercase;
-  font-size: 22px;
+  font-size: 1.6em;
   color: white;
   margin: 0 0 3em 0;
+}
+@media only screen and (max-width: 1136px) {
+  section.welcome .message {
+    margin-bottom: 1.5em;
+  }
 }
 section.welcome .message p {
   margin: 0;
@@ -744,6 +912,11 @@ section.welcome .bubbles .back, section.welcome .bubbles .front, section.welcome
   -moz-transition: bottom 1s ease-out;
   -o-transition: bottom 1s ease-out;
   transition: bottom 1s ease-out;
+  -webkit-transform: translatez(0);
+  -moz-transform: translatez(0);
+  -ms-transform: translatez(0);
+  -o-transform: translatez(0);
+  transform: translatez(0);
 }
 section.welcome .bubbles .back img, section.welcome .bubbles .front img, section.welcome .bubbles .focused img {
   width: 40%;
@@ -762,8 +935,8 @@ section.welcome .bubbles .front {
   z-index: 13;
 }
 
-.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-scroll-up, .figures-vignette-gray-left, section.clients h2:before, .figures-vignette-gray-right, section.clients h2:after, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, section.about div.message h2:before, .figures-vignette-white-right, section.about div.message h2:after {
-  background: url('../img/figures-s58143213f7.png') no-repeat;
+.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-menu, .figures-scroll-up, .figures-vignette-gray-left, section.clients h2:before, .figures-vignette-gray-right, section.clients h2:after, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, section.about div.message h2:before, .figures-vignette-white-right, section.about div.message h2:after {
+  background: url('../img/figures-s9914d9ecdc.png') no-repeat;
 }
 
 .figures-arrow-down-no-hole {
@@ -838,6 +1011,12 @@ section.welcome .bubbles .front {
   width: 100px;
 }
 
+.figures-menu {
+  background-position: 0 -1310px;
+  height: 44px;
+  width: 68px;
+}
+
 .figures-scroll-up {
   background-position: 0 -1108px;
   height: 71px;
@@ -878,6 +1057,28 @@ section.welcome .bubbles .front {
   background-position: 0 -1286px;
   height: 12px;
   width: 50px;
+}
+
+.figures-small-sprite, .figures-small-item-cube, .figures-small-item-devices, .figures-small-item-dialog {
+  background: url('../img/figures-small-sdf18143541.png') no-repeat;
+}
+
+.figures-small-item-cube {
+  background-position: 0 -64px;
+  height: 46px;
+  width: 44px;
+}
+
+.figures-small-item-devices {
+  background-position: 0 -110px;
+  height: 41px;
+  width: 55px;
+}
+
+.figures-small-item-dialog {
+  background-position: 0 0;
+  height: 64px;
+  width: 67px;
 }
 
 .brands-sprite, .brands-alfa-capital, .brands-american-eagle, .brands-bbw, .brands-bodyshop, .brands-d-and-g, .brands-justice, .brands-lasenza, .brands-lenovo, .brands-mothercare, .brands-pinkberry, .brands-starbucks {
@@ -1030,13 +1231,80 @@ a {
   text-decoration: none;
 }
 
-section.showcase > article {
+body {
+  min-width: 1000px;
+}
+@media only screen and (max-width: 1136px) {
+  body {
+    font-size: 2em;
+  }
+}
+
+html.touch * {
+  background-attachment: scroll !important;
+}
+
+section.showcase {
+  position: relative;
+  height: 900px;
+  overflow: hidden;
+}
+@media only screen and (max-width: 1136px) {
+  section.showcase {
+    height: 1200px;
+  }
+}
+section.showcase > div {
+  height: 100%;
+}
+section.showcase .showcase-item {
   position: relative;
   height: 900px;
 }
+@media only screen and (max-width: 1136px) {
+  section.showcase .showcase-item {
+    height: 1200px;
+  }
+}
+section.showcase .fotorama__nav-wrap {
+  position: absolute;
+  bottom: 160px;
+  left: 0;
+  width: 100%;
+}
+@media only screen and (max-width: 1136px) {
+  section.showcase .fotorama__nav-wrap {
+    display: none;
+  }
+}
+section.showcase .fotorama__nav-wrap,
+section.showcase .fotorama__nav .fotorama__nav--dots,
+section.showcase .fotorama__nav--dots .fotorama__nav__frame {
+  height: 32px;
+}
+section.showcase .fotorama__nav--dots .fotorama__nav__frame {
+  width: 27.2px;
+}
+section.showcase .fotorama__nav__frame.fotorama__active .fotorama__dot,
+section.showcase .fotorama__dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  border: none;
+  background-color: #868686;
+}
+section.showcase .fotorama__dot {
+  background-color: #868686;
+}
+section.showcase .fotorama__nav__frame.fotorama__active .fotorama__dot {
+  background-color: #4d4d4d;
+}
+section.showcase .fotorama__stage {
+  height: 100%;
+}
 
-.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-scroll-up, .figures-vignette-gray-left, section.clients h2:before, .figures-vignette-gray-right, section.clients h2:after, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, section.about div.message h2:before, .figures-vignette-white-right, section.about div.message h2:after {
-  background: url('../img/figures-s58143213f7.png') no-repeat;
+.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-menu, .figures-scroll-up, .figures-vignette-gray-left, section.clients h2:before, .figures-vignette-gray-right, section.clients h2:after, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, section.about div.message h2:before, .figures-vignette-white-right, section.about div.message h2:after {
+  background: url('../img/figures-s9914d9ecdc.png') no-repeat;
 }
 
 .figures-arrow-down-no-hole {
@@ -1111,6 +1379,12 @@ section.showcase > article {
   width: 100px;
 }
 
+.figures-menu {
+  background-position: 0 -1310px;
+  height: 44px;
+  width: 68px;
+}
+
 .figures-scroll-up {
   background-position: 0 -1108px;
   height: 71px;
@@ -1151,6 +1425,28 @@ section.showcase > article {
   background-position: 0 -1286px;
   height: 12px;
   width: 50px;
+}
+
+.figures-small-sprite, .figures-small-item-cube, .figures-small-item-devices, .figures-small-item-dialog {
+  background: url('../img/figures-small-sdf18143541.png') no-repeat;
+}
+
+.figures-small-item-cube {
+  background-position: 0 -64px;
+  height: 46px;
+  width: 44px;
+}
+
+.figures-small-item-devices {
+  background-position: 0 -110px;
+  height: 41px;
+  width: 55px;
+}
+
+.figures-small-item-dialog {
+  background-position: 0 0;
+  height: 64px;
+  width: 67px;
 }
 
 .brands-sprite, .brands-alfa-capital, .brands-american-eagle, .brands-bbw, .brands-bodyshop, .brands-d-and-g, .brands-justice, .brands-lasenza, .brands-lenovo, .brands-mothercare, .brands-pinkberry, .brands-starbucks {
@@ -1301,6 +1597,19 @@ a {
   -o-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
   text-decoration: none;
+}
+
+body {
+  min-width: 1000px;
+}
+@media only screen and (max-width: 1136px) {
+  body {
+    font-size: 2em;
+  }
+}
+
+html.touch * {
+  background-attachment: scroll !important;
 }
 
 .curved-border {
@@ -1310,10 +1619,18 @@ a {
   margin-top: -20px;
   background: url("../img/backgrounds/bg-curve-gray.png") repeat-x;
 }
+@media only screen and (max-width: 1136px) {
+  .curved-border {
+    display: none;
+  }
+}
 
 section.proficiencies {
   background: url("../img/backgrounds/bg-scheme.png") no-repeat center center;
-  background-attachment: fixed;
+  background-attachment: scroll;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -o-background-size: 100% auto;
   background-size: 100% auto;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -1325,6 +1642,12 @@ section.proficiencies {
   text-align: center;
   padding: 100px 50px 40px 50px;
 }
+@media only screen and (max-width: 1136px) {
+  section.proficiencies {
+    padding: 0px;
+    background: #4c6a86;
+  }
+}
 section.proficiencies h2 {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1335,14 +1658,20 @@ section.proficiencies h2 {
   font-family: "PFSquareSansPro-Regular", Arial, sans-serif;
   position: relative;
   color: whitesmoke;
-  font-size: 2.6em;
+  font-size: 2em;
   background: #081522;
   font-weight: normal;
   text-transform: uppercase;
   margin: 0 0 0.8em 0;
-  padding: 0.25em 0.25em 0em 0.25em;
+  padding: 0.25em 0.25em 0.15em 0.25em;
   line-height: 1em;
   letter-spacing: 0.05em;
+  margin: 1em 0 1em 0;
+}
+@media only screen and (max-width: 1136px) {
+  section.proficiencies h2 {
+    margin: 1em 0 1em 0;
+  }
 }
 section.proficiencies h2:before {
   left: -40px;
@@ -1379,6 +1708,14 @@ section.proficiencies > ul:before, section.proficiencies > ul:after {
 section.proficiencies > ul:after {
   clear: both;
 }
+@media only screen and (max-width: 1136px) {
+  section.proficiencies > ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
+}
 section.proficiencies > ul > li {
   list-style-image: none;
   list-style-type: none;
@@ -1399,11 +1736,92 @@ section.proficiencies > ul > li {
   margin: 0;
   margin-bottom: 50px;
 }
+@media only screen and (max-width: 1136px) {
+  section.proficiencies > ul > li {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1136px) {
+  section.proficiencies > ul > li.show-small-screen {
+    background: url("../img/backgrounds/bg-scheme.png") left center;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+section.proficiencies > ul > li .emblem {
+  margin-bottom: 1em;
+  margin-left: -0.9em;
+}
+@media only screen and (max-width: 1136px) {
+  section.proficiencies > ul > li .emblem.figures-item-dialog, section.proficiencies > ul > li .emblem.figures-item-devices, section.proficiencies > ul > li .emblem.figures-item-cube {
+    background-image: url('../img/figures-small-sdf18143541.png');
+    position: absolute;
+    top: 50%;
+    left: 3em;
+  }
+  section.proficiencies > ul > li .emblem.figures-item-dialog {
+    background-position: 0 0;
+    height: 64px;
+    width: 67px;
+    margin-top: -32px;
+  }
+  section.proficiencies > ul > li .emblem.figures-item-devices {
+    background-position: 0 -110px;
+    height: 41px;
+    width: 55px;
+    margin-top: -20.5px;
+  }
+  section.proficiencies > ul > li .emblem.figures-item-cube {
+    background-position: 0 -64px;
+    height: 46px;
+    width: 44px;
+    margin-top: -23px;
+  }
+}
 section.proficiencies > ul > li h3, section.proficiencies > ul > li ul {
-  padding: 0 0 0 14px;
+  padding: 0;
+  margin: 0 0 0.5em 0;
+}
+@media only screen and (max-width: 1136px) {
+  section.proficiencies > ul > li h3, section.proficiencies > ul > li ul {
+    display: block;
+    position: relative;
+    padding: 1.7em 2em 1.7em 0;
+    color: #081522;
+    margin: 0;
+  }
 }
 section.proficiencies > ul > li h3 {
   text-transform: uppercase;
+}
+@media only screen and (max-width: 1136px) {
+  section.proficiencies > ul > li h3 {
+    /* For IE 6/7 (trigger hasLayout) */
+    *zoom: 1;
+    /* For modern browsers */
+    font-weight: normal;
+    color: #fff;
+  }
+  section.proficiencies > ul > li h3:before, section.proficiencies > ul > li h3:after {
+    content: "";
+    display: table;
+  }
+  section.proficiencies > ul > li h3:after {
+    clear: both;
+  }
+  section.proficiencies > ul > li h3 span {
+    padding-left: 20%;
+  }
+  section.proficiencies > ul > li h3.creative {
+    background: #39546f;
+  }
+  section.proficiencies > ul > li h3.production {
+    background: #0c1d2d;
+  }
+  section.proficiencies > ul > li h3.social {
+    background: #091523;
+  }
 }
 section.proficiencies > ul > li ul {
   list-style: none;
@@ -1412,6 +1830,20 @@ section.proficiencies > ul > li ul li {
   list-style-image: none;
   list-style-type: none;
   margin-left: 0;
+}
+@media only screen and (max-width: 1136px) {
+  section.proficiencies > ul > li ul {
+    padding-left: 20%;
+    font-size: 1.2em;
+    line-height: 2em;
+  }
+}
+@media only screen and (max-width: 1136px) {
+  section.proficiencies > ul > li ul.collapsed {
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+  }
 }
 section.proficiencies > ul > li ul.pipe-separated {
   white-space: normal;
@@ -1429,8 +1861,8 @@ section.proficiencies > ul > li ul.pipe-separated li:before {
   content: "| ";
 }
 
-.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-scroll-up, .figures-vignette-gray-left, section.clients h2:before, .figures-vignette-gray-right, section.clients h2:after, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, section.about div.message h2:before, .figures-vignette-white-right, section.about div.message h2:after {
-  background: url('../img/figures-s58143213f7.png') no-repeat;
+.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-menu, .figures-scroll-up, .figures-vignette-gray-left, section.clients h2:before, .figures-vignette-gray-right, section.clients h2:after, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, section.about div.message h2:before, .figures-vignette-white-right, section.about div.message h2:after {
+  background: url('../img/figures-s9914d9ecdc.png') no-repeat;
 }
 
 .figures-arrow-down-no-hole {
@@ -1505,6 +1937,12 @@ section.proficiencies > ul > li ul.pipe-separated li:before {
   width: 100px;
 }
 
+.figures-menu {
+  background-position: 0 -1310px;
+  height: 44px;
+  width: 68px;
+}
+
 .figures-scroll-up {
   background-position: 0 -1108px;
   height: 71px;
@@ -1545,6 +1983,28 @@ section.proficiencies > ul > li ul.pipe-separated li:before {
   background-position: 0 -1286px;
   height: 12px;
   width: 50px;
+}
+
+.figures-small-sprite, .figures-small-item-cube, .figures-small-item-devices, .figures-small-item-dialog {
+  background: url('../img/figures-small-sdf18143541.png') no-repeat;
+}
+
+.figures-small-item-cube {
+  background-position: 0 -64px;
+  height: 46px;
+  width: 44px;
+}
+
+.figures-small-item-devices {
+  background-position: 0 -110px;
+  height: 41px;
+  width: 55px;
+}
+
+.figures-small-item-dialog {
+  background-position: 0 0;
+  height: 64px;
+  width: 67px;
 }
 
 .brands-sprite, .brands-alfa-capital, .brands-american-eagle, .brands-bbw, .brands-bodyshop, .brands-d-and-g, .brands-justice, .brands-lasenza, .brands-lenovo, .brands-mothercare, .brands-pinkberry, .brands-starbucks {
@@ -1697,9 +2157,25 @@ a {
   text-decoration: none;
 }
 
+body {
+  min-width: 1000px;
+}
+@media only screen and (max-width: 1136px) {
+  body {
+    font-size: 2em;
+  }
+}
+
+html.touch * {
+  background-attachment: scroll !important;
+}
+
 section.about {
   background: url("../img/backgrounds/bg-lab.jpg") no-repeat center center;
   background-attachment: fixed;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -o-background-size: 100% auto;
   background-size: 100% auto;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -1708,6 +2184,14 @@ section.about {
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=$background-url, sizingMethod='scale');
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(../img/backgrounds/bg-lab.jpg, sizingMethod='scale')";
   padding-top: 50px;
+  overflow: hidden;
+}
+@media only screen and (max-width: 1136px) {
+  section.about {
+    background: url("../img/backgrounds/bg-about-small.jpeg") repeat top left;
+    padding-top: 0;
+    padding-bottom: 1em;
+  }
 }
 section.about div.device {
   box-sizing: content-box;
@@ -1719,12 +2203,35 @@ section.about div.device {
   left: 140px;
   padding: 180px 0 0 140px;
 }
+@media only screen and (max-width: 1136px) {
+  section.about div.device {
+    background: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+    left: 0;
+    text-align: center;
+  }
+}
 section.about div.message {
   width: 480px;
   color: #fbfbfb;
   max-height: 650px;
   text-align: center;
   overflow: hidden;
+}
+@media only screen and (max-width: 1136px) {
+  section.about div.message {
+    padding-left: 10%;
+    display: inline;
+    float: left;
+    margin-right: 0;
+    width: 80%;
+    max-height: none;
+  }
+  * html section.about div.message {
+    overflow-x: hidden;
+  }
 }
 section.about div.message h2 {
   display: -moz-inline-stack;
@@ -1736,14 +2243,19 @@ section.about div.message h2 {
   font-family: "PFSquareSansPro-Regular", Arial, sans-serif;
   position: relative;
   color: #6c6c6c;
-  font-size: 2.6em;
+  font-size: 2em;
   background: #fbfbfb;
   font-weight: normal;
   text-transform: uppercase;
   margin: 0 0 0.8em 0;
-  padding: 0.25em 0.25em 0em 0.25em;
+  padding: 0.25em 0.25em 0.15em 0.25em;
   line-height: 1em;
   letter-spacing: 0.05em;
+}
+@media only screen and (max-width: 1136px) {
+  section.about div.message h2 {
+    margin: 1em 0 1em 0;
+  }
 }
 section.about div.message h2:before {
   left: -40px;
@@ -1759,15 +2271,25 @@ section.about div.message h2:before, section.about div.message h2:after {
   width: 40px;
   height: 12px;
 }
+@media only screen and (max-width: 1136px) {
+  section.about div.message h2 {
+    color: #2da4de;
+  }
+}
 section.about div.message p {
   font-family: "PFSquareSansPro-Medium", Arial, sans-serif;
   text-align: left;
   line-height: 2.3em;
   margin: 1.9em 0 1.9em 0;
 }
+@media only screen and (max-width: 1136px) {
+  section.about div.message p {
+    margin: 0 0 1.9em 0;
+  }
+}
 
-.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-scroll-up, .figures-vignette-gray-left, section.clients h2:before, .figures-vignette-gray-right, section.clients h2:after, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, section.about div.message h2:before, .figures-vignette-white-right, section.about div.message h2:after {
-  background: url('../img/figures-s58143213f7.png') no-repeat;
+.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-menu, .figures-scroll-up, .figures-vignette-gray-left, section.clients h2:before, .figures-vignette-gray-right, section.clients h2:after, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, section.about div.message h2:before, .figures-vignette-white-right, section.about div.message h2:after {
+  background: url('../img/figures-s9914d9ecdc.png') no-repeat;
 }
 
 .figures-arrow-down-no-hole {
@@ -1842,6 +2364,12 @@ section.about div.message p {
   width: 100px;
 }
 
+.figures-menu {
+  background-position: 0 -1310px;
+  height: 44px;
+  width: 68px;
+}
+
 .figures-scroll-up {
   background-position: 0 -1108px;
   height: 71px;
@@ -1882,6 +2410,28 @@ section.about div.message p {
   background-position: 0 -1286px;
   height: 12px;
   width: 50px;
+}
+
+.figures-small-sprite, .figures-small-item-cube, .figures-small-item-devices, .figures-small-item-dialog {
+  background: url('../img/figures-small-sdf18143541.png') no-repeat;
+}
+
+.figures-small-item-cube {
+  background-position: 0 -64px;
+  height: 46px;
+  width: 44px;
+}
+
+.figures-small-item-devices {
+  background-position: 0 -110px;
+  height: 41px;
+  width: 55px;
+}
+
+.figures-small-item-dialog {
+  background-position: 0 0;
+  height: 64px;
+  width: 67px;
 }
 
 .brands-sprite, .brands-alfa-capital, .brands-american-eagle, .brands-bbw, .brands-bodyshop, .brands-d-and-g, .brands-justice, .brands-lasenza, .brands-lenovo, .brands-mothercare, .brands-pinkberry, .brands-starbucks {
@@ -2034,9 +2584,25 @@ a {
   text-decoration: none;
 }
 
+body {
+  min-width: 1000px;
+}
+@media only screen and (max-width: 1136px) {
+  body {
+    font-size: 2em;
+  }
+}
+
+html.touch * {
+  background-attachment: scroll !important;
+}
+
 section.clients {
   background: url("../img/backgrounds/bg-drops.jpg") no-repeat center center;
-  background-attachment: fixed;
+  background-attachment: scroll;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -o-background-size: 100% auto;
   background-size: 100% auto;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -2046,6 +2612,11 @@ section.clients {
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(../img/backgrounds/bg-drops.jpg, sizingMethod='scale')";
   text-align: center;
   padding: 100px 0 80px 0;
+}
+@media only screen and (max-width: 1136px) {
+  section.clients {
+    padding: 0;
+  }
 }
 section.clients h2 {
   display: -moz-inline-stack;
@@ -2057,15 +2628,20 @@ section.clients h2 {
   font-family: "PFSquareSansPro-Regular", Arial, sans-serif;
   position: relative;
   color: #f3f3f4;
-  font-size: 2.6em;
+  font-size: 2em;
   background: #8c8c8c;
   font-weight: normal;
   text-transform: uppercase;
   margin: 0 0 0.8em 0;
-  padding: 0.25em 0.25em 0em 0.25em;
+  padding: 0.25em 0.25em 0.15em 0.25em;
   line-height: 1em;
   letter-spacing: 0.05em;
   margin-bottom: 3em;
+}
+@media only screen and (max-width: 1136px) {
+  section.clients h2 {
+    margin: 1em 0 1em 0;
+  }
 }
 section.clients h2:before {
   left: -40px;
@@ -2103,6 +2679,11 @@ section.clients ul:before, section.clients ul:after {
 section.clients ul:after {
   clear: both;
 }
+@media only screen and (max-width: 1136px) {
+  section.clients ul {
+    max-width: 80%;
+  }
+}
 section.clients ul li {
   list-style-image: none;
   list-style-type: none;
@@ -2118,12 +2699,6 @@ section.clients ul li {
   height: 95px;
   width: 140px;
   text-align: center;
-}
-section.clients ul li.separator {
-  width: 100%;
-  background: url("../img/backgrounds/shadow-brands.png") no-repeat center top;
-  height: 36px;
-  margin-bottom: 0;
 }
 section.clients ul li span {
   display: -moz-inline-stack;
@@ -2142,6 +2717,11 @@ section.clients ul li:nth-child(1):before {
   top: 0px;
   background: url("../img/backgrounds/shadow-brands.png") no-repeat center top;
 }
+@media only screen and (max-width: 1136px) {
+  section.clients ul li:nth-child(1):before {
+    content: none;
+  }
+}
 section.clients ul li:nth-child(6):before {
   content: " ";
   width: 100%;
@@ -2150,6 +2730,11 @@ section.clients ul li:nth-child(6):before {
   left: 0;
   top: 175px;
   background: url("../img/backgrounds/shadow-brands.png") no-repeat center top;
+}
+@media only screen and (max-width: 1136px) {
+  section.clients ul li:nth-child(6):before {
+    content: none;
+  }
 }
 section.clients ul li:nth-child(11):before {
   content: " ";
@@ -2160,6 +2745,11 @@ section.clients ul li:nth-child(11):before {
   top: 350px;
   background: url("../img/backgrounds/shadow-brands.png") no-repeat center top;
 }
+@media only screen and (max-width: 1136px) {
+  section.clients ul li:nth-child(11):before {
+    content: none;
+  }
+}
 section.clients ul li:nth-child(16):before {
   content: " ";
   width: 100%;
@@ -2168,6 +2758,11 @@ section.clients ul li:nth-child(16):before {
   left: 0;
   top: 525px;
   background: url("../img/backgrounds/shadow-brands.png") no-repeat center top;
+}
+@media only screen and (max-width: 1136px) {
+  section.clients ul li:nth-child(16):before {
+    content: none;
+  }
 }
 section.clients ul li:nth-child(21):before {
   content: " ";
@@ -2178,6 +2773,11 @@ section.clients ul li:nth-child(21):before {
   top: 700px;
   background: url("../img/backgrounds/shadow-brands.png") no-repeat center top;
 }
+@media only screen and (max-width: 1136px) {
+  section.clients ul li:nth-child(21):before {
+    content: none;
+  }
+}
 section.clients ul li:nth-child(26):before {
   content: " ";
   width: 100%;
@@ -2187,16 +2787,26 @@ section.clients ul li:nth-child(26):before {
   top: 875px;
   background: url("../img/backgrounds/shadow-brands.png") no-repeat center top;
 }
+@media only screen and (max-width: 1136px) {
+  section.clients ul li:nth-child(26):before {
+    content: none;
+  }
+}
 
 footer {
   background: url("../img/backgrounds/bg-blue-noise.png");
   background-repeat: repeat;
   text-align: center;
   color: #d2d2d2;
-  font-size: 14px;
   line-height: 1.6em;
   position: relative;
   white-space: no-wrap;
+  font-size: 0.875em;
+}
+@media only screen and (max-width: 1136px) {
+  footer {
+    font-size: 1em;
+  }
 }
 footer address {
   font-style: normal;
@@ -2204,11 +2814,20 @@ footer address {
 footer h4 {
   text-transform: uppercase;
   color: #258EC5;
-  font-size: 0.9em;
   margin-bottom: 2em;
+}
+@media only screen and (max-width: 1136px) {
+  footer h4 {
+    margin-bottom: 0;
+  }
 }
 footer p {
   margin-bottom: 2.7em;
+}
+@media only screen and (max-width: 1136px) {
+  footer p {
+    margin-bottom: 1em;
+  }
 }
 footer article {
   display: -moz-inline-stack;
@@ -2225,6 +2844,11 @@ footer article {
   margin: 30px 0 50px 0;
   text-align: left;
   vertical-align: top;
+}
+@media only screen and (max-width: 1136px) {
+  footer article {
+    margin: 0 0 25px 0;
+  }
 }
 footer article.contacts {
   width: 230px;
@@ -2244,12 +2868,21 @@ footer article.feedback {
   border-left: 1px solid #1b3b58;
   border-right: 1px solid #1b3b58;
 }
+@media only screen and (max-width: 1136px) {
+  footer article.feedback {
+    border: 0;
+  }
+}
 footer article.feedback form {
   position: relative;
   margin: 0;
   padding: 0;
 }
 footer article.feedback form input, footer article.feedback form textarea {
+  -webkit-transition: height 0.3s linear;
+  -moz-transition: height 0.3s linear;
+  -o-transition: height 0.3s linear;
+  transition: height 0.3s linear;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -2265,6 +2898,7 @@ footer article.feedback form input, footer article.feedback form textarea {
   margin-bottom: 0.8em;
   width: 100%;
   color: #d2d2d2;
+  resize: none;
 }
 footer article.feedback form button {
   -webkit-border-radius: 4px;
@@ -2280,8 +2914,20 @@ footer article.feedback form button {
   padding: 0.8em;
   margin: 0.8em 0 0 0;
 }
+@media only screen and (max-width: 1136px) {
+  footer article.feedback form button {
+    float: none;
+    padding: 0.53333em;
+  }
+}
 footer article.hire {
   width: 170px;
+}
+@media only screen and (max-width: 1136px) {
+  footer article.contacts, footer article.feedback, footer article.hire {
+    position: relative;
+    width: 70%;
+  }
 }
 footer .figures-scroll-up {
   display: -moz-inline-stack;
@@ -2295,6 +2941,13 @@ footer .figures-scroll-up {
   margin-left: 320px;
   left: 50%;
 }
+@media only screen and (max-width: 1136px) {
+  footer .figures-scroll-up {
+    position: absolute;
+    bottom: 25px;
+    margin-left: 285px;
+  }
+}
 footer a {
   color: #2da4dd;
 }
@@ -2302,8 +2955,8 @@ footer a:hover, footer a:focus, footer a.active {
   color: #2da4dd;
 }
 
-.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-scroll-up, .figures-vignette-gray-left, section.clients h2:before, .figures-vignette-gray-right, section.clients h2:after, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, section.about div.message h2:before, .figures-vignette-white-right, section.about div.message h2:after {
-  background: url('../img/figures-s58143213f7.png') no-repeat;
+.figures-sprite, .figures-arrow-down-no-hole, .figures-arrow-down-with-hole, .figures-arrow-up, .figures-carousel-dots-active, .figures-carousel-dots-inactive, .figures-item-chart, .figures-item-cube, .figures-item-devices, .figures-item-dialog, .figures-item-glass, .figures-item-pencil, .figures-item-plane, .figures-menu, .figures-scroll-up, .figures-vignette-gray-left, section.clients h2:before, .figures-vignette-gray-right, section.clients h2:after, .figures-vignette-left, section.proficiencies h2:before, .figures-vignette-right, section.proficiencies h2:after, .figures-vignette-white-left, section.about div.message h2:before, .figures-vignette-white-right, section.about div.message h2:after {
+  background: url('../img/figures-s9914d9ecdc.png') no-repeat;
 }
 
 .figures-arrow-down-no-hole {
@@ -2378,6 +3031,12 @@ footer a:hover, footer a:focus, footer a.active {
   width: 100px;
 }
 
+.figures-menu {
+  background-position: 0 -1310px;
+  height: 44px;
+  width: 68px;
+}
+
 .figures-scroll-up {
   background-position: 0 -1108px;
   height: 71px;
@@ -2418,6 +3077,28 @@ footer a:hover, footer a:focus, footer a.active {
   background-position: 0 -1286px;
   height: 12px;
   width: 50px;
+}
+
+.figures-small-sprite, .figures-small-item-cube, .figures-small-item-devices, .figures-small-item-dialog {
+  background: url('../img/figures-small-sdf18143541.png') no-repeat;
+}
+
+.figures-small-item-cube {
+  background-position: 0 -64px;
+  height: 46px;
+  width: 44px;
+}
+
+.figures-small-item-devices {
+  background-position: 0 -110px;
+  height: 41px;
+  width: 55px;
+}
+
+.figures-small-item-dialog {
+  background-position: 0 0;
+  height: 64px;
+  width: 67px;
 }
 
 .brands-sprite, .brands-alfa-capital, .brands-american-eagle, .brands-bbw, .brands-bodyshop, .brands-d-and-g, .brands-justice, .brands-lasenza, .brands-lenovo, .brands-mothercare, .brands-pinkberry, .brands-starbucks {
@@ -2570,9 +3251,25 @@ a {
   text-decoration: none;
 }
 
-section.showcase > article.lenovo .promo {
+body {
+  min-width: 1000px;
+}
+@media only screen and (max-width: 1136px) {
+  body {
+    font-size: 2em;
+  }
+}
+
+html.touch * {
+  background-attachment: scroll !important;
+}
+
+.showcase .lenovo .promo {
   background: url("../img/showcase/lenovo/bg.jpg") no-repeat center center;
-  background-attachment: fixed;
+  background-attachment: scroll;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -o-background-size: 100% auto;
   background-size: 100% auto;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -2582,14 +3279,38 @@ section.showcase > article.lenovo .promo {
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(../img/showcase/lenovo/bg.jpg, sizingMethod='scale')";
   height: 666px;
 }
-section.showcase > article.lenovo figure {
+@media only screen and (max-width: 1136px) {
+  .showcase .lenovo .promo {
+    height: 100%;
+    background: url("../img/showcase/lenovo/bg_small.jpg") no-repeat center center;
+    background-attachment: scroll;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=$background-url, sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(../img/showcase/lenovo/bg_small.jpg, sizingMethod='scale')";
+    background-position: right 70%;
+  }
+}
+.showcase .lenovo figure {
   position: absolute;
   bottom: 40px;
   right: 50%;
   margin-right: -20em;
   white-space: nowrap;
 }
-section.showcase > article.lenovo figure img {
+@media only screen and (max-width: 1136px) {
+  .showcase .lenovo figure {
+    top: 0;
+    left: 30px;
+  }
+}
+.showcase .lenovo figure img.big-screen {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -2598,7 +3319,21 @@ section.showcase > article.lenovo figure img {
   *display: inline;
   margin-top: 180px;
 }
-section.showcase > article.lenovo figure figcaption {
+@media only screen and (max-width: 1136px) {
+  .showcase .lenovo figure img.big-screen {
+    display: none;
+  }
+}
+.showcase .lenovo figure img.small-screen {
+  display: none;
+}
+@media only screen and (max-width: 1136px) {
+  .showcase .lenovo figure img.small-screen {
+    display: block;
+    margin-bottom: 3em;
+  }
+}
+.showcase .lenovo figure figcaption {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -2607,7 +3342,12 @@ section.showcase > article.lenovo figure figcaption {
   *display: inline;
   margin: 230px 0 0 30px;
 }
-section.showcase > article.lenovo figure figcaption h3 {
+@media only screen and (max-width: 1136px) {
+  .showcase .lenovo figure figcaption {
+    margin: 0;
+  }
+}
+.showcase .lenovo figure figcaption h3 {
   font-family: "PFSquareSansPro-Regular", Arial, sans-serif;
   font-size: 2.4em;
   background: #081522;
@@ -2619,17 +3359,22 @@ section.showcase > article.lenovo figure figcaption h3 {
   line-height: 1em;
   padding: 0.25em 0.25em 0em 0.25em;
 }
-section.showcase > article.lenovo figure figcaption p {
+@media only screen and (max-width: 1136px) {
+  .showcase .lenovo figure figcaption h3 {
+    font-size: 1.7em;
+  }
+}
+.showcase .lenovo figure figcaption p {
   margin: 0.3em 0 0 0;
 }
-section.showcase > article.lenovo figure figcaption p span {
+.showcase .lenovo figure figcaption p span {
   font-family: "PFSquareSansPro-Regular", Arial, sans-serif;
   padding: 0.3em 0.3em 0 0.3em;
   font-size: 1.2em;
   color: #081522;
   background-color: #f6f6f6;
 }
-section.showcase > article.lenovo figure figcaption p span.highlighted {
+.showcase .lenovo figure figcaption p span.highlighted {
   font-family: "PFSquareSansPro-Medium", Arial, sans-serif;
   color: white;
   background-color: #2da4dd;

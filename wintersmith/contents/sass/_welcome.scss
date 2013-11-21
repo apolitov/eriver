@@ -6,10 +6,14 @@ section.welcome {
 	@include cover-background("../img/backgrounds/bg-underwater.jpg", fixed);
 	position: relative;
 	width: 100%;
-	min-height: 700px;
+	min-height: 800px;
 	text-align: center;
 	// compensate fixed header
 	margin-top: $top-menu-height;
+
+	@include respond-to(small-screen) { 
+		margin-top: 0;
+	}
 
 	.hero {
 		width: 100%;
@@ -17,23 +21,35 @@ section.welcome {
 		left: 0;
 		bottom: 2*$gap;
 		z-index: 20;
+
+		@include respond-to(small-screen) { 
+			bottom: $gap/2;
+		}
 	}
 
 	.logo {
 		background: url("../img/logo/logo-big.png") center center no-repeat;
 		height: 183px;
-		margin: 0 0 2*$gap 0;		
+		margin: 0 0 2*$gap 0;
+
+		@include respond-to(small-screen) { 
+			margin-bottom: $gap;
+		}		
 	}
 
 	.message {
 		@include PFSquareFont('Light');
 		text-transform: uppercase;
 
-		font-size: 22px;
+		font-size: 1.6em;
 
 		color: white;
 
 		margin: 0 0 $gap 0;
+
+		@include respond-to(small-screen) { 
+			margin-bottom: $gap/2;
+		}
 
 		p {
 			margin: 0;
@@ -72,7 +88,9 @@ section.welcome {
 		}
 
 		.back, .front, .focused{
-					@include transition(bottom 1.0s ease-out);
+			@include transition(bottom 1.0s ease-out);
+			@include hardware-acceleration;
+
 			img {
 				width: 40%;
 			}

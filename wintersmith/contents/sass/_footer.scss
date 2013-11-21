@@ -7,16 +7,21 @@ $article-feedback-width: 300px;
 $article-hire-width: 170px;
 
 $footer-bottom-margin: 50px;
+$footer-small-bottom-margin: $footer-bottom-margin/2;
 
 footer {
 	background: url("../img/backgrounds/bg-blue-noise.png");
 	background-repeat: repeat;
 	text-align: center;
 	color: $light-gray;
-	font-size: $base-font-size;
 	line-height: 1.6em;
 	position: relative;
 	white-space: no-wrap;
+	font-size: 0.875em;
+
+	@include respond-to(small-screen) {
+		font-size: 1em;
+	}
 
 	address {
 		font-style: normal;
@@ -25,12 +30,19 @@ footer {
 	h4 {
 		text-transform: uppercase;
 		color: #258EC5;
-		font-size: 0.9em;
 		margin-bottom: 2em;
+
+		@include respond-to(small-screen) {
+			margin-bottom: 0;
+		} 
 	}
 
 	p {
 		margin-bottom: 2.7em;
+
+		@include respond-to(small-screen) {
+			margin-bottom: 1em;
+		}
 	}
 
 	article {
@@ -41,6 +53,10 @@ footer {
 		margin: 30px 0 $footer-bottom-margin 0;
 		text-align: left;
 		vertical-align: top;
+
+		@include respond-to(small-screen) {
+			margin: 0 0 $footer-small-bottom-margin 0;
+		}
 	}
 
 	article.contacts {
@@ -61,6 +77,10 @@ footer {
 		border-left: 1px solid $border-color;
 		border-right: 1px solid $border-color;
 
+		@include respond-to(small-screen) {
+			border: 0;
+		}
+
 		form {
 			position: relative;
 			$radius: 4px;
@@ -69,6 +89,7 @@ footer {
 			padding: 0;
 
 			input, textarea {
+				@include transition(height 0.3s linear);
 				@include border-radius($radius);
 				@include box-sizing(border-box);
 				border: none;
@@ -78,6 +99,7 @@ footer {
 				margin-bottom: $offsets;
 				width: 100%;
 				color: $light-gray;
+				resize: none;
 			}
 
 			button {
@@ -89,12 +111,24 @@ footer {
 				background: #258ec5;
 				padding: $offsets;
 				margin: $offsets 0 0 0;
+
+				@include respond-to(small-screen) {
+					float: none;
+					padding: $offsets/1.5;
+				}
 			}
 		}
 	}
 
 	article.hire {
 		width: $article-hire-width;
+	}
+
+	article.contacts, article.feedback, article.hire {
+		@include respond-to(small-screen) {
+			position: relative;
+			width: 70%;
+		}
 	}
 
 	.figures-scroll-up {
@@ -126,6 +160,12 @@ footer {
 
 		margin-left: $el-offset;
 		left: 50%;
+
+		@include respond-to(small-screen) {
+			position: absolute;
+			bottom: $footer-small-bottom-margin;
+			margin-left: $el-offset - $columns-padding/2;
+		}
 	}
 
 	a {

@@ -21,7 +21,7 @@
     "smartLists": true,
     "smartypants": true
   },
-  "port": 1337,
+  "port": 8086,
   "ignore": [
     "sass"
   ]

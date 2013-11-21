@@ -3,8 +3,15 @@
 $light-gray: #fbfbfb;
 
 section.about {
-	@include cover-background('../img/backgrounds/bg-lab.jpg', fixed);	
+	@include cover-background('../img/backgrounds/bg-lab.jpg', fixed);
 	padding-top: 50px;
+	overflow: hidden;
+
+	@include respond-to(small-screen) {
+		background: url('../img/backgrounds/bg-about-small.jpeg') repeat top left;
+		padding-top: 0;
+		padding-bottom: 1em;
+	}
 
 	div.device {
 		box-sizing: content-box;
@@ -15,6 +22,15 @@ section.about {
 		margin: 0 auto;
 		left: 140px;
 		padding: 180px 0 0 140px;
+
+		@include respond-to(small-screen) {
+			background: none;
+			width: auto;
+			height: auto;
+			padding: 0;
+			left: 0;
+			text-align: center;
+		}
 	}
 
 	div.message {
@@ -24,8 +40,18 @@ section.about {
 		text-align: center;
 		overflow: hidden;
 
+		@include respond-to(small-screen) {
+			@include prepend(1);
+			@include column(8, true);
+			max-height: none;
+		}
+
 		h2 {
 			@include section-header(#6c6c6c, $light-gray, 'white');
+
+			@include respond-to(small-screen) {
+				color: #2da4de;
+			}
 		}
 
 		p {
@@ -33,6 +59,10 @@ section.about {
 			text-align: left;
 			line-height: 2.3em;
 			margin: 1.9em 0 1.9em 0;
+
+			@include respond-to(small-screen) {
+				margin: 0 0 1.9em 0;
+			}
 		}
 	}
 }

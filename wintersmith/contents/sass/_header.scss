@@ -10,20 +10,47 @@ body > header {
 	top: 0;
 	left: 0;
 	z-index: 100;
-
+	min-width: $min-width;
 	width: 100%;
+	min-width: $min-width;
 	height: $top-menu-height;
 	background: $top-menu-background-color;
 	color: $top-menu-color;
+	line-height: $top-menu-height;
 
-	.logo, nav {
+	@include respond-to(small-screen) {
+		position: relative;
+		height: $-small-screen-top-menu-height;
+		line-height: $-small-screen-top-menu-height;
+		font-size: 1.5em;
+	}
+
+	.logo, nav, .collapsed-menu {
 		@include inline-block;
 		height: 100%;
+	}
+
+	.collapsed-menu {
+		display: none;
+
+		.figures-menu {
+			@include inline-block;
+			vertical-align: middle;
+			margin-left: $-small-screen-side-offset;
+		}
+
+		@include respond-to(small-screen) { 
+			@include column(5);
+		}
 	}
 
 	.logo {
 		@include column(3);
 		background: url("../img/logo/logo-small.png") right center no-repeat;
+
+		@include respond-to(small-screen) { 
+			display: none;
+		}
 	}
 
 	a {
@@ -36,22 +63,30 @@ body > header {
 
 	nav {
 		@include column(7, true);
-		text-align: right;		
+		text-align: right;
+
+		@include respond-to(small-screen) { 
+			@include column(5, true);
+		}
 
 		ul {
 			$gap: 1em;
 
 			@include inline-block;
 			@include horizontal-list($gap);
-			font-size: 1em;
 
-			li {
-				line-height: $top-menu-height;
+			@include respond-to(small-screen) { 
+				display: none;
 			}
 
 			&.language {
 				@include horizontal-list(0em);
 				margin: 0 3*$gap 0 3*$gap;
+
+				@include respond-to(small-screen) { 
+					@include inline-block;
+					margin: 0 $-small-screen-side-offset 0 0;
+				}
 
 				li:after {
 					display: inline;

@@ -8,16 +8,26 @@ $delimeter-height: 20px;
 	height: $delimeter-height;
 	margin-top: (-$delimeter-height);
 	background: url("../img/backgrounds/bg-curve-gray.png") repeat-x;
+
+	@include respond-to(small-screen) {
+		display: none;
+	}
 }
 
 section.proficiencies {
-	@include cover-background('../img/backgrounds/bg-scheme.png', fixed);	
+	@include cover-background('../img/backgrounds/bg-scheme.png', scroll);	
 	background-color: #f7f7f7;
 	text-align: center;
 	padding: 100px 50px 40px 50px;
 
+	@include respond-to(small-screen) {
+		padding: 0px;
+		background: #4c6a86;
+	}
+
 	h2 {
 		@include section-header(#f5f5f5, $dark-blue, 'dark');
+		margin: 1em 0 1em 0;
 	}
 
 	> ul {
@@ -33,6 +43,13 @@ section.proficiencies {
 		// intend sets block to visual center (not actual)
 		padding-left: 10em;
 
+		@include respond-to(small-screen) {
+			display: block;
+			margin: 0;
+			padding: 0;
+			max-width: none;
+		}
+
 		> li {
 			@include inline-block-list-item;
 			@include PFSquareFont("Regular");
@@ -44,16 +61,104 @@ section.proficiencies {
 			margin: 0;
 			margin-bottom: 50px;
 
+			@include respond-to(small-screen) {
+				display: none;
+			}
+
+			&.show-small-screen {
+				@include respond-to(small-screen) {
+					background: url('../img/backgrounds/bg-scheme.png') left center;
+					display: block;
+					width: 100%;
+					margin-bottom: 0;
+				}
+			}
+
+			.emblem {
+				margin-bottom: 1em;
+				margin-left: -0.9em;
+
+				// TODO: replace this with a mixin
+				@include respond-to(small-screen) {
+					&.figures-item-dialog,
+					&.figures-item-devices,
+					&.figures-item-cube {
+						background-image: sprite-url($figures-small-sprites);
+						position: absolute;
+						top:50%;
+						left: 3em;
+					}
+
+					&.figures-item-dialog {
+						@include figures-small-sprite(item-dialog);
+						margin-top: (- figures-small-sprite-height(item-dialog)/2);
+					}
+
+					&.figures-item-devices {
+						@include figures-small-sprite(item-devices);
+						margin-top: (- figures-small-sprite-height(item-devices)/2);
+					}
+
+					&.figures-item-cube {
+						@include figures-small-sprite(item-cube);
+						margin-top: (- figures-small-sprite-height(item-cube)/2);
+					}
+				}
+			}
+
 			h3, ul {
-				padding: 0 0 0 14px;
+				padding: 0;
+				margin: 0 0 0.5em 0;
+
+				@include respond-to(small-screen) {
+					display: block;
+					position: relative;
+					padding: 1.7em 2em 1.7em 0;
+					color: $dark-blue;
+					margin: 0;
+				}
 			}
 
 			h3 {
 				text-transform: uppercase;
+
+				@include respond-to(small-screen) {
+					@include clearfix;
+					font-weight: normal;
+					color: #fff;
+
+					span {
+						@include prepend(2);
+					}
+
+					&.creative {
+						background: #39546f;
+					}
+
+					&.production {
+						background: #0c1d2d;
+					}
+
+					&.social {
+						background: #091523;
+					}
+				}
 			}
 
 			ul {
 				@include no-bullets;
+				@include respond-to(small-screen) {
+					@include prepend(2);
+					font-size: 1.2em;
+					line-height: 2em;
+				}
+				@include respond-to(small-screen) {
+					&.collapsed {
+						padding: 0;
+						height: 0;
+						overflow: hidden;
+					}
+				}
 			}
 
 			ul.pipe-separated {

@@ -1,10 +1,15 @@
 @import 'base';
 
-section.showcase > article.lenovo {
-
+.showcase .lenovo {
 	.promo {
-		@include cover-background('../img/showcase/lenovo/bg.jpg', fixed);
+		@include cover-background('../img/showcase/lenovo/bg.jpg', scroll);
 		height: 666px;
+
+		@include respond-to(small-screen) { 
+			height: 100%;
+			@include cover-background('../img/showcase/lenovo/bg_small.jpg', scroll);
+			background-position: right 70%;
+		}
 	}
 
 	figure {
@@ -14,14 +19,36 @@ section.showcase > article.lenovo {
 		margin-right: -20em;
 		white-space: nowrap;
 
-		img {
+		@include respond-to(small-screen) {
+			top: 0;
+			left: $-small-screen-side-offset;
+		}
+
+		img.big-screen {
 			@include inline-block;
 			margin-top: 180px;
+
+			@include respond-to(small-screen) {
+				display: none;
+			}
+		}
+
+		img.small-screen {
+			display: none;
+
+			@include respond-to(small-screen) {
+				display: block;
+				margin-bottom: 3em;
+			}
 		}
 
 		figcaption {
 			@include inline-block;
 			margin: 230px 0 0 30px;
+
+			@include respond-to(small-screen) {
+				margin: 0;
+			}
 
 			h3 {
 				@include PFSquareFont('Regular');
@@ -34,6 +61,10 @@ section.showcase > article.lenovo {
 				margin: 0 0 0.6em 0;
 				line-height: 1em;
 				padding: 0.25em 0.25em 0em 0.25em;
+
+				@include respond-to(small-screen) {
+					font-size: 1.7em;
+				}
 			}
 
 			p {

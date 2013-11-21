@@ -3,10 +3,10 @@
 $blueprint_grid_columns: 10;
 $blueprint_grid_width: 10%;
 $blueprint_grid_margin: 0%;
-	// Fonts
-$base-font-size: 14px;
 	// Variables
 $top-menu-height: 70px;
+$-small-screen-top-menu-height: 100px;
+$-small-screen-side-offset: 30px;
 	// Colors
 $dark-blue: #081522;
 
@@ -16,6 +16,7 @@ $dark-blue: #081522;
 @import "compass/typography/lists/inline-block-list"; 
 @import "compass/typography/lists/bullets";
 @import "compass/utilities/sprites";
+@import "compass/css3/background-size";
 @import "blueprint/grid";
 @import "compass/css3/opacity";
 @import "compass/css3/border-radius";
@@ -27,6 +28,10 @@ $dark-blue: #081522;
 @import "figures/*.png";
 $figures-sprite-dimensions: true;
 @include all-figures-sprites;
+	// small figures for mobile devices
+@import "figures-small/*.png";
+$figures-small-sprite-dimensions: true;
+@include all-figures-small-sprites;
 	// small brands logotypes
 @import "brands/*.png";
 $brands-sprite-dimensions: true;
@@ -55,6 +60,9 @@ $brands-sprite-dimensions: true;
 @mixin cover-background($background-url, $attachment: scroll) {
 	background: url($background-url) no-repeat center center;
 	background-attachment: $attachment;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
 	background-size: 100% auto;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -71,14 +79,18 @@ $brands-sprite-dimensions: true;
 	@include PFSquareFont('Regular');
 	position: relative;
 	color: $color;
-	font-size: 2.6em;
+	font-size: 2em;
 	background: $background-color;
 	font-weight: normal;
 	text-transform: uppercase;
 	margin: 0 0 0.8em 0;
-	padding: 0.25em 0.25em 0em 0.25em;
+	padding: 0.25em 0.25em 0.15em 0.25em;
 	line-height: 1em;
 	letter-spacing: 0.05em;
+
+	@include respond-to(small-screen) {
+		margin: 1em 0 1em 0;
+	}
 
 	// additional elements are those mustaches at sides of header
 	@if ($additional-elements) {
@@ -138,8 +150,40 @@ $brands-sprite-dimensions: true;
     }
 }
 
+// Enables hardware acceleration. Use this to optimize animation
+@mixin hardware-acceleration {
+    -webkit-transform: translatez(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    transform: translatez(0);
+}
+
+// Manages media queries breakpoints
+$break-small: 1136px;
+
+@mixin respond-to($media) {
+  @if $media == small-screen {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+}
+
 // Global styles
 a {
 	@include transition(color 0.3s ease-out);
 	text-decoration: none;
+}
+
+$min-width: 1000px;
+
+body {
+	min-width: $min-width;
+	@include respond-to(small-screen) {
+		font-size: 2em;
+	}
+}
+
+// Hack for apple devices that can't properly render fixed background
+html.touch * {
+	background-attachment: scroll !important;
 }
