@@ -31,17 +31,15 @@ section.proficiencies {
 	}
 
 	> ul {
-		$item-width: 370px;		
-
+		$item-width: 320px;
+		$item-margin: 50px;
 		@include inline-block-list-container;
 		display: block;
 		position: relative;
 		// 3 column list
-		max-width: 3 * $item-width;
+		max-width: 3 * ($item-width + $item-margin);
 		margin: 70px auto 0 auto;
 		white-space: normal;
-		// intend sets block to visual center (not actual)
-		padding-left: 10em;
 
 		@include respond-to(small-screen) {
 			display: block;
@@ -53,16 +51,17 @@ section.proficiencies {
 		> li {
 			@include inline-block-list-item;
 			@include PFSquareFont("Regular");
+			white-space: normal;
 			box-sizing: border-box;
 			width: $item-width;
 			height: auto;
 			vertical-align: top;
 			text-align: left;
-			margin: 0;
-			margin-bottom: 50px;
+			margin: 0 0 $item-margin $item-margin;
 
 			@include respond-to(small-screen) {
 				display: none;
+				margin-left: 0;
 			}
 
 			&.show-small-screen {
@@ -75,7 +74,7 @@ section.proficiencies {
 			}
 
 			.emblem {
-				margin-bottom: 1em;
+				margin-bottom: 1.4em;
 				margin-left: -0.9em;
 
 				// TODO: replace this with a mixin
@@ -108,7 +107,7 @@ section.proficiencies {
 
 			h3, ul {
 				padding: 0;
-				margin: 0 0 0.5em 0;
+				margin: 0 0 0.8em 0;
 
 				@include respond-to(small-screen) {
 					display: block;
@@ -151,13 +150,6 @@ section.proficiencies {
 					@include prepend(2);
 					font-size: 1.2em;
 					line-height: 2em;
-				}
-				@include respond-to(small-screen) {
-					&.collapsed {
-						padding: 0;
-						height: 0;
-						overflow: hidden;
-					}
 				}
 			}
 

@@ -1,29 +1,36 @@
 footer
-	article.contacts
-		h4 Контакты
-		address
-			p
-				| Россия, Москва <br />
-				| Старая&nbsp;Басманная 38/2, СТР.&nbsp;1
-			p
-				| +7&nbsp;(495)&nbsp;781&nbsp;59&nbsp;80
-			p
-				ul
-					li
-						| we@nlomarketing.ru
-					li
-						| hireme@nlomarketing.ru
-	article.feedback#feedback
-		h4 Напишите нам
-		p
-			| Если у вас есть предложения, заполните форму и отправьте нам.
-		form(method="post")
-			input(type="text", name="email", value="", placeholder="E-mail")
-			input(type="text", name="name", value="", placeholder="Ваше имя")
-			textarea(name="message", value="", placeholder="Сообщение", rows=3)
-			button.clearfix Отправить	
-	article.hire
-		h4 Работа
-		p
-			Если вы готовы делать интересные проекты, что&nbsp;ж... <a href="">Супер!</a>
-	a.figures-scroll-up(href="#welcome")
+    //- IMPORTANT
+    //- Pipe syntax is used to remove spaces between inline-block element.
+    //- <li /> elements are generated as plain html text and their content
+    //- has no indendation to preven jaid render error.
+    | <article class="contacts">
+    h4 Контакты
+    address
+        p
+            | Россия, Москва <br />
+            | Старая&nbsp;Басманная 38/2, СТР.&nbsp;1
+        p
+            | +7&nbsp;(495)&nbsp;781&nbsp;59&nbsp;80
+        p
+            ul
+                li
+                    | we@nlomarketing.ru
+                li
+                    | hireme@nlomarketing.ru
+    | </article
+    | ><article class="feedback" id="feedback">
+    h4 Напишите нам
+    p
+        | Если у вас есть предложения, заполните форму и отправьте нам.
+    form(method="post")
+        input(type="text", name="email", value="", placeholder="E-mail")
+        input(type="text", name="name", value="", placeholder="Ваше имя")
+        textarea(name="message", value="", placeholder="Сообщение", rows=3)
+        button.clearfix Отправить   
+    | </article
+    | ><article class="hire">
+    h4 Работа
+    p
+        Если вы готовы делать интересные проекты, что&nbsp;ж... <a href="">Супер!</a>
+    | </article>
+    a.figures-scroll-up(href="#welcome")

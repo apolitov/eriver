@@ -16,11 +16,12 @@ footer {
 	color: $light-gray;
 	line-height: 1.6em;
 	position: relative;
-	white-space: no-wrap;
+	white-space: nowrap;
 	font-size: 0.875em;
 
 	@include respond-to(small-screen) {
 		font-size: 1em;
+		white-space: normal;
 	}
 
 	address {
@@ -53,6 +54,7 @@ footer {
 		margin: 30px 0 $footer-bottom-margin 0;
 		text-align: left;
 		vertical-align: top;
+		white-space: normal;
 
 		@include respond-to(small-screen) {
 			margin: 0 0 $footer-small-bottom-margin 0;

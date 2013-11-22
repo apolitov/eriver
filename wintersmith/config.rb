@@ -6,4 +6,4 @@ sass_dir = 'contents/sass'
 images_dir = 'contents/img'
 fonts_dir = 'contents/css/fonts'
 relative_assets = true
-line_comments = false
+line_comments = true

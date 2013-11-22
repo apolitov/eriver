@@ -183,6 +183,19 @@ body {
 	}
 }
 
+// ie fix since ie won't switch to small screen media query
+html.lt-ie9 body {
+	min-width: none;
+}
+
+.small-screen-collapsable {
+	@include respond-to(small-screen) {
+		&.collapsed {
+			display: none;
+		}
+	}
+}
+
 // Hack for apple devices that can't properly render fixed background
 html.touch * {
 	background-attachment: scroll !important;

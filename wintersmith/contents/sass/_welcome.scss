@@ -127,3 +127,8 @@ section.welcome {
 		}
 	}
 }
+
+html.lt-ie9 section.welcome {
+	margin-top: 0px;
+	margin-bottom: -1px;
+}

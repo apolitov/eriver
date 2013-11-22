@@ -5,7 +5,6 @@ $top-menu-color: #cdcece;
 
 body > header {
 	@include PFSquareFont('Light');
-
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -25,23 +24,9 @@ body > header {
 		font-size: 1.5em;
 	}
 
-	.logo, nav, .collapsed-menu {
+	.logo, nav {
 		@include inline-block;
 		height: 100%;
-	}
-
-	.collapsed-menu {
-		display: none;
-
-		.figures-menu {
-			@include inline-block;
-			vertical-align: middle;
-			margin-left: $-small-screen-side-offset;
-		}
-
-		@include respond-to(small-screen) { 
-			@include column(5);
-		}
 	}
 
 	.logo {
@@ -66,7 +51,25 @@ body > header {
 		text-align: right;
 
 		@include respond-to(small-screen) { 
-			@include column(5, true);
+			width: 100%;
+		}
+
+		h3 {
+			display: none;
+			line-height: $-small-screen-top-menu-height;
+			padding: 0;
+			margin: 0;
+
+			.figures-menu {
+				@include inline-block;
+				vertical-align: middle;
+				margin-left: $-small-screen-side-offset;
+			}
+
+			@include respond-to(small-screen) {
+				display: block;
+				float: left;
+			}
 		}
 
 		ul {
@@ -74,10 +77,6 @@ body > header {
 
 			@include inline-block;
 			@include horizontal-list($gap);
-
-			@include respond-to(small-screen) { 
-				display: none;
-			}
 
 			&.language {
 				@include horizontal-list(0em);
@@ -99,6 +98,21 @@ body > header {
 					content: "";
 				}
 			}
+
+			/* TODO!!!
+			li {
+				@include respond-to(small-screen) { 
+					display: block;
+					float: none;
+					background: $top-menu-background-color;
+				}
+			}
+			*/
 		}
 	}
+}
+
+// ie fix
+html.lt-ie9 body > header {
+	position: relative;
 }
