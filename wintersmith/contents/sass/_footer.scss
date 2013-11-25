@@ -22,6 +22,7 @@ footer {
 	@include respond-to(small-screen) {
 		font-size: 1em;
 		white-space: normal;
+		padding-bottom: $footer-bottom-margin;
 	}
 
 	address {
@@ -165,8 +166,10 @@ footer {
 
 		@include respond-to(small-screen) {
 			position: absolute;
-			bottom: $footer-small-bottom-margin;
-			margin-left: $el-offset - $columns-padding/2;
+			bottom: $footer-bottom-margin + $footer-small-bottom-margin - 10; // 10px is a magical value that depends on image
+			left: auto;
+			right: 15%;
+			margin-left: (-$columns-padding);
 		}
 	}
 

@@ -11,6 +11,10 @@ section.welcome {
 	// compensate fixed header
 	margin-top: $top-menu-height;
 
+	@include respond-to(small-height) {
+		min-height: 600px;	
+	}
+
 	@include respond-to(small-screen) { 
 		margin-top: 0;
 	}
@@ -22,6 +26,10 @@ section.welcome {
 		bottom: 2*$gap;
 		z-index: 20;
 
+		@include respond-to(small-height) {
+			bottom: $gap/2;	
+		}
+
 		@include respond-to(small-screen) { 
 			bottom: $gap/2;
 		}
@@ -31,6 +39,10 @@ section.welcome {
 		background: url("../img/logo/logo-big.png") center center no-repeat;
 		height: 183px;
 		margin: 0 0 2*$gap 0;
+
+		@include respond-to(small-height) {
+			margin-bottom: $gap;
+		}
 
 		@include respond-to(small-screen) { 
 			margin-bottom: $gap;
@@ -46,6 +58,10 @@ section.welcome {
 		color: white;
 
 		margin: 0 0 $gap 0;
+
+		@include respond-to(small-height) {
+			margin-bottom: $gap/2;	
+		}
 
 		@include respond-to(small-screen) { 
 			margin-bottom: $gap/2;

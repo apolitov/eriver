@@ -9,9 +9,7 @@ body > header {
 	top: 0;
 	left: 0;
 	z-index: 100;
-	min-width: $min-width;
 	width: 100%;
-	min-width: $min-width;
 	height: $top-menu-height;
 	background: $top-menu-background-color;
 	color: $top-menu-color;
@@ -19,7 +17,9 @@ body > header {
 
 	@include respond-to(small-screen) {
 		position: relative;
-		height: $-small-screen-top-menu-height;
+		height: auto;
+		// preventing header from jumping upon image load
+		min-height: $-small-screen-top-menu-height * 1.1;
 		line-height: $-small-screen-top-menu-height;
 		font-size: 1.5em;
 	}
@@ -51,6 +51,7 @@ body > header {
 		text-align: right;
 
 		@include respond-to(small-screen) { 
+			float: none;
 			width: 100%;
 		}
 
@@ -78,13 +79,37 @@ body > header {
 			@include inline-block;
 			@include horizontal-list($gap);
 
+			@include respond-to(small-screen) { 
+				display: block;
+				text-align: left;
+				padding-bottom: 0.5em;
+			}
+
+			li, li:first-child {
+				@include respond-to(small-screen) { 
+					display: block;
+					float: none;
+					background: $top-menu-background-color;
+					padding-left: $-small-screen-side-offset;
+				}
+			}
+
 			&.language {
 				@include horizontal-list(0em);
 				margin: 0 3*$gap 0 3*$gap;
+				float: right;
 
 				@include respond-to(small-screen) { 
-					@include inline-block;
+					display: block;
+					width: 100%;
 					margin: 0 $-small-screen-side-offset 0 0;
+					text-align: right;
+					float: none;
+
+					li {
+						@include inline-block();
+						float: none;
+					}
 				}
 
 				li:after {
@@ -98,16 +123,6 @@ body > header {
 					content: "";
 				}
 			}
-
-			/* TODO!!!
-			li {
-				@include respond-to(small-screen) { 
-					display: block;
-					float: none;
-					background: $top-menu-background-color;
-				}
-			}
-			*/
 		}
 	}
 }

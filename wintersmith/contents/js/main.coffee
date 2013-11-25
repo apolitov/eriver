@@ -1,3 +1,64 @@
+$(document).ready ->
+    viewportHeight = window.innerHeight
+    set_welcome_height viewportHeight
+    # Document height shall be calculated after welcome screen resized
+    if not touch_device()
+        set_parallax $('.welcome').height()
+        set_smooth_scroll()
+    spy_nav_anchors viewportHeight
+    # Use elastic to authoheight feedback textarea
+    $('textarea').autosize()
+    # Replace blocks at footer
+    swap_footer_blocks()
+    # Enable element collapse by clicking it's header (used for mobile media queries)
+    collapsableContainers = $('.proficiencies > ul > li, header > nav');
+
+    # Hack to prevent reacting to both event - click and touch
+
+    # Required to distinct touchmove from tapping
+    busyFlag = false;
+    touchmoveFlag = false;   
+
+    collapsableContainers.on 'touchmove', 'h3', ->
+        touchmoveFlag = true;
+
+    collapsableContainers.on 'touchend click', 'h3', ->
+        if not busyFlag
+            busyFlag = true
+            setTimeout ->
+                busyFlag = false
+            , 400
+            if not touchmoveFlag
+                $(this).siblings('.small-screen-collapsable').toggleClass('collapsed')
+        touchmoveFlag = false
+        return
+
+    # IE 7-8 CSS3 support (see css3pie.com)
+    if window.PIE
+        $('.fotorama__dot').each ->
+            PIE.attach(this)
+        $('.fotorama').on 'fotorama:showend', (e, fotorama, extra) ->
+            $('.fotorama__dot').each ->
+                PIE.attach(this)
+
+
+$(window).resize ->
+    viewportHeight = $(window).height()
+    set_welcome_height viewportHeight
+    # Remove previously set parallax handler
+    if not touch_device()
+        $(document).off 'scroll.bubbleParallax touchmove.bubbleParallax'
+        set_parallax $('.welcome').height()
+        set_smooth_scroll()
+    spy_nav_anchors viewportHeight
+    # Reinitialize fotorama gallery
+    $('.fotorama').fotorama()
+    # Use elastic to authoheight feedback textarea
+    $('textarea').autosize()
+    # Replace blocks at footer
+    swap_footer_blocks()
+
+
 set_parallax = (max_distance) ->
     # Set bubbles parallax effect at welcome screen
     bubble_parallax('.welcome .bubbles .back', 0.2, max_distance)
@@ -15,7 +76,7 @@ spy_nav_anchors = (window_height) ->
     $(window).off 'scroll.scrollSpy'
 
     # increase offset to trigger earliear
-    offset = window_height/1.5
+    offset = window_height/1.8
     links = $('header nav a')
     sections = {}
     for link in links
@@ -33,7 +94,7 @@ spy_nav_anchors = (window_height) ->
             intervalFlag = true
             setTimeout -> 
                 intervalFlag = false
-            , 500
+            , 200
         else
             return
         
@@ -83,7 +144,7 @@ set_smooth_scroll = ->
     # Some magic number (feel free to change)
     step = 300
     top = $(this).scrollTop()
-    animationTime = 200
+    animationTime = 150
 
     $(window).on 'scroll', (e) ->
         if not inProgress
@@ -127,57 +188,6 @@ set_welcome_height = (viewportHeight)->
         welcomeScreen.css('height', viewportHeight - headerHeight)
 
 
-$(document).ready ->
-    viewportHeight = $(window).height()
-    set_welcome_height(viewportHeight)
-    # Document height shall be calculated after welcome screen resized
-    set_parallax( $('.welcome').height() )
-    set_smooth_scroll()
-    spy_nav_anchors(viewportHeight)
-    # Use elastic to authoheight feedback textarea
-    $('textarea').autosize()
-    # Replace blocks at footer
-    swap_footer_blocks()
-    # Enable element collapse by clicking it's header (used for mobile media queries)
-    collapsable_containers = $('.proficiencies > ul > li, header > nav');
-
-    # Hack to prevent reacting to both event - click and touch
-
-    # Required to distinct touchmove from tapping
-    busy_flag = false;
-    touchmove_flag = false;   
-
-    collapsable_containers.on 'touchmove', 'h3', ->
-        touchmove_flag = true;
-
-    collapsable_containers.on 'touchend click', 'h3', ->
-        if not busy_flag
-            busy_flag = true
-            setTimeout ->
-                busy_flag = false
-            , 400
-            if not touchmove_flag
-                $(this).siblings('.small-screen-collapsable').toggleClass('collapsed')
-        touchmove_flag = false
-        return
-
-
-$(window).resize ->
-    viewportHeight = $(window).height()
-    set_welcome_height(viewportHeight)
-    # Remove previously set parallax handler
-    $(document).off 'scroll.bubbleParallax touchmove.bubbleParallax'
-    set_parallax( $('.welcome').height() )
-    set_smooth_scroll()
-    spy_nav_anchors(viewportHeight)
-    # Reinitialize fotorama gallery
-    $('.fotorama').fotorama()
-    # Use elastic to authoheight feedback textarea
-    $('textarea').autosize()
-    # Replace blocks at footer
-    swap_footer_blocks()
-    
-
 # Sets selector element position in dependence of window scroll
 bubble_parallax = (selector, ratio, max_distance) ->
     $el = $(selector)
@@ -193,27 +203,32 @@ swap_footer_blocks = ->
     if ie_browser()
         return
 
-    # media query breakpoint
-    $breakpoint = 1136
+    # swap footer block only for mobile media query
+    breakpoint = $('footer > article').first().width() > ($(window).width() / 2)
 
-    hire_block = $('footer .hire')
-    feedback_block = $('footer .feedback')
+    hireBlock = $('footer .hire')
+    feedbackBlock = $('footer .feedback')
 
     # if articles are already in place - do nothing
-    if $(window).width() > $breakpoint 
-        if feedback_block.next('.hire').length isnt 0
+    if breakpoint
+        if feedbackBlock.next('.hire').length is 0
             return
 
-    hire_block_html = hire_block.wrap('<div/>').parent().html();
+    hireBlockHtml = hireBlock.wrap('<div/>').parent().html();
 
-    if $(window).width() <= $breakpoint
-        feedback_block.before(hire_block_html)
+    if breakpoint
+        feedbackBlock.before(hireBlockHtml)
     else
-        feedback_block.after(hire_block_html)
-    hire_block.unwrap().remove()
+        feedbackBlock.after(hireBlockHtml)
+    hireBlock.unwrap().remove()
 
 
 ie_browser = ->
     if $("html").hasClass("lt-ie9")
+        return true
+    return false
+
+touch_device = ->
+    if $("html").hasClass("touch")
         return true
     return false

@@ -13,7 +13,6 @@ section.clients {
 		padding: 0;
 	}
 
-
 	h2 {
 		@include section-header($light-gray, $dark-gray, 'gray');
 		margin-bottom: 3em;
@@ -83,4 +82,16 @@ section.clients {
 			}
 		}
 	}
+}
+
+// IE 7-8 fix
+html.lt-ie9 section.clients {
+	margin: 0;
+	padding-bottom: 0;
+}
+
+html.lt-ie9 section.clients ul li {
+	@include ie-transparency();
+	width: 158px;
+	height: 130px;
 }

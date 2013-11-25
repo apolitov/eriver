@@ -7,6 +7,7 @@ $blueprint_grid_margin: 0%;
 $top-menu-height: 70px;
 $-small-screen-top-menu-height: 100px;
 $-small-screen-side-offset: 30px;
+$min-showcase-height: 666px;
 	// Colors
 $dark-blue: #081522;
 
@@ -161,11 +162,23 @@ $brands-sprite-dimensions: true;
 
 // Manages media queries breakpoints
 $break-small: 1136px;
+$break-small-height: 800px;
 
 @mixin respond-to($media) {
   @if $media == small-screen {
     @media only screen and (max-width: $break-small) { @content; }
   }
+  @if $media == small-height {
+  	@media only screen and (max-height: $break-small-height) { @content; }	
+  }
+}
+
+// Fixes IE transparency bug
+@mixin ie-transparency() {
+    background: transparent;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE8 */   
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);   /* IE6 & 7 */      
+    zoom: 1;
 }
 
 // Global styles
@@ -175,11 +188,17 @@ a {
 }
 
 $min-width: 1000px;
+$small-screen-min-width: 640px;
+
+html, body {
+	height: 100%;
+}
 
 body {
 	min-width: $min-width;
 	@include respond-to(small-screen) {
-		font-size: 2em;
+		font-size: 1.5em;
+		min-width: $small-screen-min-width;
 	}
 }
 

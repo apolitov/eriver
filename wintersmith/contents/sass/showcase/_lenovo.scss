@@ -3,12 +3,14 @@
 .showcase .lenovo {
 	.promo {
 		@include cover-background('../img/showcase/lenovo/bg.jpg', scroll);
-		height: 666px;
+		height: 75%;
+		max-height: $min-showcase-height;
 
 		@include respond-to(small-screen) { 
 			height: 100%;
+			max-height: none;
 			@include cover-background('../img/showcase/lenovo/bg_small.jpg', scroll);
-			background-position: right 70%;
+			background-position: right 50%;
 		}
 	}
 
@@ -27,6 +29,8 @@
 		img.big-screen {
 			@include inline-block;
 			margin-top: 180px;
+			width: 60%;
+			max-width: 659px;
 
 			@include respond-to(small-screen) {
 				display: none;
@@ -38,7 +42,7 @@
 
 			@include respond-to(small-screen) {
 				display: block;
-				margin-bottom: 3em;
+				margin-bottom: 1em;
 			}
 		}
 

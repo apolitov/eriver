@@ -82,10 +82,11 @@ section.proficiencies {
 					&.figures-item-dialog,
 					&.figures-item-devices,
 					&.figures-item-cube {
+						@include inline-block();
 						background-image: sprite-url($figures-small-sprites);
-						position: absolute;
-						top:50%;
-						left: 3em;
+						position: relative;
+						margin: 0 1em 0em 2em;
+						vertical-align: bottom;
 					}
 
 					&.figures-item-dialog {
@@ -125,10 +126,6 @@ section.proficiencies {
 					@include clearfix;
 					font-weight: normal;
 					color: #fff;
-
-					span {
-						@include prepend(2);
-					}
 
 					&.creative {
 						background: #39546f;
