@@ -1,6 +1,6 @@
 @import 'base';
 
-$light-gray: #fbfbfb;
+$light-gray: #f5f5f5;
 
 section.about {
 	@include cover-background('../img/backgrounds/bg-lab.jpg', fixed);
@@ -55,7 +55,7 @@ section.about {
 		}
 
 		p {
-			@include PFSquareFont("Medium");
+			@include PFSquareFont("Regular");
 			text-align: left;
 			line-height: 2.3em;
 			margin: 1.9em 0 1.9em 0;

@@ -2688,7 +2688,7 @@ section.about div.device {
 /* line 36, ../sass/_about.scss */
 section.about div.message {
   width: 480px;
-  color: #fbfbfb;
+  color: whitesmoke;
   max-height: 650px;
   text-align: center;
   overflow: hidden;
@@ -2720,7 +2720,7 @@ section.about div.message h2 {
   position: relative;
   color: #6c6c6c;
   font-size: 2em;
-  background: #fbfbfb;
+  background: whitesmoke;
   font-weight: normal;
   text-transform: uppercase;
   margin: 0 0 0.8em 0;
@@ -2760,7 +2760,7 @@ section.about div.message h2:before, section.about div.message h2:after {
 }
 /* line 57, ../sass/_about.scss */
 section.about div.message p {
-  font-family: "PFSquareSansPro-Medium", Arial, sans-serif;
+  font-family: "PFSquareSansPro-Regular", Arial, sans-serif;
   text-align: left;
   line-height: 2.3em;
   margin: 1.9em 0 1.9em 0;
