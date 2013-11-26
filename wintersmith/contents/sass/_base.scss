@@ -199,6 +199,7 @@ html, body {
 }
 
 body {
+	@include PFSquareFont("Regular");
 	min-width: $min-width;
 	@include respond-to(small-screen) {
 		font-size: 1.5em;

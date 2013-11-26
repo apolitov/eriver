@@ -1,5 +1,5 @@
 {
-	"template": "welcome.jade",
+	"template": "sections/welcome.jade",
 	"label": [
 		"FULL SCOPE OF DIGITAL",
 		"AND SOCIAL MEDIA",

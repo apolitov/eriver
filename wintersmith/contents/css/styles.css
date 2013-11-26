@@ -339,6 +339,7 @@ html, body {
 
 /* line 201, ../sass/_base.scss */
 body {
+  font-family: "PFSquareSansPro-Regular", Arial, sans-serif;
   min-width: 1000px;
 }
 @media only screen and (max-width: 1136px) {
@@ -349,19 +350,19 @@ body {
   }
 }
 
-/* line 210, ../sass/_base.scss */
+/* line 211, ../sass/_base.scss */
 html.lt-ie9 body {
   min-width: none;
 }
 
 @media only screen and (max-width: 1136px) {
-  /* line 216, ../sass/_base.scss */
+  /* line 217, ../sass/_base.scss */
   .small-screen-collapsable.collapsed {
     display: none;
   }
 }
 
-/* line 223, ../sass/_base.scss */
+/* line 224, ../sass/_base.scss */
 html.touch * {
   background-attachment: scroll !important;
 }
@@ -445,14 +446,14 @@ body > header nav {
   }
 }
 /* line 58, ../sass/_header.scss */
-body > header nav h3 {
+body > header nav .menu-holder {
   display: none;
   line-height: 100px;
   padding: 0;
   margin: 0;
 }
 /* line 64, ../sass/_header.scss */
-body > header nav h3 .figures-menu {
+body > header nav .menu-holder .figures-menu {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -464,7 +465,7 @@ body > header nav h3 .figures-menu {
 }
 @media only screen and (max-width: 1136px) {
   /* line 58, ../sass/_header.scss */
-  body > header nav h3 {
+  body > header nav .menu-holder {
     display: block;
     float: left;
   }
@@ -579,13 +580,17 @@ body > header nav ul.language li.last {
 @media only screen and (max-width: 1136px) {
   /* line 97, ../sass/_header.scss */
   body > header nav ul.language {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     display: block;
     width: 100%;
-    margin: 0 30px 0 0;
+    margin: 0;
+    padding: 0 30px 0 0;
     text-align: right;
     float: none;
   }
-  /* line 109, ../sass/_header.scss */
+  /* line 111, ../sass/_header.scss */
   body > header nav ul.language li {
     display: -moz-inline-stack;
     display: inline-block;
@@ -596,7 +601,7 @@ body > header nav ul.language li.last {
     float: none;
   }
 }
-/* line 118, ../sass/_header.scss */
+/* line 120, ../sass/_header.scss */
 body > header nav ul.language li:first-child:after {
   display: inline;
   content: "|";
@@ -604,7 +609,7 @@ body > header nav ul.language li:first-child:after {
   margin-right: 0.3em;
 }
 
-/* line 130, ../sass/_header.scss */
+/* line 132, ../sass/_header.scss */
 html.lt-ie9 body > header {
   position: relative;
 }
@@ -950,6 +955,7 @@ html, body {
 
 /* line 201, ../sass/_base.scss */
 body {
+  font-family: "PFSquareSansPro-Regular", Arial, sans-serif;
   min-width: 1000px;
 }
 @media only screen and (max-width: 1136px) {
@@ -960,19 +966,19 @@ body {
   }
 }
 
-/* line 210, ../sass/_base.scss */
+/* line 211, ../sass/_base.scss */
 html.lt-ie9 body {
   min-width: none;
 }
 
 @media only screen and (max-width: 1136px) {
-  /* line 216, ../sass/_base.scss */
+  /* line 217, ../sass/_base.scss */
   .small-screen-collapsable.collapsed {
     display: none;
   }
 }
 
-/* line 223, ../sass/_base.scss */
+/* line 224, ../sass/_base.scss */
 html.touch * {
   background-attachment: scroll !important;
 }
@@ -1017,13 +1023,13 @@ section.welcome .hero {
   bottom: 6em;
   z-index: 20;
 }
-@media only screen and (max-height: 800px) {
+@media only screen and (max-width: 1136px) {
   /* line 22, ../sass/_welcome.scss */
   section.welcome .hero {
     bottom: 1.5em;
   }
 }
-@media only screen and (max-width: 1136px) {
+@media only screen and (max-height: 800px) {
   /* line 22, ../sass/_welcome.scss */
   section.welcome .hero {
     bottom: 1.5em;
@@ -1036,13 +1042,13 @@ section.welcome .logo {
   width: 533px;
   margin: 0 auto 6em auto;
 }
-@media only screen and (max-height: 800px) {
+@media only screen and (max-width: 1136px) {
   /* line 38, ../sass/_welcome.scss */
   section.welcome .logo {
     margin-bottom: 3em;
   }
 }
-@media only screen and (max-width: 1136px) {
+@media only screen and (max-height: 800px) {
   /* line 38, ../sass/_welcome.scss */
   section.welcome .logo {
     margin-bottom: 3em;
@@ -1056,13 +1062,13 @@ section.welcome .message {
   color: white;
   margin: 0 0 3em 0;
 }
-@media only screen and (max-height: 800px) {
+@media only screen and (max-width: 1136px) {
   /* line 53, ../sass/_welcome.scss */
   section.welcome .message {
     margin-bottom: 1.5em;
   }
 }
-@media only screen and (max-width: 1136px) {
+@media only screen and (max-height: 800px) {
   /* line 53, ../sass/_welcome.scss */
   section.welcome .message {
     margin-bottom: 1.5em;
@@ -1490,6 +1496,7 @@ html, body {
 
 /* line 201, ../sass/_base.scss */
 body {
+  font-family: "PFSquareSansPro-Regular", Arial, sans-serif;
   min-width: 1000px;
 }
 @media only screen and (max-width: 1136px) {
@@ -1500,19 +1507,19 @@ body {
   }
 }
 
-/* line 210, ../sass/_base.scss */
+/* line 211, ../sass/_base.scss */
 html.lt-ie9 body {
   min-width: none;
 }
 
 @media only screen and (max-width: 1136px) {
-  /* line 216, ../sass/_base.scss */
+  /* line 217, ../sass/_base.scss */
   .small-screen-collapsable.collapsed {
     display: none;
   }
 }
 
-/* line 223, ../sass/_base.scss */
+/* line 224, ../sass/_base.scss */
 html.touch * {
   background-attachment: scroll !important;
 }
@@ -1933,6 +1940,7 @@ html, body {
 
 /* line 201, ../sass/_base.scss */
 body {
+  font-family: "PFSquareSansPro-Regular", Arial, sans-serif;
   min-width: 1000px;
 }
 @media only screen and (max-width: 1136px) {
@@ -1943,19 +1951,19 @@ body {
   }
 }
 
-/* line 210, ../sass/_base.scss */
+/* line 211, ../sass/_base.scss */
 html.lt-ie9 body {
   min-width: none;
 }
 
 @media only screen and (max-width: 1136px) {
-  /* line 216, ../sass/_base.scss */
+  /* line 217, ../sass/_base.scss */
   .small-screen-collapsable.collapsed {
     display: none;
   }
 }
 
-/* line 223, ../sass/_base.scss */
+/* line 224, ../sass/_base.scss */
 html.touch * {
   background-attachment: scroll !important;
 }
@@ -2020,7 +2028,7 @@ section.proficiencies h2 {
   line-height: 1em;
   letter-spacing: 0.05em;
   white-space: nowrap;
-  margin: 1em 0 1em 0;
+  margin: 1em 0 1em 1%;
 }
 @media only screen and (max-width: 1136px) {
   /* line 28, ../sass/_proficiencies.scss */
@@ -2068,6 +2076,12 @@ section.proficiencies > ul:before, section.proficiencies > ul:after {
 section.proficiencies > ul:after {
   clear: both;
 }
+@media only screen and (max-width: 1250px) {
+  /* line 33, ../sass/_proficiencies.scss */
+  section.proficiencies > ul {
+    max-width: 1020px;
+  }
+}
 @media only screen and (max-width: 1136px) {
   /* line 33, ../sass/_proficiencies.scss */
   section.proficiencies > ul {
@@ -2077,7 +2091,7 @@ section.proficiencies > ul:after {
     max-width: none;
   }
 }
-/* line 51, ../sass/_proficiencies.scss */
+/* line 58, ../sass/_proficiencies.scss */
 section.proficiencies > ul > li {
   list-style-image: none;
   list-style-type: none;
@@ -2098,15 +2112,21 @@ section.proficiencies > ul > li {
   text-align: left;
   margin: 0 0 50px 50px;
 }
+@media only screen and (max-width: 1250px) {
+  /* line 58, ../sass/_proficiencies.scss */
+  section.proficiencies > ul > li {
+    margin: 0 0 20px 20px;
+  }
+}
 @media only screen and (max-width: 1136px) {
-  /* line 51, ../sass/_proficiencies.scss */
+  /* line 58, ../sass/_proficiencies.scss */
   section.proficiencies > ul > li {
     display: none;
     margin-left: 0;
   }
 }
 @media only screen and (max-width: 1136px) {
-  /* line 67, ../sass/_proficiencies.scss */
+  /* line 79, ../sass/_proficiencies.scss */
   section.proficiencies > ul > li.show-small-screen {
     background: url("../img/backgrounds/bg-scheme.png") left center;
     display: block;
@@ -2114,13 +2134,14 @@ section.proficiencies > ul > li {
     margin-bottom: 0;
   }
 }
-/* line 76, ../sass/_proficiencies.scss */
+/* line 88, ../sass/_proficiencies.scss */
 section.proficiencies > ul > li .emblem {
+  display: block;
   margin-bottom: 1.4em;
   margin-left: -0.9em;
 }
 @media only screen and (max-width: 1136px) {
-  /* line 84, ../sass/_proficiencies.scss */
+  /* line 97, ../sass/_proficiencies.scss */
   section.proficiencies > ul > li .emblem.figures-item-dialog, section.proficiencies > ul > li .emblem.figures-item-devices, section.proficiencies > ul > li .emblem.figures-item-cube {
     display: -moz-inline-stack;
     display: inline-block;
@@ -2133,21 +2154,21 @@ section.proficiencies > ul > li .emblem {
     margin: 0 1em 0em 2em;
     vertical-align: bottom;
   }
-  /* line 92, ../sass/_proficiencies.scss */
+  /* line 105, ../sass/_proficiencies.scss */
   section.proficiencies > ul > li .emblem.figures-item-dialog {
     background-position: 0 -66px;
     height: 64px;
     width: 67px;
     margin-top: -32px;
   }
-  /* line 97, ../sass/_proficiencies.scss */
+  /* line 110, ../sass/_proficiencies.scss */
   section.proficiencies > ul > li .emblem.figures-item-devices {
     background-position: 0 -132px;
     height: 64px;
     width: 67px;
     margin-top: -32px;
   }
-  /* line 102, ../sass/_proficiencies.scss */
+  /* line 115, ../sass/_proficiencies.scss */
   section.proficiencies > ul > li .emblem.figures-item-cube {
     background-position: 0 0;
     height: 64px;
@@ -2155,13 +2176,13 @@ section.proficiencies > ul > li .emblem {
     margin-top: -32px;
   }
 }
-/* line 109, ../sass/_proficiencies.scss */
+/* line 122, ../sass/_proficiencies.scss */
 section.proficiencies > ul > li h3, section.proficiencies > ul > li ul {
   padding: 0;
   margin: 0 0 0.8em 0;
 }
 @media only screen and (max-width: 1136px) {
-  /* line 109, ../sass/_proficiencies.scss */
+  /* line 122, ../sass/_proficiencies.scss */
   section.proficiencies > ul > li h3, section.proficiencies > ul > li ul {
     display: block;
     position: relative;
@@ -2170,12 +2191,12 @@ section.proficiencies > ul > li h3, section.proficiencies > ul > li ul {
     margin: 0;
   }
 }
-/* line 122, ../sass/_proficiencies.scss */
+/* line 135, ../sass/_proficiencies.scss */
 section.proficiencies > ul > li h3 {
   text-transform: uppercase;
 }
 @media only screen and (max-width: 1136px) {
-  /* line 122, ../sass/_proficiencies.scss */
+  /* line 135, ../sass/_proficiencies.scss */
   section.proficiencies > ul > li h3 {
     /* For IE 6/7 (trigger hasLayout) */
     *zoom: 1;
@@ -2192,20 +2213,20 @@ section.proficiencies > ul > li h3 {
   section.proficiencies > ul > li h3:after {
     clear: both;
   }
-  /* line 130, ../sass/_proficiencies.scss */
+  /* line 143, ../sass/_proficiencies.scss */
   section.proficiencies > ul > li h3.creative {
     background: #39546f;
   }
-  /* line 134, ../sass/_proficiencies.scss */
+  /* line 147, ../sass/_proficiencies.scss */
   section.proficiencies > ul > li h3.production {
     background: #0c1d2d;
   }
-  /* line 138, ../sass/_proficiencies.scss */
+  /* line 151, ../sass/_proficiencies.scss */
   section.proficiencies > ul > li h3.social {
     background: #091523;
   }
 }
-/* line 144, ../sass/_proficiencies.scss */
+/* line 157, ../sass/_proficiencies.scss */
 section.proficiencies > ul > li ul {
   list-style: none;
 }
@@ -2216,34 +2237,34 @@ section.proficiencies > ul > li ul li {
   margin-left: 0;
 }
 @media only screen and (max-width: 1136px) {
-  /* line 144, ../sass/_proficiencies.scss */
+  /* line 157, ../sass/_proficiencies.scss */
   section.proficiencies > ul > li ul {
     padding-left: 20%;
     font-size: 1.2em;
     line-height: 2em;
   }
 }
-/* line 153, ../sass/_proficiencies.scss */
+/* line 166, ../sass/_proficiencies.scss */
 section.proficiencies > ul > li ul.pipe-separated {
   white-space: normal;
 }
-/* line 156, ../sass/_proficiencies.scss */
+/* line 169, ../sass/_proficiencies.scss */
 section.proficiencies > ul > li ul.pipe-separated li {
   display: inline;
 }
-/* line 159, ../sass/_proficiencies.scss */
+/* line 172, ../sass/_proficiencies.scss */
 section.proficiencies > ul > li ul.pipe-separated li:first-child:before {
   content: "";
 }
-/* line 163, ../sass/_proficiencies.scss */
+/* line 176, ../sass/_proficiencies.scss */
 section.proficiencies > ul > li ul.pipe-separated li:last-child:before {
   content: "";
 }
-/* line 167, ../sass/_proficiencies.scss */
+/* line 180, ../sass/_proficiencies.scss */
 section.proficiencies > ul > li ul.pipe-separated li:before {
   content: "| ";
 }
-/* line 172, ../sass/_proficiencies.scss */
+/* line 185, ../sass/_proficiencies.scss */
 section.proficiencies > ul > li ul.pipe-separated li.ie-last-child:before {
   content: " ";
 }
@@ -2589,6 +2610,7 @@ html, body {
 
 /* line 201, ../sass/_base.scss */
 body {
+  font-family: "PFSquareSansPro-Regular", Arial, sans-serif;
   min-width: 1000px;
 }
 @media only screen and (max-width: 1136px) {
@@ -2599,19 +2621,19 @@ body {
   }
 }
 
-/* line 210, ../sass/_base.scss */
+/* line 211, ../sass/_base.scss */
 html.lt-ie9 body {
   min-width: none;
 }
 
 @media only screen and (max-width: 1136px) {
-  /* line 216, ../sass/_base.scss */
+  /* line 217, ../sass/_base.scss */
   .small-screen-collapsable.collapsed {
     display: none;
   }
 }
 
-/* line 223, ../sass/_base.scss */
+/* line 224, ../sass/_base.scss */
 html.touch * {
   background-attachment: scroll !important;
 }
@@ -3091,6 +3113,7 @@ html, body {
 
 /* line 201, ../sass/_base.scss */
 body {
+  font-family: "PFSquareSansPro-Regular", Arial, sans-serif;
   min-width: 1000px;
 }
 @media only screen and (max-width: 1136px) {
@@ -3101,19 +3124,19 @@ body {
   }
 }
 
-/* line 210, ../sass/_base.scss */
+/* line 211, ../sass/_base.scss */
 html.lt-ie9 body {
   min-width: none;
 }
 
 @media only screen and (max-width: 1136px) {
-  /* line 216, ../sass/_base.scss */
+  /* line 217, ../sass/_base.scss */
   .small-screen-collapsable.collapsed {
     display: none;
   }
 }
 
-/* line 223, ../sass/_base.scss */
+/* line 224, ../sass/_base.scss */
 html.touch * {
   background-attachment: scroll !important;
 }
@@ -3367,7 +3390,6 @@ footer {
   line-height: 1.6em;
   position: relative;
   white-space: nowrap;
-  font-size: 0.875em;
 }
 @media only screen and (max-width: 1136px) {
   /* line 12, ../sass/_footer.scss */
@@ -3377,33 +3399,33 @@ footer {
     padding-bottom: 50px;
   }
 }
-/* line 28, ../sass/_footer.scss */
+/* line 27, ../sass/_footer.scss */
 footer address {
   font-style: normal;
 }
-/* line 32, ../sass/_footer.scss */
+/* line 31, ../sass/_footer.scss */
 footer h4 {
   text-transform: uppercase;
   color: #258EC5;
   margin-bottom: 2em;
 }
 @media only screen and (max-width: 1136px) {
-  /* line 32, ../sass/_footer.scss */
+  /* line 31, ../sass/_footer.scss */
   footer h4 {
     margin-bottom: 0;
   }
 }
-/* line 42, ../sass/_footer.scss */
+/* line 41, ../sass/_footer.scss */
 footer p {
   margin-bottom: 2.7em;
 }
 @media only screen and (max-width: 1136px) {
-  /* line 42, ../sass/_footer.scss */
+  /* line 41, ../sass/_footer.scss */
   footer p {
     margin-bottom: 1em;
   }
 }
-/* line 50, ../sass/_footer.scss */
+/* line 49, ../sass/_footer.scss */
 footer article {
   display: -moz-inline-stack;
   display: inline-block;
@@ -3422,16 +3444,16 @@ footer article {
   white-space: normal;
 }
 @media only screen and (max-width: 1136px) {
-  /* line 50, ../sass/_footer.scss */
+  /* line 49, ../sass/_footer.scss */
   footer article {
     margin: 0 0 25px 0;
   }
 }
-/* line 65, ../sass/_footer.scss */
+/* line 64, ../sass/_footer.scss */
 footer article.contacts {
   width: 230px;
 }
-/* line 68, ../sass/_footer.scss */
+/* line 67, ../sass/_footer.scss */
 footer article.contacts ul {
   list-style: none;
   margin: 0;
@@ -3443,26 +3465,27 @@ footer article.contacts ul li {
   list-style-type: none;
   margin-left: 0;
 }
-/* line 75, ../sass/_footer.scss */
+/* line 74, ../sass/_footer.scss */
 footer article.feedback {
   width: 300px;
   border-left: 1px solid #1b3b58;
   border-right: 1px solid #1b3b58;
 }
 @media only screen and (max-width: 1136px) {
-  /* line 75, ../sass/_footer.scss */
+  /* line 74, ../sass/_footer.scss */
   footer article.feedback {
     border: 0;
   }
 }
-/* line 87, ../sass/_footer.scss */
+/* line 86, ../sass/_footer.scss */
 footer article.feedback form {
   position: relative;
   margin: 0;
   padding: 0;
 }
-/* line 94, ../sass/_footer.scss */
+/* line 93, ../sass/_footer.scss */
 footer article.feedback form input, footer article.feedback form textarea {
+  font-family: "PFSquareSansPro-Regular", Arial, sans-serif;
   -webkit-transition: height 0.3s linear;
   -moz-transition: height 0.3s linear;
   -o-transition: height 0.3s linear;
@@ -3486,6 +3509,7 @@ footer article.feedback form input, footer article.feedback form textarea {
 }
 /* line 108, ../sass/_footer.scss */
 footer article.feedback form button {
+  font-family: "PFSquareSansPro-Regular", Arial, sans-serif;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -3506,18 +3530,18 @@ footer article.feedback form button {
     padding: 0.53333em;
   }
 }
-/* line 126, ../sass/_footer.scss */
+/* line 127, ../sass/_footer.scss */
 footer article.hire {
   width: 170px;
 }
 @media only screen and (max-width: 1136px) {
-  /* line 130, ../sass/_footer.scss */
+  /* line 131, ../sass/_footer.scss */
   footer article.contacts, footer article.feedback, footer article.hire {
     position: relative;
     width: 70%;
   }
 }
-/* line 137, ../sass/_footer.scss */
+/* line 138, ../sass/_footer.scss */
 footer .figures-scroll-up {
   display: -moz-inline-stack;
   display: inline-block;
@@ -3531,7 +3555,7 @@ footer .figures-scroll-up {
   left: 50%;
 }
 @media only screen and (max-width: 1136px) {
-  /* line 137, ../sass/_footer.scss */
+  /* line 138, ../sass/_footer.scss */
   footer .figures-scroll-up {
     position: absolute;
     bottom: 65px;
@@ -3540,11 +3564,11 @@ footer .figures-scroll-up {
     margin-left: -70px;
   }
 }
-/* line 176, ../sass/_footer.scss */
+/* line 177, ../sass/_footer.scss */
 footer a {
   color: #2da4dd;
 }
-/* line 179, ../sass/_footer.scss */
+/* line 180, ../sass/_footer.scss */
 footer a:hover, footer a:focus, footer a.active {
   color: #2da4dd;
 }
@@ -3890,6 +3914,7 @@ html, body {
 
 /* line 201, ../sass/_base.scss */
 body {
+  font-family: "PFSquareSansPro-Regular", Arial, sans-serif;
   min-width: 1000px;
 }
 @media only screen and (max-width: 1136px) {
@@ -3900,19 +3925,19 @@ body {
   }
 }
 
-/* line 210, ../sass/_base.scss */
+/* line 211, ../sass/_base.scss */
 html.lt-ie9 body {
   min-width: none;
 }
 
 @media only screen and (max-width: 1136px) {
-  /* line 216, ../sass/_base.scss */
+  /* line 217, ../sass/_base.scss */
   .small-screen-collapsable.collapsed {
     display: none;
   }
 }
 
-/* line 223, ../sass/_base.scss */
+/* line 224, ../sass/_base.scss */
 html.touch * {
   background-attachment: scroll !important;
 }

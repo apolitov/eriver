@@ -26,12 +26,12 @@ section.welcome {
 		bottom: 2*$gap;
 		z-index: 20;
 
-		@include respond-to(small-height) {
-			bottom: $gap/2;	
-		}
-
 		@include respond-to(small-screen) { 
 			bottom: $gap/2;
+		}
+
+		@include respond-to(small-height) {
+			bottom: $gap/2;	
 		}
 	}
 
@@ -41,13 +41,13 @@ section.welcome {
 		width: 533px;
 		margin: 0 auto 2*$gap auto;
 
-		@include respond-to(small-height) {
-			margin-bottom: $gap;
-		}
-
 		@include respond-to(small-screen) { 
 			margin-bottom: $gap;
 		}		
+
+		@include respond-to(small-height) {
+			margin-bottom: $gap;
+		}
 	}
 
 	.message {
@@ -60,12 +60,12 @@ section.welcome {
 
 		margin: 0 0 $gap 0;
 
-		@include respond-to(small-height) {
-			margin-bottom: $gap/2;	
-		}
-
 		@include respond-to(small-screen) { 
 			margin-bottom: $gap/2;
+		}
+
+		@include respond-to(small-height) {
+			margin-bottom: $gap/2;	
 		}
 
 		p {

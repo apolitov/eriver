@@ -17,7 +17,6 @@ footer {
 	line-height: 1.6em;
 	position: relative;
 	white-space: nowrap;
-	font-size: 0.875em;
 
 	@include respond-to(small-screen) {
 		font-size: 1em;
@@ -92,6 +91,7 @@ footer {
 			padding: 0;
 
 			input, textarea {
+				@include PFSquareFont("Regular");
 				@include transition(height 0.3s linear);
 				@include border-radius($radius);
 				@include box-sizing(border-box);
@@ -106,6 +106,7 @@ footer {
 			}
 
 			button {
+				@include PFSquareFont("Regular");
 				@include border-radius($radius);
 				display: block;
 				float: right;

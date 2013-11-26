@@ -55,7 +55,7 @@ body > header {
 			width: 100%;
 		}
 
-		h3 {
+		.menu-holder {
 			display: none;
 			line-height: $-small-screen-top-menu-height;
 			padding: 0;
@@ -100,9 +100,11 @@ body > header {
 				float: right;
 
 				@include respond-to(small-screen) { 
+					@include box-sizing(border-box);
 					display: block;
 					width: 100%;
-					margin: 0 $-small-screen-side-offset 0 0;
+					margin: 0;
+					padding: 0 $-small-screen-side-offset 0 0;
 					text-align: right;
 					float: none;
 

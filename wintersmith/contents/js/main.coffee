@@ -1,37 +1,17 @@
 $(document).ready ->
     viewportHeight = window.innerHeight
     set_welcome_height viewportHeight
-    # Document height shall be calculated after welcome screen resized
     if not touch_device()
         set_parallax $('.welcome').height()
         spy_nav_anchors viewportHeight
     set_smooth_scroll()
-    # Use elastic to authoheight feedback textarea
+    # Set feedback textarea authoheight
     $('textarea').autosize()
     # Replace blocks at footer
     swap_footer_blocks()
     # Enable element collapse by clicking it's header (used for mobile media queries)
     collapsableContainers = $('.proficiencies > ul > li, header > nav');
-
-    # Hack to prevent reacting to both event - click and touch
-
-    # Required to distinct touchmove from tapping
-    busyFlag = false;
-    touchmoveFlag = false;   
-
-    collapsableContainers.on 'touchmove', 'h3', ->
-        touchmoveFlag = true;
-
-    collapsableContainers.on 'touchend click', 'h3', ->
-        if not busyFlag
-            busyFlag = true
-            setTimeout ->
-                busyFlag = false
-            , 400
-            if not touchmoveFlag
-                $(this).siblings('.small-screen-collapsable').toggleClass('collapsed')
-        touchmoveFlag = false
-        return
+    set_collapsable_containers(collapsableContainers)
 
     # IE 7-8 CSS3 support (see css3pie.com)
     if window.PIE
@@ -45,30 +25,50 @@ $(document).ready ->
 $(window).resize ->
     viewportHeight = $(window).height()
     set_welcome_height viewportHeight
-    # Remove previously set parallax handler
     if not touch_device()
         set_parallax $('.welcome').height()
         spy_nav_anchors viewportHeight
     set_smooth_scroll()
     # Reinitialize fotorama gallery
     $('.fotorama').fotorama()
-    # Use elastic to authoheight feedback textarea
+    # Use plugin to authoheight feedback textarea
     $('textarea').autosize()
     # Replace blocks at footer
     swap_footer_blocks()
 
 
+set_collapsable_containers = ($containers) ->
+    # Required to distinct touchmove from tapping
+    busyFlag = false;
+    touchmoveFlag = false;   
+
+    $containers.on 'touchmove', 'h3', ->
+        touchmoveFlag = true;
+
+    $containers.on 'touchend click', 'h3', ->
+        # Hack to prevent reacting to both event - click and touch
+        if not busyFlag
+            busyFlag = true
+            setTimeout ->
+                busyFlag = false
+            , 400
+            if not touchmoveFlag
+                $(this).siblings('.small-screen-collapsable').toggleClass('collapsed')
+        touchmoveFlag = false
+        return
+
+
+# Set bubbles parallax effect at welcome screen
 set_parallax = (max_distance) ->
     $(document).off 'scroll.bubbleParallax touchmove.bubbleParallax'
-    # Set bubbles parallax effect at welcome screen
     back = ".welcome .bubbles .back"
     focused = ".welcome .bubbles .focused"
     front = ".welcome .bubbles .front"
     $(back + ', ' + focused + ', ' + front).css
         bottom: 0
-    bubble_parallax('.welcome .bubbles .back', 0.2, max_distance)
-    bubble_parallax('.welcome .bubbles .focused', 0.5, max_distance)
-    bubble_parallax('.welcome .bubbles .front', 1.5, max_distance)    
+    bubble_parallax(back, 0.2, max_distance)
+    bubble_parallax(focused, 0.5, max_distance)
+    bubble_parallax(front, 1.5, max_distance)    
 
 
 get_bottom_scroll_limit = ->
@@ -93,6 +93,7 @@ spy_nav_anchors = (window_height) ->
 
     currentSectionPosition = null
     intervalFlag = false
+
     $(window).on 'scroll.scrollSpy', (e) =>
         if not intervalFlag
             # Should do expensive operations not so often as event occures
@@ -123,13 +124,17 @@ spy_nav_anchors = (window_height) ->
 
 
 set_smooth_scroll = ->
-    # Init smooth scrolling for onpage anchor links
+    # Init smooth scrolling for anchor links
     $header = $('header');
     smoothScrollOffset = 0;
 
     # Compensate fixed header
     if $header.css('position') is 'fixed'
         smoothScrollOffset = -($header).height()
+        $('a.figures-scroll-up').attr('href', '#welcome')
+    # ...or set scroll top anchor to relatively positioned header
+    else
+        $('a.figures-scroll-up').attr('href', '#header')
 
     # scrolling smooth upon hitting on-page links
     $('a').smoothScroll
@@ -160,7 +165,6 @@ set_smooth_scroll = ->
                             set_parallax()
             , wsAnimationTimeout
             return false
-            
 
     # Set smooth scrolling through page
 
@@ -176,8 +180,8 @@ set_smooth_scroll = ->
 
     # Some magic number (feel free to change)
     step = 300
-    top = $(this).scrollTop()
     animationTime = 150
+    top = $(this).scrollTop()
 
     $(window).on 'scroll', (e) ->
         if not inProgress
@@ -266,6 +270,7 @@ ie_browser = ->
     if $("html").hasClass("lt-ie9")
         return true
     return false
+
 
 touch_device = ->
     if $("html").hasClass("touch")

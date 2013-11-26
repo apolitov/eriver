@@ -27,12 +27,14 @@ section.proficiencies {
 
 	h2 {
 		@include section-header(#f5f5f5, $dark-blue, 'dark');
-		margin: 1em 0 1em 0;
+		margin: 1em 0 1em 1%;
 	}
 
 	> ul {
 		$item-width: 320px;
 		$item-margin: 50px;
+		$narrow-screen-breakpoint: 1250px;
+		$narrow-item-margin: 20px;
 		@include inline-block-list-container;
 		display: block;
 		position: relative;
@@ -40,6 +42,11 @@ section.proficiencies {
 		max-width: 3 * ($item-width + $item-margin);
 		margin: 70px auto 0 auto;
 		white-space: normal;
+
+		// Hack to keep 3 column on low-res desktop screen
+		@media only screen and (max-width: $narrow-screen-breakpoint) {
+			max-width: 3 * ($item-width + $narrow-item-margin);
+		}
 
 		@include respond-to(small-screen) {
 			display: block;
@@ -59,6 +66,11 @@ section.proficiencies {
 			text-align: left;
 			margin: 0 0 $item-margin $item-margin;
 
+			// Hack to keep 3 column on low-res desktop screen
+			@media only screen and (max-width: $narrow-screen-breakpoint) {
+				margin: 0 0 $narrow-item-margin $narrow-item-margin;
+			}
+
 			@include respond-to(small-screen) {
 				display: none;
 				margin-left: 0;
@@ -74,6 +86,7 @@ section.proficiencies {
 			}
 
 			.emblem {
+				display: block;
 				margin-bottom: 1.4em;
 				margin-left: -0.9em;
 
