@@ -4,8 +4,8 @@ $(document).ready ->
     # Document height shall be calculated after welcome screen resized
     if not touch_device()
         set_parallax $('.welcome').height()
-        set_smooth_scroll()
-    spy_nav_anchors viewportHeight
+        spy_nav_anchors viewportHeight
+    set_smooth_scroll()
     # Use elastic to authoheight feedback textarea
     $('textarea').autosize()
     # Replace blocks at footer
@@ -47,10 +47,9 @@ $(window).resize ->
     set_welcome_height viewportHeight
     # Remove previously set parallax handler
     if not touch_device()
-        $(document).off 'scroll.bubbleParallax touchmove.bubbleParallax'
         set_parallax $('.welcome').height()
-        set_smooth_scroll()
-    spy_nav_anchors viewportHeight
+        spy_nav_anchors viewportHeight
+    set_smooth_scroll()
     # Reinitialize fotorama gallery
     $('.fotorama').fotorama()
     # Use elastic to authoheight feedback textarea
@@ -60,7 +59,13 @@ $(window).resize ->
 
 
 set_parallax = (max_distance) ->
+    $(document).off 'scroll.bubbleParallax touchmove.bubbleParallax'
     # Set bubbles parallax effect at welcome screen
+    back = ".welcome .bubbles .back"
+    focused = ".welcome .bubbles .focused"
+    front = ".welcome .bubbles .front"
+    $(back + ', ' + focused + ', ' + front).css
+        bottom: 0
     bubble_parallax('.welcome .bubbles .back', 0.2, max_distance)
     bubble_parallax('.welcome .bubbles .focused', 0.5, max_distance)
     bubble_parallax('.welcome .bubbles .front', 1.5, max_distance)    
@@ -126,8 +131,36 @@ set_smooth_scroll = ->
     if $header.css('position') is 'fixed'
         smoothScrollOffset = -($header).height()
 
+    # scrolling smooth upon hitting on-page links
     $('a').smoothScroll
         offset: smoothScrollOffset
+
+    # special animation for scroll down button at welcome screen
+    welcomeScroll = $('.welcome a.scroll-down')
+    wsTarget = welcomeScroll[0].hash
+    wsAnimationTimeout = 0
+    welcomeScroll.smoothScroll
+        scrollTarget: this
+        # animate bubbles
+        beforeScroll: ->
+            $('.back, .front, .focused').css
+                bottom: $(window).height()
+            # scroll to destianation
+            setTimeout ->
+                # disable default parallax to let bubbles float
+                $(document).off 'scroll.bubbleParallax touchmove.bubbleParallax'
+                # scroll to destination
+                $.smoothScroll
+                    scrollTarget: $(wsTarget)
+                    offset: smoothScrollOffset
+                    speed: 1000
+                    afterScroll: ->
+                            # reenable default parallax
+                        if not touch_device()
+                            set_parallax()
+            , wsAnimationTimeout
+            return false
+            
 
     # Set smooth scrolling through page
 
