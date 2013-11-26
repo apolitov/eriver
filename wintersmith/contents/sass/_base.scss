@@ -91,6 +91,7 @@ $brands-sprite-dimensions: true;
 	padding: 0.25em 0.25em 0.15em 0.25em;
 	line-height: 1em;
 	letter-spacing: 0.05em;
+	white-space: nowrap;
 
 	@include respond-to(small-screen) {
 		margin: 1em 0 1em 0;
