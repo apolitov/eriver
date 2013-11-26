@@ -167,6 +167,11 @@ section.proficiencies {
 					&:before {
 						content: "| ";
 					}
+
+					// ie fix
+					&.ie-last-child:before {
+						content: " ";
+					}
 				}
 			}
 		}

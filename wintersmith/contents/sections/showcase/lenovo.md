@@ -1,3 +1,0 @@
----
-template: sections/showcase/lenovo.jade
----

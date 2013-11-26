@@ -38,7 +38,8 @@ section.welcome {
 	.logo {
 		background: url("../img/logo/logo-big.png") center center no-repeat;
 		height: 183px;
-		margin: 0 0 2*$gap 0;
+		width: 533px;
+		margin: 0 auto 2*$gap auto;
 
 		@include respond-to(small-height) {
 			margin-bottom: $gap;

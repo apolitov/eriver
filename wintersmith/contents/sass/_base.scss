@@ -26,14 +26,17 @@ $dark-blue: #081522;
 
 // Sprites
 	// small images
+$figures-spacing: 2px;	// ie fix
 @import "figures/*.png";
 $figures-sprite-dimensions: true;
 @include all-figures-sprites;
 	// small figures for mobile devices
+$figures-small-spacing: 2px;
 @import "figures-small/*.png";
 $figures-small-sprite-dimensions: true;
 @include all-figures-small-sprites;
 	// small brands logotypes
+$brands-spacing: 5px;
 @import "brands/*.png";
 $brands-sprite-dimensions: true;
 @include all-brands-sprites;

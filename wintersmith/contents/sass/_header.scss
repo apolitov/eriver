@@ -112,15 +112,14 @@ body > header {
 					}
 				}
 
-				li:after {
+				// Sadly IE8 does not support last-child
+				// so we shall use first-child unless 
+				// there are more than 2 languages
+				li:first-child:after {
 					display: inline;
 					content: "|";
 					margin-left: 0.3em;
 					margin-right: 0.3em;
-				}
-
-				li:last-child:after {
-					content: "";
 				}
 			}
 		}
