@@ -191,7 +191,13 @@ set_welcome_height = (viewportHeight)->
 # Sets selector element position in dependence of window scroll
 bubble_parallax = (selector, ratio, max_distance) ->
     $el = $(selector)
-    $(document).on 'scroll.bubbleParallax touchmove.bubbleParallax', ->
+    $document = $(document)
+
+    # since ie ties event to window rather than document
+    if ie_browser()
+        $document = $(window)
+
+    $document.on 'scroll.bubbleParallax touchmove.bubbleParallax', ->
         scrollbar_position = $(document).scrollTop()
         if 0 < scrollbar_position < max_distance
             $el.css('bottom', scrollbar_position * ratio)
