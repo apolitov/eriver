@@ -1,40 +1,17 @@
 section.clients#clients
-	h2 Наши клиенты
-	ul
-		//- IMPORTANT
-		//- Pipe syntax is used to remove spaces between inline-block element.
-		//- <li /> elements are generated as plain html text and their content
-		//- has no indendation to preven jaid render error.
-		|<li>
-		span.brands-d-and-g
-		| </li
-		| ><li>
-		span.brands-lenovo
-		| </li
-		| ><li>
-		span.brands-alfa-capital
-		| </li
-		| ><li>
-		span.brands-bbw
-		| </li
-		| ><li>
-		span.brands-bodyshop
-		| </li
-		| ><li>
-		span.brands-pinkberry
-		| </li
-		| ><li>
-		span.brands-mothercare
-		| </li
-		| ><li>
-		span.brands-american-eagle
-		| </li
-		| ><li>
-		span.brands-justice
-		| </li
-		| ><li>
-		span.brands-lasenza
-		| </li
-		| ><li>
-		span.brands-starbucks
-		| </li>
+    h2 Наши клиенты
+    ul
+        - var data = contents.sections['clients.json'].metadata
+        //- IMPORTANT
+        //- Pipe syntax is used to remove spaces between inline-block element.
+        //- <li /> elements are generated as plain html text and their content
+        //- has no indendation to preven jaid render error.
+        each brand, i in data.clients
+            if i == 0
+                | <li>
+            else
+                | ><li>
+
+            span(class="brands-#{brand}")
+            | </li
+        |>

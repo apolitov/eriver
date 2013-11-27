@@ -1,3 +1,16 @@
 {
-	"template": "sections/clients.jade"
+	"template": "sections/clients.jade",
+	"clients": [
+		"d-and-g",
+		"lenovo",
+		"alfa-capital",
+		"bbw",
+		"bodyshop",
+		"pinkberry",
+		"mothercare",
+		"american-eagle",
+		"justice",
+		"lasenza",
+		"starbucks"
+	]
 }

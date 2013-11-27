@@ -1,18 +1,24 @@
 $(document).ready ->
     viewportHeight = window.innerHeight
-    set_welcome_height viewportHeight
-    if not touch_device()
-        set_parallax $('.welcome').height()
-        spy_nav_anchors viewportHeight
-    set_smooth_scroll()
+    setWelcomeHeight viewportHeight
+    if not touchDevice()
+        setParallax $('.welcome').height()
+        spyNavAnchors viewportHeight
+    setSmoothScroll()
     # Set feedback textarea authoheight
     $('textarea').autosize()
     # Replace blocks at footer
-    swap_footer_blocks()
+    swapFooterBlocks()
     # Enable element collapse by clicking it's header (used for mobile media queries)
     collapsableContainers = $('.proficiencies > ul > li, header > nav');
-    set_collapsable_containers(collapsableContainers)
-
+    setCollapsableContainers(collapsableContainers)
+    # Set current language link active
+    languages =
+        "RUS": "/",
+        "ENG": "/en"
+    $('nav .language a').each (index,value) ->
+        if languages[value.name] is window.location.pathname
+            $(this).addClass('active')
     # IE 7-8 CSS3 support (see css3pie.com)
     if window.PIE
         $('.fotorama__dot').each ->
@@ -24,20 +30,20 @@ $(document).ready ->
 
 $(window).resize ->
     viewportHeight = $(window).height()
-    set_welcome_height viewportHeight
-    if not touch_device()
-        set_parallax $('.welcome').height()
-        spy_nav_anchors viewportHeight
-    set_smooth_scroll()
+    setWelcomeHeight viewportHeight
+    if not touchDevice()
+        setParallax $('.welcome').height()
+        spyNavAnchors viewportHeight
+    setSmoothScroll()
     # Reinitialize fotorama gallery
     $('.fotorama').fotorama()
     # Use plugin to authoheight feedback textarea
     $('textarea').autosize()
     # Replace blocks at footer
-    swap_footer_blocks()
+    swapFooterBlocks()
 
 
-set_collapsable_containers = ($containers) ->
+setCollapsableContainers = ($containers) ->
     # Required to distinct touchmove from tapping
     busyFlag = false;
     touchmoveFlag = false;   
@@ -59,29 +65,30 @@ set_collapsable_containers = ($containers) ->
 
 
 # Set bubbles parallax effect at welcome screen
-set_parallax = (max_distance) ->
+setParallax = (max_distance) ->
     $(document).off 'scroll.bubbleParallax touchmove.bubbleParallax'
     back = ".welcome .bubbles .back"
     focused = ".welcome .bubbles .focused"
     front = ".welcome .bubbles .front"
     $(back + ', ' + focused + ', ' + front).css
         bottom: 0
-    bubble_parallax(back, 0.2, max_distance)
-    bubble_parallax(focused, 0.5, max_distance)
-    bubble_parallax(front, 1.5, max_distance)    
+    bubbleParallax(back, 0.2, max_distance)
+    bubbleParallax(focused, 0.5, max_distance)
+    bubbleParallax(front, 1.5, max_distance)    
 
 
-get_bottom_scroll_limit = ->
+getBottomScrollLimit = ->
     return $(document).height() - $(window).height()
 
 
 # Mark navigation link active if appropriate section scrolled to
-spy_nav_anchors = (window_height) ->
+spyNavAnchors = (window_height) ->
     # remove previous bindings
     $(window).off 'scroll.scrollSpy'
 
-    # increase offset to trigger earliear
+    # increase offset to trigger earlier
     offset = window_height/1.8
+    # create a dictionary with key-pair section and it's offset from top
     links = $('header nav a')
     sections = {}
     for link in links
@@ -110,6 +117,7 @@ spy_nav_anchors = (window_height) ->
         if currentScroll < currentSectionPosition
             currentSectionPosition = null
 
+        # if user scroll position near some section, mark it as active
         for position of sections
             position = position
             sections[position].removeClass('active')
@@ -123,7 +131,7 @@ spy_nav_anchors = (window_height) ->
     return
 
 
-set_smooth_scroll = ->
+setSmoothScroll = ->
     # Init smooth scrolling for anchor links
     $header = $('header');
     smoothScrollOffset = 0;
@@ -148,8 +156,12 @@ set_smooth_scroll = ->
         scrollTarget: this
         # animate bubbles
         beforeScroll: ->
-            $('.back, .front, .focused').css
-                bottom: $(window).height()
+            $('.bubbles .back').css
+                bottom: $(window).height() * 0.2
+            $('.bubbles .front').css
+                bottom: $(window).height() * 0.5
+            $('.bubbles .focused').css
+                bottom: $(window).height() * 1.5
             # scroll to destianation
             setTimeout ->
                 # disable default parallax to let bubbles float
@@ -161,8 +173,8 @@ set_smooth_scroll = ->
                     speed: 1000
                     afterScroll: ->
                             # reenable default parallax
-                        if not touch_device()
-                            set_parallax()
+                        if not touchDevice()
+                            setParallax()
             , wsAnimationTimeout
             return false
 
@@ -191,7 +203,7 @@ set_smooth_scroll = ->
         if not inProgress
             # we may need to recalculate scroll limit in case some div height has changed
             # (it'll mostly be feedback form)
-            scrollLimit = get_bottom_scroll_limit()
+            scrollLimit = getBottomScrollLimit()
 
         inProgress = true
 
@@ -216,7 +228,7 @@ set_smooth_scroll = ->
         return false;
 
 
-set_welcome_height = (viewportHeight)->
+setWelcomeHeight = (viewportHeight)->
     # Make welcome screen occupy full height
     welcomeScreen = $('body > .welcome')
     defaultMinHeight = parseInt( welcomeScreen.css('min-height') );
@@ -226,12 +238,12 @@ set_welcome_height = (viewportHeight)->
 
 
 # Sets selector element position in dependence of window scroll
-bubble_parallax = (selector, ratio, max_distance) ->
+bubbleParallax = (selector, ratio, max_distance) ->
     $el = $(selector)
     $document = $(document)
 
     # since ie ties event to window rather than document
-    if ie_browser()
+    if ieBrowser()
         $document = $(window)
 
     $document.on 'scroll.bubbleParallax touchmove.bubbleParallax', ->
@@ -241,9 +253,9 @@ bubble_parallax = (selector, ratio, max_distance) ->
 
 
 # Swap places of footer blocks (feedback and hire)
-swap_footer_blocks = ->
+swapFooterBlocks = ->
     # ie knows nothing of media queries
-    if ie_browser()
+    if ieBrowser()
         return
 
     # swap footer block only for mobile media query
@@ -258,7 +270,6 @@ swap_footer_blocks = ->
             return
 
     hireBlockHtml = hireBlock.wrap('<div/>').parent().html();
-
     if breakpoint
         feedbackBlock.before(hireBlockHtml)
     else
@@ -266,13 +277,13 @@ swap_footer_blocks = ->
     hireBlock.unwrap().remove()
 
 
-ie_browser = ->
+ieBrowser = ->
     if $("html").hasClass("lt-ie9")
         return true
     return false
 
 
-touch_device = ->
+touchDevice = ->
     if $("html").hasClass("touch")
         return true
     return false

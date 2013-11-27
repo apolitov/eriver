@@ -1,3 +1,35 @@
 {
-	"template": "header.jade"
+	"template": "header.jade",
+	"languages": [
+		{
+			"name": "RUS",
+			"path": "/"
+		},
+		{
+			"name": "ENG",
+			"path": "/en/"
+		}
+	],
+	"navigation": [
+		{
+			"name": "О компании",
+			"path": "#about"
+		},
+		{
+			"name": "Кейсы",
+			"path": "#showcase"
+		},
+		{
+			"name": "Услуги",
+			"path": "#proficiencies"
+		},
+		{
+			"name": "Клиенты",
+			"path": "#clients"
+		},
+		{
+			"name": "Обратная связь",
+			"path": "#feedback"
+		}
+	]
 }

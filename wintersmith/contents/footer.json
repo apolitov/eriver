@@ -1,3 +1,20 @@
 {
-	"template": "footer.jade"
+	"template": "footer.jade",
+	"contacts": {
+		"header": "Контакты",
+		"address": "Россия, Москва <br /> Старая&nbsp;Басманная 38/2, СТР.&nbsp;1",
+		"phone": "+7&nbsp;(495)&nbsp;781&nbsp;59&nbsp;80",
+		"emails": [
+			"we@nlomarketing.ru",
+			"hireme@nlomarketing.ru"
+		]
+	},
+	"feedback": {
+		"header": "Напишите нам",
+		"message": "Если у вас есть предложения, заполните форму и отправьте нам."
+	},
+	"job": {
+		"header": "Работа",
+		"message": "Если вы готовы делать интересные проекты, что&nbsp;ж... <a href=\"\">Супер!</a>"
+	}
 }

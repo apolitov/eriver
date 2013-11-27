@@ -2,98 +2,36 @@ div.curved-border
 section.proficiencies#proficiencies
 	h2 Что мы делаем
 	ul
-		//- IMPORTANT
-		//- Pipe syntax is used to remove spaces between inline-block element.
-		//- <li /> elements are generated as plain html text and their content
-		//- has no indendation to preven jaid render error.
-		| <li class="show-small-screen">
-		h3.creative
-			span.emblem.figures-item-cube
-			span Креатив и стратегии
-		ul.small-screen-collapsable
-			li Social media стратегии
-			li Digital стратегии
-			li Mobile стратегии
-			li Креативные концепции
-			li Концепции сообществ бренда
-			li Social media гайдлайны
-			li Вирусные компании
-			li Кампании в геолокационных сервисах
-		| </li
-		| ><li>
-		h3 
-			span.emblem.figures-item-pencil
-			span Ведение каналов бренда
-		ul
-			li Ведение каналов бренда
-			li Комьюнити-менеджмент
-			li Проведение промо-активностей
-			li Проведение конкурсов и акций
-			li BTL поддержка
-		| </li
-		| ><li>
-		h3 
-			span.emblem.figures-item-plane
-			span Продвижение
-		ul
-			li Таргетированная реклама
-			li Rich-media ads
-			li Размещения в сообществах и блогах
-			li Брендинг сообществ
-			li Брендированные интеграции в приложения
-			li Спонсорство
-			li Офферные системы
-			li Работа с opinion-leaders
-		| </li
-		| ><li>
-		h3 
-			span.emblem.figures-item-glass
-			span Мониторинг
-		ul
-			li Мониторинг упоминаний бренда
-			li Работа с репутацией в блогах
-		| </li
-		| ><li class="show-small-screen">
-		h3.production
-			span.emblem.figures-item-devices
-			span Production
-		ul.small-screen-collapsable.collapsed
-			li Web-дизайн
-			li Создание интерфейсов
-			li Разработка высокотехнологичных проектов
-			li Разработка промо-сайтов
-			li Дизайн и разработка для social media
-			li Создание контента
-			li Создание приложений (social, mobile, Smart&nbsp;TV)
-			li Видео/фото production
-		| </li
-		| ><li>
-		h3 
-			span.emblem.figures-item-chart
-			span Social media аналитика
-		ul
-			li Системный анализ присутствия бренда
-			li Анализ упоминаемости бренда
-			li Аналитика-промо-проектов (ROI и KPI)
-			li Post-campaign аналитика
-			li Исследование рынка
-			li Исследование конкурентов
-			li Исследование аудитории
-		| </li
-		| ><li class="show-small-screen">
-		h3.social
-			span.emblem.figures-item-dialog
-			span Социальные сети
-		ul.pipe-separated.small-screen-collapsable.collapsed
-			li Facebook
-			li Одноклассники
-			li Vk.com
-			li Twitter
-			li G+
-			li Foursquare
-			li Instagram
-			li Youtube
-			li LinkedIn
-			li Pinterest
-			li.ie-last-child и другие, в т.ч. тематические сети
-		| </li>
+		- var data = contents.sections['proficiencies.json'].metadata
+		each prof, i in data.proficiencies
+			- var profClass = prof.mobile ? "show-small-screen" : ""
+
+			//- IMPORTANT
+			//- Pipe syntax is used to remove spaces between inline-block element.
+
+			if i == 0
+				| <li class="#{profClass}">
+			else
+				| ><li class="#{profClass}">
+
+			//- Header for current proficient
+			h3(class="#{prof.class || ''}")
+				//- Icon and header
+				span(class="emblem #{prof.icon}")
+				span #{prof.name}
+			//- List items
+			- var listClass = "";
+			if prof["pipe-separated"]
+				- listClass = listClass + " pipe-separated "
+			if prof.mobile
+				- listClass = listClass + " small-screen-collapsable "					
+			ul(class="#{listClass}")
+				each item, j in prof.items
+					if j == prof.items.length - 1
+						li(class="ie-last-child")!= item
+					else
+						li!= item
+			| </li
+
+		//- Very last element closing tag
+		>

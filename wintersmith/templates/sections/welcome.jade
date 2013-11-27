@@ -2,9 +2,10 @@ section.welcome#welcome
 	div.hero
 		div.logo
 		div.message
-			p Full scope of digital
-			p and social media
-			p on one shore
+			- var rows = contents.sections['welcome.json'].metadata.rows
+			- for (var i=0; i <= rows.length; i++) {
+				p= rows[i]
+			- }
 		a.scroll-down.figures-arrow-down-with-hole(href='#showcase')
 	div.bubbles
 		div.back

@@ -1,3 +1,9 @@
 {
-	"template": "sections/showcase/lenovo.jade"
+	"template": "sections/showcase/lenovo.jade",
+	"header": "Доступные технологии",
+	"subheader": "LENOVO в social media",
+	"rows":[
+		"30&thinsp;000 фанов в сообществах в VK",
+		"Facebook и Twitter"
+	]
 }

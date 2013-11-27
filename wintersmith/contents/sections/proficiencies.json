@@ -1,3 +1,108 @@
 {
-	"template": "sections/proficiencies.jade"
+	"template": "sections/proficiencies.jade",
+	"header": "Что мы делаем",
+	"proficiencies": [
+		{
+			"name": "Креатив и стратегии",
+			"class": "creative",
+			"icon" : "figures-item-cube",
+			"mobile": true,
+			"items": [
+				"Social media стратегии",
+				"Digital стратегии",
+				"Mobile стратегии",
+				"Креативные концепции",
+				"Концепции сообществ бренда",
+				"Social media гайдлайны",
+				"Вирусные компании",
+				"Кампании в геолокационных сервисах"
+			]
+		},
+		{
+			"name": "Ведение каналов бренда",
+			"icon" : "figures-item-pencil",
+			"mobile": false,
+			"items": [
+				"Ведение каналов бренда",
+				"Комьюнити-менеджмент",
+				"Проведение промо-активностей",
+				"Проведение конкурсов и акций",
+				"BTL поддержка"
+			]
+		},
+		{
+			"name": "Продвижение",
+			"icon" : "figures-item-plane",
+			"mobile": false,
+			"items": [
+				"Таргетированная реклама",
+				"Rich-media ads",
+				"Размещения в сообществах и блогах",
+				"Брендинг сообществ",
+				"Брендированные интеграции в приложения",
+				"Спонсорство",
+				"Офферные системы",
+				"Работа с opinion-leaders"
+			]
+		},
+		{
+			"name": "Мониторинг",
+			"icon" : "figures-item-glass",
+			"mobile": false,
+			"items": [
+				"Мониторинг упоминаний бренда",
+				"Работа с репутацией в блогах"
+			]
+		},
+		{
+			"name": "Production",
+			"class": "production",
+			"icon" : "figures-item-devices",
+			"mobile": true,
+			"items": [
+				"Web-дизайн",
+				"Создание интерфейсов",
+				"Разработка высокотехнологичных проектов",
+				"Разработка промо-сайтов",
+				"Дизайн и разработка для social media",
+				"Создание контента",
+				"Создание приложений (social, mobile, Smart&nbsp;TV)",
+				"Видео/фото production"
+			]
+		},
+		{
+			"name": "Social media аналитика",
+			"icon" : "figures-item-chart",
+			"mobile": false,
+			"items": [
+				"Системный анализ присутствия бренда",
+				"Анализ упоминаемости бренда",
+				"Аналитика-промо-проектов (ROI и KPI)",
+				"Post-campaign аналитика",
+				"Исследование рынка",
+				"сследование конкурентов",
+				"Исследование аудитории"
+			]
+		},
+		{
+			"name": "Социальные сети",
+			"class": "social",
+			"icon" : "figures-item-dialog",
+			"mobile": true,
+			"pipe-separated": true,
+			"items": [
+				"Facebook",
+				"Одноклассники",
+				"Vk.com",
+				"Twitter",
+				"G+",
+				"Foursquare",
+				"Instagram",
+				"Youtube",
+				"LinkedIn",
+				"Pinterest",
+				"и другие, в т.ч. тематические сети"
+			]
+		}
+	]
 }

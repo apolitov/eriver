@@ -4,10 +4,10 @@ article.showcase-item.lenovo
 		img.big-screen(src="img/showcase/lenovo/display.png", alt="Lenovo")
 		img.small-screen(src="img/showcase/lenovo/logo.png", alt="Lenovo")
 		figcaption
-			h3 Доступные технологии
+			- var data = contents.sections.showcase['lenovo.json'].metadata
+			h3= data.header
 			p
-				span.highlighted LENOVO в social media
-			p 
-				span 30&thinsp;000 фанов в сообществах в VK
-			p 
-				span Facebook и Twitter
+				span.highlighted= data.subheader
+			each row in data.rows
+				p 
+					span!= row
