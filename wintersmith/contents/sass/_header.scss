@@ -5,7 +5,6 @@ $top-menu-color: #cdcece;
 
 body > header {
 	@include PFSquareFont('Light');
-	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 100;

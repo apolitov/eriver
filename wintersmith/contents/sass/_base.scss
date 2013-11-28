@@ -170,7 +170,8 @@ $break-small-height: 800px;
 
 @mixin respond-to($media) {
   @if $media == small-screen {
-    @media only screen and (max-width: $break-small) { @content; }
+    @media only screen and (max-width: $break-small)
+		{ @content; }
   }
   @if $media == small-height {
   	@media only screen and (max-height: $break-small-height) { @content; }	
@@ -191,7 +192,7 @@ a {
 	text-decoration: none;
 }
 
-$min-width: 1000px;
+$min-width: 1136px;
 $small-screen-min-width: 640px;
 
 html, body {
@@ -207,9 +208,18 @@ body {
 	}
 }
 
-// ie fix since ie won't switch to small screen media query
-html.lt-ie9 body {
-	min-width: none;
+html.no-touch { 
+	@media only screen and (min-width: $min-width) {
+		// Most touch devices and narrow screens handle fixed position badly
+		body > header {
+			position: fixed;
+		}
+
+		// compensate fixed header
+		section.welcome {
+			margin-top: $top-menu-height;
+		}
+	}
 }
 
 .small-screen-collapsable {

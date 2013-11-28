@@ -8,8 +8,7 @@ section.welcome {
 	width: 100%;
 	min-height: 800px;
 	text-align: center;
-	// compensate fixed header
-	margin-top: $top-menu-height;
+
 
 	@include respond-to(small-height) {
 		min-height: 600px;	
