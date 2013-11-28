@@ -15,7 +15,7 @@ $(document).ready ->
     # Set current language link active
     languages =
         "RUS": "/",
-        "ENG": "/en"
+        "ENG": "/en/"
     $('nav .language a').each (index,value) ->
         if languages[value.name] is window.location.pathname
             $(this).addClass('active')
@@ -49,7 +49,7 @@ setCollapsableContainers = ($containers) ->
     touchmoveFlag = false;   
 
     $containers.on 'touchmove', 'h3', ->
-        touchmoveFlag = true;
+        touchmoveFlag = true
 
     $containers.on 'touchend click', 'h3', ->
         # Hack to prevent reacting to both event - click and touch
@@ -101,16 +101,7 @@ spyNavAnchors = (window_height) ->
     currentSectionPosition = null
     intervalFlag = false
 
-    $(window).on 'scroll.scrollSpy', (e) =>
-        if not intervalFlag
-            # Should do expensive operations not so often as event occures
-            intervalFlag = true
-            setTimeout -> 
-                intervalFlag = false
-            , 200
-        else
-            return
-        
+    $(window).on 'scroll.scrollSpy', (e) =>       
         currentScroll = $(document).scrollTop() + offset
 
         # reset links state on scrolling up
@@ -119,7 +110,6 @@ spyNavAnchors = (window_height) ->
 
         # if user scroll position near some section, mark it as active
         for position of sections
-            position = position
             sections[position].removeClass('active')
             if position < currentScroll
                 if (currentSectionPosition? and parseInt(position) >= currentSectionPosition) or
@@ -147,6 +137,8 @@ setSmoothScroll = ->
     # scrolling smooth upon hitting on-page links
     $('a').smoothScroll
         offset: smoothScrollOffset
+        afterScroll: ->
+            $(window).trigger("scroll")
 
     # special animation for scroll down button at welcome screen
     welcomeScroll = $('.welcome a.scroll-down')
@@ -156,6 +148,7 @@ setSmoothScroll = ->
         scrollTarget: this
         # animate bubbles
         beforeScroll: ->
+            # move bubbles up
             $('.bubbles .back').css
                 bottom: $(window).height() * 0.2
             $('.bubbles .front').css
@@ -174,7 +167,7 @@ setSmoothScroll = ->
                     afterScroll: ->
                             # reenable default parallax
                         if not touchDevice()
-                            setParallax()
+                            setParallax $('.welcome').height()
             , wsAnimationTimeout
             return false
 
@@ -238,6 +231,7 @@ setWelcomeHeight = (viewportHeight)->
 
 
 # Sets selector element position in dependence of window scroll
+# Higher the ratio parameter the bubbles will move up faster
 bubbleParallax = (selector, ratio, max_distance) ->
     $el = $(selector)
     $document = $(document)

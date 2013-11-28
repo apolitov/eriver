@@ -1,10 +1,10 @@
 article.showcase-item.lenovo
 	div.promo
 	figure
-		img.big-screen(src="img/showcase/lenovo/display.png", alt="Lenovo")
-		img.small-screen(src="img/showcase/lenovo/logo.png", alt="Lenovo")
+		img.big-screen(src="/img/showcase/lenovo/display.png", alt="Lenovo")
+		img.small-screen(src="/img/showcase/lenovo/logo.png", alt="Lenovo")
 		figcaption
-			- var data = contents.sections.showcase['lenovo.json'].metadata
+			- var data = env.helpers.getLocalizedContent(contents, page, 'sections/showcase/lenovo.json')
 			h3= data.header
 			p
 				span.highlighted= data.subheader

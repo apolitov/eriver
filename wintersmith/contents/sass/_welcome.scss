@@ -38,7 +38,7 @@ section.welcome {
 	.logo {
 		background: url("../img/logo/logo-big.png") center center no-repeat;
 		height: 183px;
-		width: 533px;
+		max-width: 533px;
 		margin: 0 auto 2*$gap auto;
 
 		@include respond-to(small-screen) { 
@@ -46,7 +46,7 @@ section.welcome {
 		}		
 
 		@include respond-to(small-height) {
-			margin-bottom: $gap;
+			margin-bottom: $gap/2;
 		}
 	}
 
@@ -65,7 +65,8 @@ section.welcome {
 		}
 
 		@include respond-to(small-height) {
-			margin-bottom: $gap/2;	
+			margin-bottom: $gap/3;	
+			font-size: 1em;
 		}
 
 		p {

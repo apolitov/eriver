@@ -7,7 +7,8 @@
   },
   "plugins": [
     "wintersmith-livereload",
-    "wintersmith-coffee"
+    "wintersmith-coffee",
+    "./plugins/l10n_data.coffee"
   ],
   "require": {
     "moment": "moment",

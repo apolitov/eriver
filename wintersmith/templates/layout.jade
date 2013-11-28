@@ -6,7 +6,7 @@ doctype
 //if IE 8
   <html class="no-js lt-ie9">
 //[if gt IE 8]><!
-html.no-js
+html.no-js(lang="ru")
   //<![endif]
   head
     meta(name='viewport', content='user-scalable=yes,width=device-width')
@@ -14,26 +14,26 @@ html.no-js
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     title=locals.name
     meta(name='description', content=locals.description)
-    link(rel='stylesheet', href='css/normalize.css')
-    link(rel='stylesheet', href='css/main.css')
+    link(rel='stylesheet', href='/css/normalize.css')
+    link(rel='stylesheet', href='/css/main.css')
     link(rel='stylesheet', href='http://fotorama.s3.amazonaws.com/fotorama.css')
-    block styles
-    script(src='js/vendor/modernizr-2.6.2.min.js')
+    link(rel='stylesheet', href='/css/styles.css')
+    script(src='/js/vendor/modernizr-2.6.2.min.js')
     //- Live reload page (development)
     !{ env.helpers.livereload() }
     //- IE 7-8 CSS 3 support
     //if lt IE 9
-      script(type="text/javascript" src="js/vendor/PIE.js")
+      script(type="text/javascript" src="/js/vendor/PIE.js")
   body
     block content
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
     script.
-      window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
-    script(src='js/vendor/jquery-mousewheel/jquery.mousewheel.js')
-    script(src='js/vendor/jquery-smooth-scroll/jquery.smooth-scroll.min.js')
-    script(src='js/vendor/fotorama-4.4.8/fotorama.js')
-    script(src='js/vendor/jquery.autosize.min.js')
-    script(src='js/plugins.js')
-    script(src='js/main.js')
+      window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.2.min.js"><\/script>')
+    script(src='/js/vendor/jquery-mousewheel/jquery.mousewheel.js')
+    script(src='/js/vendor/jquery-smooth-scroll/jquery.smooth-scroll.min.js')
+    script(src='/js/vendor/fotorama-4.4.8/fotorama.js')
+    script(src='/js/vendor/jquery.autosize.min.js')
+    script(src='/js/plugins.js')
+    script(src='/js/main.js')
     block scripts

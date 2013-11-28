@@ -1,7 +1,7 @@
+- var data = env.helpers.getLocalizedContent(contents, page, 'sections/clients.json')
 section.clients#clients
-    h2 Наши клиенты
+    h2= data.header
     ul
-        - var data = contents.sections['clients.json'].metadata
         //- IMPORTANT
         //- Pipe syntax is used to remove spaces between inline-block element.
         //- <li /> elements are generated as plain html text and their content

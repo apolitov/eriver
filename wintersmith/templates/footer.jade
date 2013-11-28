@@ -4,7 +4,7 @@ footer
     //- <li /> elements are generated as plain html text and their content
     //- has no indendation to preven jaid render error.
 
-    - var data = contents['footer.json'].metadata
+    - var data = env.helpers.getLocalizedContent(contents, page, 'footer.json')
 
     | <article class="contacts">
     h4= data.contacts.header
@@ -21,10 +21,10 @@ footer
     h4= data.feedback.header
     p!= data.feedback.message
     form(method="post")
-        input(type="text", name="email", value="", placeholder="E-mail")
-        input(type="text", name="name", value="", placeholder="Ваше имя")
-        textarea(name="message", placeholder="Сообщение", rows=3)
-        button.clearfix Отправить   
+        input(type="text", name="email", value="", placeholder="#{data.emailPlaceholder}")
+        input(type="text", name="name", value="", placeholder="#{data.namePlaceholder}")
+        textarea(name="message", placeholder="#{data.messagePlaceholder}", rows=3)
+        button.clearfix= data.sendButton   
     | </article
     | ><article class="hire">
     h4= data.job.header

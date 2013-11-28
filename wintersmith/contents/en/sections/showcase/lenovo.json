@@ -1,0 +1,9 @@
+{
+	"template": "sections/showcase/lenovo.jade",
+	"header": "ENG Доступные технологии",
+	"subheader": "ENG LENOVO в social media",
+	"rows":[
+		"30&thinsp;000 фанов в сообществах в VK",
+		"Facebook и Twitter"
+	]
+}

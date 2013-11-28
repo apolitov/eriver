@@ -7,3 +7,4 @@ images_dir = 'contents/img'
 fonts_dir = 'contents/css/fonts'
 relative_assets = true
 line_comments = true
+output_style = :compressed

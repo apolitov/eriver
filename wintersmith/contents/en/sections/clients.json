@@ -1,6 +1,6 @@
 {
 	"template": "sections/clients.jade",
-	"header": "Наши клиенты",
+	"header": "ENG Наши клиенты",
 	"clients": [
 		"d-and-g",
 		"lenovo",

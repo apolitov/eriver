@@ -5,7 +5,7 @@ header#header
         h3.menu-holder
             span.figures-menu
         ul.language
-            - var data = contents['header.json'].metadata
+            - var data = env.helpers.getLocalizedContent(contents, page, 'header.json')
             - var languages = data.languages
             - for (var i=0; i < languages.length; i++) {
             -   var lang = languages[i]

@@ -1,0 +1,35 @@
+{
+	"template": "header.jade",
+	"languages": [
+		{
+			"name": "RUS",
+			"path": "/"
+		},
+		{
+			"name": "ENG",
+			"path": "/en/"
+		}
+	],
+	"navigation": [
+		{
+			"name": "About",
+			"path": "#about"
+		},
+		{
+			"name": "Showcase",
+			"path": "#showcase"
+		},
+		{
+			"name": "Services",
+			"path": "#proficiencies"
+		},
+		{
+			"name": "Clients",
+			"path": "#clients"
+		},
+		{
+			"name": "Feedback",
+			"path": "#feedback"
+		}
+	]
+}

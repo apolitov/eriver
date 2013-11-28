@@ -1,7 +1,7 @@
 section.about#about
 	div.device
 		div.message
-			- var data = contents.sections['about.json'].metadata
+			- var data = env.helpers.getLocalizedContent(contents, page, 'sections/about.json')
 			h2= data.header
 			each paragraph in data.paragraphs
 				p!= paragraph
