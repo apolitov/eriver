@@ -62,7 +62,8 @@ footer {
 	}
 
 	article.contacts {
-		width: $article-contact-width;
+		width: 15%;
+		max-width: $article-contact-width;
 
 		ul {
 			@include no-bullets;
@@ -72,7 +73,8 @@ footer {
 	}
 
 	article.feedback {
-		width: $article-feedback-width;
+		width: 25%;
+		max-width: $article-feedback-width;
 
 		$border-color: #1b3b58;
 
@@ -125,13 +127,15 @@ footer {
 	}
 
 	article.hire {
-		width: $article-hire-width;
+		width: 15%;
+		max-width: $article-hire-width;
 	}
 
 	article.contacts, article.feedback, article.hire {
 		@include respond-to(small-screen) {
 			position: relative;
 			width: 70%;
+			max-width: none;
 		}
 	}
 

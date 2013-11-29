@@ -1,6 +1,18 @@
 @import 'base';
 
 .showcase .lenovo {
+	// Some strange ipad bug with 1px height gap at top of section
+	@include respond-to(small-width) { 
+		margin-top: -1px;
+	}
+
+	// The same problem with iphone but at bottom of section.
+	// Bringing margin and padding reset out of media query doesn't work (why?)
+	@include respond-to(small-screen) { 
+		margin: 0;
+		padding: 0;
+	}
+
 	.promo {
 		@include cover-background('../img/showcase/lenovo/bg.jpg', scroll);
 		height: 75%;
@@ -15,73 +27,12 @@
 	}
 
 	figure {
-		position: absolute;
-		bottom: 40px;
-		right: 50%;
-		margin-right: -20em;
-		white-space: nowrap;
+			@extend %showcase_hero;
 
-		@include respond-to(small-screen) {
-			top: 0;
-			left: $-small-screen-side-offset;
-		}
-
-		img.big-screen {
-			@include inline-block;
-			margin-top: 180px;
-			width: 60%;
-			max-width: 659px;
-
-			@include respond-to(small-screen) {
-				display: none;
-			}
-		}
-
-		img.small-screen {
-			display: none;
-
-			@include respond-to(small-screen) {
-				display: block;
-				margin-bottom: 1em;
-			}
-		}
-
-		figcaption {
-			@include inline-block;
-			margin: 230px 0 0 30px;
-
-			@include respond-to(small-screen) {
-				margin: 0;
-			}
-
-			h3 {
-				@include PFSquareFont('Regular');
-				@include section-header(#f5f5f5, $dark-blue, 'none');
-				font-size: 2.4em;
-
-				@include respond-to(small-screen) {
-					font-size: 1.7em;
+			img.big-screen {
+				@include respond-to(small-width) {
+					width: 40%;
 				}
 			}
-
-			p {
-				margin: 0.3em 0 0 0;
-
-				span {
-					@include PFSquareFont('Regular');					
-					padding: 0.3em 0.3em 0 0.3em;
-					font-size: 1.2em;
-					color: $dark-blue;
-					background-color: #f6f6f6;
-
-					&.highlighted {
-						@include PFSquareFont('Medium');						
-						color: white;
-						background-color: #2da4dd;
-					}
-				}
-			}
-		}
-
 	}
 }

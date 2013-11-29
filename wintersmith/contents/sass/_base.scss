@@ -170,12 +170,15 @@ $break-small-height: 800px;
 
 @mixin respond-to($media) {
   @if $media == small-screen {
-    @media only screen and (max-width: $break-small)
+    @media only screen and (orientation: portrait)
 		{ @content; }
   }
   @if $media == small-height {
   	@media only screen and (max-height: $break-small-height) { @content; }	
   }
+  @if $media == small-width {
+  	@media only screen and (max-height: $break-small) { @content; }	
+  }  
 }
 
 // Fixes IE transparency bug
@@ -192,7 +195,7 @@ a {
 	text-decoration: none;
 }
 
-$min-width: 1136px;
+$min-width: 1024px;
 $small-screen-min-width: 640px;
 
 html, body {

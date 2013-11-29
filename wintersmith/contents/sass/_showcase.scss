@@ -10,6 +10,7 @@ section.showcase {
 	min-height: $min-showcase-height;
 	max-height: $max-height;
 	overflow: hidden;
+	background-color: white;
 
 	@include respond-to(small-screen) { 
 		max-height: none;
@@ -17,6 +18,7 @@ section.showcase {
 	}
 
 	> div {
+		min-height: $min-showcase-height;
 		height: 100%;
 	}
 
@@ -28,6 +30,7 @@ section.showcase {
 			height: $height-small;
 		}
 	}
+
 
 	// Fotorama carousel specific styles
 	$dot-diameter: 16px;
@@ -70,6 +73,95 @@ section.showcase {
 	}
 
 	.fotorama__stage {
+		min-height: $min-showcase-height;
 		height: 100%;
 	}
+}
+
+
+// Hero unit with brand logo, display image, header and subheader
+%showcase_hero {
+	position: absolute;
+	bottom: 40px;
+	right: 50%;
+	margin-right: -20em;
+	white-space: nowrap;
+
+	@include respond-to(small-width) {
+		right: auto;
+		left: auto;
+		margin-right: 0;
+	}
+
+	@include respond-to(small-screen) {
+		top: 0;
+		left: $-small-screen-side-offset;
+	}
+
+	img.big-screen {
+		@include inline-block;
+		margin-top: 180px;
+		width: 60%;
+		max-width: 659px;
+
+		@include respond-to(small-width) {
+			margin-top: 180px;
+			width: 45%;
+		}
+
+		@include respond-to(small-screen) {
+			display: none;
+		}
+	}
+
+	img.small-screen {
+		display: none;
+
+		@include respond-to(small-screen) {
+			display: block;
+			margin-bottom: 1em;
+		}
+	}
+
+	figcaption {
+		@include inline-block;
+		margin: 230px 0 0 30px;
+
+		@include respond-to(small-height) {
+			margin-top: 100px;
+		}
+
+		@include respond-to(small-screen) {
+			margin: 0;
+		}
+
+		h3 {
+			@include PFSquareFont('Regular');
+			@include section-header(#f5f5f5, $dark-blue, 'none');
+			font-size: 2.4em;
+
+			@include respond-to(small-screen) {
+				font-size: 1.7em;
+			}
+		}
+
+		p {
+			margin: 0.3em 0 0 0;
+
+			span {
+				@include PFSquareFont('Regular');					
+				padding: 0.3em 0.3em 0 0.3em;
+				font-size: 1.2em;
+				color: $dark-blue;
+				background-color: #f6f6f6;
+
+				&.highlighted {
+					@include PFSquareFont('Medium');						
+					color: white;
+					background-color: #2da4dd;
+				}
+			}
+		}
+	}
+
 }

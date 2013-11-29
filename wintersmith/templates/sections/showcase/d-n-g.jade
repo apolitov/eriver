@@ -1,0 +1,13 @@
+article.showcase-item.d-n-g
+	div.promo
+	figure
+		img.big-screen(src="/img/showcase/d-n-g/display.png", alt="Dolce Gabanna")
+		img.small-screen(src="/img/showcase/d-n-g/logo.png", alt="Dolce Gabanna")
+		figcaption
+			- var data = env.helpers.getLocalizedContent(contents, page, 'sections/showcase/d-n-g.json')
+			h3= data.header
+			p
+				span.highlighted= data.subheader
+			each row in data.rows
+				p 
+					span!= row

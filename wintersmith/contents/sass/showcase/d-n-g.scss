@@ -1,0 +1,20 @@
+@import 'base';
+
+.showcase .d-n-g {
+	.promo {
+		@include cover-background('../img/showcase/d-n-g/bg.jpg', scroll);
+		height: 75%;
+		max-height: $min-showcase-height;
+
+		@include respond-to(small-screen) { 
+			height: 100%;
+			max-height: none;
+			@include cover-background('../img/showcase/d-n-g/bg_small.jpg', scroll);
+			background-position: right 50%;
+		}
+	}
+
+	figure {
+		@extend %showcase_hero;
+	}
+}

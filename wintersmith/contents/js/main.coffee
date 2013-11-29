@@ -5,6 +5,9 @@ $(document).ready ->
         setParallax $('.welcome').height()
         spyNavAnchors viewportHeight
     setSmoothScroll()
+    $('.fotorama').fotorama()
+    $(window).on 'orientationchange', ->
+        $(window).trigger('resize')
     # Set feedback textarea authoheight
     $('textarea').autosize()
     # Replace blocks at footer
@@ -29,7 +32,7 @@ $(document).ready ->
 
 
 $(window).resize ->
-    viewportHeight = $(window).height()
+    viewportHeight = window.innerHeight
     setWelcomeHeight viewportHeight
     if not touchDevice()
         setParallax $('.welcome').height()
@@ -253,7 +256,7 @@ swapFooterBlocks = ->
         return
 
     # swap footer block only for mobile media query
-    breakpoint = $('footer > article').first().width() > ($(window).width() / 2)
+    breakpoint = $(".figures-menu").is(":visible")
 
     hireBlock = $('footer .hire')
     feedbackBlock = $('footer .feedback')

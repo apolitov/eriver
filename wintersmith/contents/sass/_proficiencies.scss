@@ -34,6 +34,7 @@ section.proficiencies {
 		$item-width: 320px;
 		$item-margin: 50px;
 		$narrow-screen-breakpoint: 1250px;
+		$narrow-item-width: 280px;
 		$narrow-item-margin: 20px;
 		@include inline-block-list-container;
 		display: block;
@@ -45,7 +46,7 @@ section.proficiencies {
 
 		// Hack to keep 3 column on low-res desktop screen
 		@media only screen and (max-width: $narrow-screen-breakpoint) {
-			max-width: 3 * ($item-width + $narrow-item-margin);
+			max-width: 3 * ($narrow-item-width + $narrow-item-margin);
 		}
 
 		@include respond-to(small-screen) {
@@ -68,6 +69,7 @@ section.proficiencies {
 
 			// Hack to keep 3 column on low-res desktop screen
 			@media only screen and (max-width: $narrow-screen-breakpoint) {
+				width: $narrow-item-width;
 				margin: 0 0 $narrow-item-margin $narrow-item-margin;
 			}
 
