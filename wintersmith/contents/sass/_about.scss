@@ -63,6 +63,10 @@ section.about {
 			@include respond-to(small-screen) {
 				margin: 0 0 1.9em 0;
 			}
+
+			@include respond-to(old-handheld) {
+				font-family: sans-serif; // mobile browser sometimes does not display &shy;
+			}
 		}
 	}
 }

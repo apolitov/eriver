@@ -1,6 +1,8 @@
 $(document).ready ->
     viewportHeight = window.innerHeight
-    setWelcomeHeight viewportHeight
+    # Set scale for smallest screens
+    screenScale = setInitialScale()
+    setWelcomeHeight viewportHeight, screenScale
     if not touchDevice()
         setParallax $('.welcome').height()
         spyNavAnchors viewportHeight
@@ -33,7 +35,9 @@ $(document).ready ->
 
 $(window).resize ->
     viewportHeight = window.innerHeight
-    setWelcomeHeight viewportHeight
+    # Set scale for smallest screens
+    screenScale = setInitialScale()
+    setWelcomeHeight viewportHeight, screenScale
     if not touchDevice()
         setParallax $('.welcome').height()
         spyNavAnchors viewportHeight
@@ -43,7 +47,20 @@ $(window).resize ->
     # Use plugin to authoheight feedback textarea
     $('textarea').autosize()
     # Replace blocks at footer
-    swapFooterBlocks()
+    swapFooterBlocks() 
+
+
+
+# Changes meta tag attribute initial scale to fit site on small screens.
+# Returns scale
+setInitialScale = ->
+    minWidth = parseInt($('body').css('min-width'))
+    viewportWidth = window.innerWidth
+    scale = 1.0
+    if minWidth? and viewportWidth < minWidth
+        scale = viewportWidth / minWidth
+        $("meta[name=viewport]").attr("content", "'user-scalable=yes, maximum-scale=" + scale + ", initial-scale=" + scale + ", width=device-width")
+    return scale
 
 
 setCollapsableContainers = ($containers) ->
@@ -224,13 +241,13 @@ setSmoothScroll = ->
         return false;
 
 
-setWelcomeHeight = (viewportHeight)->
+setWelcomeHeight = (viewportHeight, scale)->
     # Make welcome screen occupy full height
     welcomeScreen = $('body > .welcome')
     defaultMinHeight = parseInt( welcomeScreen.css('min-height') );
     if viewportHeight > defaultMinHeight
         headerHeight = $('header').height()
-        welcomeScreen.css('height', viewportHeight - headerHeight)
+        welcomeScreen.css('height', (viewportHeight/scale - headerHeight))
 
 
 # Sets selector element position in dependence of window scroll

@@ -167,6 +167,7 @@ $brands-sprite-dimensions: true;
 // Manages media queries breakpoints
 $break-small: 1136px;
 $break-small-height: 800px;
+$smallest-possible-width: 480px;
 
 @mixin respond-to($media) {
   @if $media == small-screen {
@@ -177,8 +178,11 @@ $break-small-height: 800px;
   	@media only screen and (max-height: $break-small-height) { @content; }	
   }
   @if $media == small-width {
-  	@media only screen and (max-height: $break-small) { @content; }	
-  }  
+  	@media only screen and (max-width: $break-small) { @content; }	
+  }
+  @if $media == old-handheld {
+  	@media only screen and (max-width: $smallest-possible-width) { @content; }
+  }
 }
 
 // Fixes IE transparency bug
@@ -195,19 +199,22 @@ a {
 	text-decoration: none;
 }
 
-$min-width: 1024px;
-$small-screen-min-width: 640px;
-
 html, body {
 	height: 100%;
 }
+
+$min-width: 1024px;
 
 body {
 	@include PFSquareFont("Regular");
 	min-width: $min-width;
 	@include respond-to(small-screen) {
 		font-size: 1.5em;
-		min-width: $small-screen-min-width;
+		min-width: $smallest-possible-width;
+	}
+	@include respond-to(old-handheld) {
+		font-size: 1rem;
+		min-width: none;
 	}
 }
 

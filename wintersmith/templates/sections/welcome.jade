@@ -1,6 +1,6 @@
 section.welcome#welcome
 	div.hero
-		div.logo
+		img.logo(src="img/logo/logo-big.png", alt="electric river")
 		div.message
 			- var rows = env.helpers.getLocalizedContent(contents, page, 'sections/welcome.json').rows
 			- for (var i=0; i <= rows.length; i++) {

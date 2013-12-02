@@ -155,10 +155,18 @@ section.showcase {
 				color: $dark-blue;
 				background-color: #f6f6f6;
 
+				@include respond-to(old-handheld) {
+					font-family: sans-serif; // mobile browser sometimes does not display &shy;
+				}
+
 				&.highlighted {
 					@include PFSquareFont('Medium');						
 					color: white;
 					background-color: #2da4dd;
+
+					@include respond-to(old-handheld) {
+						font-family: sans-serif; // mobile browser sometimes does not display &shy;
+					}
 				}
 			}
 		}

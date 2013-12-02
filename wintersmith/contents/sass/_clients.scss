@@ -44,6 +44,11 @@ section.clients {
 			width: $element-width;
 			text-align: center;
 
+			@include respond-to(old-handheld) {
+				margin-left: $element-margin/2;
+				margin-right: $element-margin/2;
+			}
+
 			span {
 				@include inline-block;
 			}

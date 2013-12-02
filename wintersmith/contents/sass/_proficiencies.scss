@@ -101,22 +101,18 @@ section.proficiencies {
 						background-image: sprite-url($figures-small-sprites);
 						position: relative;
 						margin: 0 1em 0em 2em;
-						vertical-align: bottom;
 					}
 
 					&.figures-item-dialog {
 						@include figures-small-sprite(item-dialog);
-						margin-top: (- figures-small-sprite-height(item-dialog)/2);
 					}
 
 					&.figures-item-devices {
 						@include figures-small-sprite(item-devices);
-						margin-top: (- figures-small-sprite-height(item-devices)/2);
 					}
 
 					&.figures-item-cube {
 						@include figures-small-sprite(item-cube);
-						margin-top: (- figures-small-sprite-height(item-cube)/2);
 					}
 				}
 			}
@@ -128,9 +124,10 @@ section.proficiencies {
 				@include respond-to(small-screen) {
 					display: block;
 					position: relative;
-					padding: 1.7em 2em 1.7em 0;
+					padding: 0.7em 2em 0.7em 0;
 					color: $dark-blue;
 					margin: 0;
+					line-height: 2em;
 				}
 			}
 
@@ -141,6 +138,7 @@ section.proficiencies {
 					@include clearfix;
 					font-weight: normal;
 					color: #fff;
+					white-space: nowrap;
 
 					&.creative {
 						background: #39546f;
