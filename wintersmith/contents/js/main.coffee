@@ -3,13 +3,11 @@ $(document).ready ->
     # Set scale for smallest screens
     screenScale = setInitialScale()
     setWelcomeHeight viewportHeight, screenScale
+    setParallax $('.welcome').height()
     if not touchDevice()
-        setParallax $('.welcome').height()
         spyNavAnchors viewportHeight
     setSmoothScroll()
     $('.fotorama').fotorama()
-    $(window).on 'orientationchange', ->
-        $(window).trigger('resize')
     # Set feedback textarea authoheight
     $('textarea').autosize()
     # Replace blocks at footer
@@ -38,8 +36,8 @@ $(window).resize ->
     # Set scale for smallest screens
     screenScale = setInitialScale()
     setWelcomeHeight viewportHeight, screenScale
+    setParallax $('.welcome').height()
     if not touchDevice()
-        setParallax $('.welcome').height()
         spyNavAnchors viewportHeight
     setSmoothScroll()
     # Reinitialize fotorama gallery
@@ -60,6 +58,9 @@ setInitialScale = ->
     if minWidth? and viewportWidth < minWidth
         scale = viewportWidth / minWidth
         $("meta[name=viewport]").attr("content", "'user-scalable=yes, maximum-scale=" + scale + ", initial-scale=" + scale + ", width=device-width")
+        # old ipad bug with empty space at side
+        if $(document).width() >  $('body').width()
+            $("meta[name=viewport]").attr("content", "'user-scalable=no, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, width=device-width")
     return scale
 
 
@@ -88,13 +89,15 @@ setCollapsableContainers = ($containers) ->
 setParallax = (max_distance) ->
     $(document).off 'scroll.bubbleParallax touchmove.bubbleParallax'
     back = ".welcome .bubbles .back"
-    focused = ".welcome .bubbles .focused"
-    front = ".welcome .bubbles .front"
-    $(back + ', ' + focused + ', ' + front).css
+    middle = ".welcome .bubbles .middle"
+    frontBig = ".welcome .bubbles .front-big"
+    frontSmall = ".welcome .bubbles .front-small"
+    $([back, middle, frontBig, frontSmall].join(', ')).css
         bottom: 0
     bubbleParallax(back, 0.2, max_distance)
-    bubbleParallax(focused, 0.5, max_distance)
-    bubbleParallax(front, 1.5, max_distance)    
+    bubbleParallax(middle, 0.5, max_distance)
+    bubbleParallax(frontBig, 1.1, max_distance)
+    bubbleParallax(frontSmall, 1.5, max_distance)
 
 
 getBottomScrollLimit = ->
@@ -171,9 +174,11 @@ setSmoothScroll = ->
             # move bubbles up
             $('.bubbles .back').css
                 bottom: $(window).height() * 0.2
-            $('.bubbles .front').css
+            $('.bubbles .middle').css
                 bottom: $(window).height() * 0.5
-            $('.bubbles .focused').css
+            $('.bubbles .front-big').css
+                bottom: $(window).height() * 1.1
+            $('.bubbles .front-small').css
                 bottom: $(window).height() * 1.5
             # scroll to destianation
             setTimeout ->
@@ -212,11 +217,16 @@ setSmoothScroll = ->
         if not inProgress
             top = $(this).scrollTop()
 
+    hero = $("#welcome .hero")
+    timeoutHandler = null
+
     $body.on 'mousewheel.smoothScroll', (event) ->
         if not inProgress
             # we may need to recalculate scroll limit in case some div height has changed
             # (it'll mostly be feedback form)
             scrollLimit = getBottomScrollLimit()
+            # Hide scroll down button at welcome screen
+            $("#welcome .scroll-down").addClass('scrolled')
 
         inProgress = true
 
@@ -237,17 +247,25 @@ setSmoothScroll = ->
             'linear'                    # easing type
             ->                          # callback
                 inProgress = false
+                # Smoothly reveal scroll down button at welcome screen
+                clearTimeout(timeoutHandler);
+                timeoutHandler = setTimeout -> 
+                    $("#welcome .scroll-down").removeClass('scrolled')
+                , 1000
 
         return false;
 
 
 setWelcomeHeight = (viewportHeight, scale)->
     # Make welcome screen occupy full height
+    multiplier = 2 # times the welcome section exceed viewport height
+    if touchDevice()
+        multiplier = 1
     welcomeScreen = $('body > .welcome')
     defaultMinHeight = parseInt( welcomeScreen.css('min-height') );
     if viewportHeight > defaultMinHeight
         headerHeight = $('header').height()
-        welcomeScreen.css('height', (viewportHeight/scale - headerHeight))
+        welcomeScreen.css('height', (viewportHeight/scale - headerHeight) * multiplier)
 
 
 # Sets selector element position in dependence of window scroll

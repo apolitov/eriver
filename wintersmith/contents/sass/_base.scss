@@ -204,6 +204,7 @@ html, body {
 }
 
 $min-width: 1024px;
+$section-z-index: 10;
 
 body {
 	@include PFSquareFont("Regular");
@@ -215,6 +216,12 @@ body {
 	@include respond-to(old-handheld) {
 		font-size: 1rem;
 		min-width: none;
+	}
+
+	// Required for welcome screen fixed position logo fade
+	> section {
+		position: relative;
+		z-index: $section-z-index;
 	}
 }
 

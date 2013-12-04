@@ -8,10 +8,10 @@ section.welcome {
 	width: 100%;
 	min-height: 800px;
 	text-align: center;
-
+	z-index: $section-z-index - 7;
 
 	@include respond-to(small-height) {
-		min-height: 500px;	
+		min-height: 500px;
 	}
 
 	@include respond-to(small-screen) { 
@@ -24,17 +24,19 @@ section.welcome {
 
 	.hero {
 		width: 100%;
-		position: absolute;
+		position: fixed;
 		left: 0;
 		bottom: 2*$gap;
-		z-index: 20;
+		z-index: $section-z-index - 1;
 
 		@include respond-to(small-screen) { 
+			position: absolute;
 			bottom: $gap/2;
 		}
 
 		@include respond-to(small-height) {
-			bottom: $gap/2;	
+			position: absolute;
+			bottom: $gap/2;
 		}
 	}
 
@@ -80,12 +82,18 @@ section.welcome {
 
 	.scroll-down {
 		@include inline-block;
+		@include transition(all 2s ease-out 0);
 		width: 71px;
 		height: 111px;
+
+		&.scrolled {
+			@include opacity(0);
+			@include transition(all 1s ease-out 0);
+		}
 	}
 
 	.bubbles {
-		z-index: 10;
+		z-index: $section-z-index - 6;
 		overflow: hidden;
 
 		&, > div {
@@ -108,7 +116,7 @@ section.welcome {
 			right: -5%;
 		}
 
-		.back, .front, .focused{
+		.back, .front-big, .front-small, .middle{
 			@include transition(bottom 1.0s ease-out);
 			@include hardware-acceleration;
 
@@ -118,7 +126,7 @@ section.welcome {
 		}
 
 		.back {
-			z-index: 11;
+			z-index: $section-z-index - 5;
 			bottom: 0;
 
 			img {
@@ -126,28 +134,25 @@ section.welcome {
 			}
 		}
 
-
-		.focused {
-			z-index: 12;
-
-			.left {
-			}
-
-			.right {
-			}
+		.middle {
+			z-index: $section-z-index - 4;
 		}
 
-		.front {
-			z-index: 13;
+		.front-big {
+			z-index: $section-z-index - 3;
+		}
 
-			.left {
-			}
-
-			.right {
-			}
+		.front-small {
+			z-index: $section-z-index - 2;
 		}
 	}
 }
+
+
+html.touch section.welcome .hero {
+	position: absolute;
+}
+
 
 html.lt-ie9 section.welcome {
 	margin-top: 0px;

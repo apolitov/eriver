@@ -8,6 +8,7 @@ $delimeter-height: 20px;
 	height: $delimeter-height;
 	margin-top: (-$delimeter-height);
 	background: url("../img/backgrounds/bg-curve-gray.png") repeat-x;
+	z-index: $section-z-index;
 
 	@include respond-to(small-screen) {
 		display: none;

@@ -1,6 +1,6 @@
 section.welcome#welcome
 	div.hero
-		img.logo(src="img/logo/logo-big.png", alt="electric river")
+		img.logo(src="#{rootElement}img/logo/logo-big.png", alt="electric river")
 		div.message
 			- var rows = env.helpers.getLocalizedContent(contents, page, 'sections/welcome.json').rows
 			- for (var i=0; i <= rows.length; i++) {
@@ -9,11 +9,14 @@ section.welcome#welcome
 		a.scroll-down.figures-arrow-down-with-hole(href='#showcase')
 	div.bubbles
 		div.back
-			img(src="/img/bubbles/back-left.png", class="left", alt="Bubbles");
-			img(src="/img/bubbles/back-right.png" class="right", alt="Bubbles");
-		div.focused
-			img(src="/img/bubbles/focus-left.png", class="left", alt="Bubbles");
-			img(src="/img/bubbles/focus-right.png" class="right", alt="Bubbles");
-		div.front
-			img(src="/img/bubbles/front-left.png", class="left", alt="Bubbles");
-			img(src="/img/bubbles/front-right.png" class="right", alt="Bubbles");
+			img(src="#{rootElement}img/bubbles/back-left.png", class="left", alt="Bubbles");
+			img(src="#{rootElement}img/bubbles/back-right.png" class="right", alt="Bubbles");
+		div.middle
+			img(src="#{rootElement}img/bubbles/middle-left.png", class="left", alt="Bubbles");
+			img(src="#{rootElement}img/bubbles/middle-right.png" class="right", alt="Bubbles");
+		div.front-big
+			img(src="#{rootElement}img/bubbles/front-big-left.png", class="left", alt="Bubbles");
+			img(src="#{rootElement}img/bubbles/front-big-right.png" class="right", alt="Bubbles");
+		div.front-small
+			img(src="#{rootElement}img/bubbles/front-mini-left.png", class="left", alt="Bubbles");
+			img(src="#{rootElement}img/bubbles/front-mini-right.png" class="right", alt="Bubbles");
