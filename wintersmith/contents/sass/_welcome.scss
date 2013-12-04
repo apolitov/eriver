@@ -35,7 +35,6 @@ section.welcome {
 		}
 
 		@include respond-to(small-height) {
-			position: absolute;
 			bottom: $gap/2;
 		}
 	}
