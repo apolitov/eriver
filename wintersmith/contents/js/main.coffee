@@ -35,7 +35,7 @@ $(window).resize ->
     viewportHeight = window.innerHeight
     # Set scale for smallest screens
     screenScale = setInitialScale()
-    setWelcomeHeight viewportHeight, screenScale
+    setWelcomeHeight viewportHeight, 1
     setParallax $('.welcome').height()
     if not touchDevice()
         spyNavAnchors viewportHeight

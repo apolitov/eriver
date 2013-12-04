@@ -81,13 +81,16 @@ section.welcome {
 
 	.scroll-down {
 		@include inline-block;
+		@include opacity(1);
 		@include transition(all 2s ease-out 0);
+		-moz-transition: 1s ease-in-out;
 		width: 71px;
 		height: 111px;
 
 		&.scrolled {
 			@include opacity(0);
 			@include transition(all 1s ease-out 0);
+			-moz-transition: 1s ease-in-out;
 		}
 	}
 

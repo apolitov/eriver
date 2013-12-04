@@ -3,7 +3,7 @@
 $light-gray: #f5f5f5;
 
 section.about {
-	@include cover-background('../img/backgrounds/bg-lab.jpg', fixed);
+	@include cover-background('../img/backgrounds/bg-lab.jpg', scroll);
 	padding-top: 50px;
 	overflow: hidden;
 
