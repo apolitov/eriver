@@ -214,16 +214,11 @@ setSmoothScroll = function() {
   }
   return $body.on('mousewheel.smoothScroll', function(event) {
     var delta, scrollLimit;
-    $body.on('MozMousePixelScroll', function() {
-      $body.off('mousewheel.smoothScroll');
-      return console.log('aaaaaaa');
-    });
     if (!inProgress) {
       scrollLimit = getBottomScrollLimit();
       $("#welcome .scroll-down").addClass('scrolled');
     }
     inProgress = true;
-    console.log(event);
     delta = event.deltaFactor * event.deltaY;
     top -= delta;
     if (top > scrollLimit) {

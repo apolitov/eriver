@@ -228,10 +228,6 @@ setSmoothScroll = ->
         return
 
     $body.on 'mousewheel.smoothScroll', (event) ->
-        $body.on 'MozMousePixelScroll', ->
-            $body.off 'mousewheel.smoothScroll'
-            console.log('aaaaaaa')
-
         if not inProgress
             # we may need to recalculate scroll limit in case some div height has changed
             # (it'll mostly be feedback form)
@@ -243,7 +239,6 @@ setSmoothScroll = ->
 
         # event.deltaY is the scroll direction
         # ('1' value is up and '-1' is down)
-        console.log(event)
         delta = event.deltaFactor * event.deltaY
 
         top -= delta;
