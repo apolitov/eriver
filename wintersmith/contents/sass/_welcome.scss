@@ -165,4 +165,14 @@ html.touch section.welcome .hero {
 html.lt-ie9 section.welcome {
 	margin-top: 0px;
 	margin-bottom: -1px;
+
+	.hero {
+		position: absolute;
+		bottom: 1em;
+	}
+
+	// does not work in ie at all
+	.bubbles {
+		display: none
+	}
 }

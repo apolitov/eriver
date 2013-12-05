@@ -145,6 +145,9 @@ spyNavAnchors = (window_height) ->
 
 
 setSmoothScroll = ->
+    if ieBrowser()
+        return
+
     # Init smooth scrolling for anchor links
     $header = $('header');
     smoothScrollOffset = 0;
@@ -209,7 +212,6 @@ setSmoothScroll = ->
     inProgress = false
 
     # Some magic number (feel free to change)
-    step = 300
     animationTime = 150
     top = $(this).scrollTop()
 
@@ -220,7 +222,16 @@ setSmoothScroll = ->
     hero = $("#welcome .hero")
     timeoutHandler = null
 
+
+    # no smooth scrolling through page is required for Firefox
+    if firefox()
+        return
+
     $body.on 'mousewheel.smoothScroll', (event) ->
+        $body.on 'MozMousePixelScroll', ->
+            $body.off 'mousewheel.smoothScroll'
+            console.log('aaaaaaa')
+
         if not inProgress
             # we may need to recalculate scroll limit in case some div height has changed
             # (it'll mostly be feedback form)
@@ -232,7 +243,8 @@ setSmoothScroll = ->
 
         # event.deltaY is the scroll direction
         # ('1' value is up and '-1' is down)
-        delta = step * event.deltaY
+        console.log(event)
+        delta = event.deltaFactor * event.deltaY
 
         top -= delta;
 
@@ -259,7 +271,7 @@ setSmoothScroll = ->
 setWelcomeHeight = (viewportHeight, scale)->
     # Make welcome screen occupy full height
     multiplier = 2 # times the welcome section exceed viewport height
-    if touchDevice()
+    if touchDevice() or ieBrowser()
         multiplier = 1
     welcomeScreen = $('body > .welcome')
     defaultMinHeight = parseInt( welcomeScreen.css('min-height') );
@@ -307,6 +319,10 @@ swapFooterBlocks = ->
     else
         feedbackBlock.after(hireBlockHtml)
     hireBlock.unwrap().remove()
+
+
+firefox = ->
+    navigator.userAgent.toLowerCase().indexOf('firefox') > -1
 
 
 ieBrowser = ->
