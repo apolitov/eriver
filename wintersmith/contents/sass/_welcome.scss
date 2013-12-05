@@ -30,7 +30,6 @@ section.welcome {
 		z-index: $section-z-index - 1;
 
 		@include respond-to(small-screen) { 
-			position: absolute;
 			bottom: $gap/2;
 		}
 
@@ -150,6 +149,13 @@ section.welcome {
 	}
 }
 
+
+html.no-touch section.welcome .hero {
+	@media only screen and (max-height: 550px) {
+		top: $top-menu-height * 1.5;
+		padding-top: 1em;
+	}
+}
 
 html.touch section.welcome .hero {
 	position: absolute;
