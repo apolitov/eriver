@@ -1,8 +1,9 @@
 <?php
 	$destination = "vk@eriv.ru";
-	$topic = "eriver feedback form";
 	$message = $_REQUEST['message'];
 	$email = $_REQUEST['email'];
+	$name = $_REQUEST['name'];
+	$topic = "eriver feedback form from: ".$name;	
 	$headers = "From: ".$email;
 	$redirect_to = $_REQUEST['location'];
 
