@@ -29,6 +29,8 @@ $(document).ready ->
         $('.fotorama').on 'fotorama:showend', (e, fotorama, extra) ->
             $('.fotorama__dot').each ->
                 PIE.attach(this)
+    # Save current location to mail submit form
+    $("#feedback form input[name='location']").attr "value", $(location).attr 'href'
 
 
 $(window).resize ->

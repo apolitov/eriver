@@ -20,11 +20,12 @@ footer
     | ><article class="feedback" id="feedback">
     h4= data.feedback.header
     p!= data.feedback.message
-    form(method="post")
+    form(method="post", action="sendmail.php")
         input(type="text", name="email", value="", placeholder="#{data.emailPlaceholder}")
         input(type="text", name="name", value="", placeholder="#{data.namePlaceholder}")
         textarea(name="message", placeholder="#{data.messagePlaceholder}", rows=3)
-        button.clearfix= data.sendButton   
+        input(type="hidden", name="location", value="")
+        button.clearfix(type="submit")= data.sendButton
     | </article
     | ><article class="hire">
     h4= data.job.header
