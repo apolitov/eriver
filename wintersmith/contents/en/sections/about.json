@@ -1,9 +1,9 @@
 {
 	"template": "sections/about.jade",
-	"header": "ENG О компании",
+	"header": "ABOUT AGENCY",
 	"paragraphs": [
-		"<strong>#electricriver</strong> — полносервисное digital а&shy;гент&shy;ство нового по&shy;ко&shy;ле&shy;ния с&nbsp;фо&shy;ку&shy;сом на social media. Мы создаем продукты, по&shy;мо&shy;га&shy;ющие брен&shy;дам пос&shy;то&shy;ян&shy;но впечатлять свою аудиторию и быть на вер&shy;ши&shy;не циф&shy;ро&shy;во&shy;го ми&shy;ра и мира социальных сетей.",
-		"<strong>#electricriver</strong> — это команда профессионалов, объединяющая в се&shy;бе про&shy;дю&shy;сер&shy;ов, кре&shy;а&shy;то&shy;ров, комьюнити-менеджеров, ко&shy;пи&shy;рай&shy;те&shy;ров, раз&shy;ра&shy;бот&shy;чи&shy;ков, стратегов и аналитиков для соз&shy;да&shy;ния луч&shy;ших про&shy;ек&shy;тов для smm и digital рынка.",
-		"<strong>Наша миссия:</strong> соз&shy;да&shy;вать эф&shy;фек&shy;тив&shy;ные ин&shy;тер&shy;ак&shy;тив&shy;ные ак&shy;ти&shy;ва&shy;ции, пре&shy;дос&shy;тав&shy;лять качественный сервис для наших клиентов и быть прос&shy;то хо&shy;ро&shy;ши&shy;ми людь&shy;ми."
+		"<strong>#electricriver</strong> — next genegation full service digital agency with focus on social media. We based in Moscow (Russia). We create social media products and services that help brands always impress their audience and to be on the top of our digital and social media world.",
+		"<strong>#electricriver</strong> — is a professional team that brings together producers, creators, community managers, copywriters, developers, strategists and analysts to create the best projects for social media and digital market.",
+		"<strong>Our mission:</strong> make awesome interactive activations, give a quality service to our clients, and just be good people."
 	]
 }

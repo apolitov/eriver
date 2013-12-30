@@ -1,9 +1,9 @@
 {
 	"template": "sections/showcase/d-n-g.jade",
-	"header": "ENG Больше чем мода",
-	"subheader": "DOLCE&GABBANA в social media",
+	"header": "More than fashion",
+	"subheader": "DOLCE&GABBANA in russian social media",
 	"rows":[
-		"300&thinsp;000 фанов в сообществах в VK",
-		"Facebook и OK"
+		"more than 300k fans on VK, Odnoklassniki and",
+		"LiveJournal brand pages"
 	]
 }

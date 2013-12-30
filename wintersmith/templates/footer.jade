@@ -10,19 +10,19 @@ footer
     h4= data.contacts.header
     address
         p!= data.contacts.address
-        p!= data.contacts.phone
+        - if (data.contacts.phone)
+            p!= data.contacts.phone
         ul
             each email in data.contacts.emails
-                li
-                    a(href="mailto:#{email}")
-                    | #{email}
+                li!= email
     | </article
     | ><article class="feedback" id="feedback">
     h4= data.feedback.header
     p!= data.feedback.message
     form(method="post", action="sendmail.php")
-        input(type="text", name="email", value="", placeholder="#{data.emailPlaceholder}")
         input(type="text", name="name", value="", placeholder="#{data.namePlaceholder}")
+        input(type="tel", name="tel", value="", id="phoneNum", placeholder="#{data.telPlaceholder}")
+        input(type="email", name="email", value="", placeholder="#{data.emailPlaceholder}")
         textarea(name="message", placeholder="#{data.messagePlaceholder}", rows=3)
         input(type="hidden", name="location", value="")
         button.clearfix(type="submit")= data.sendButton
@@ -30,5 +30,7 @@ footer
     | ><article class="hire">
     h4= data.job.header
     p!= data.job.message
+    - if (data.job.email)
+        p!= data.job.email
     | </article>
     a.figures-scroll-up(href="#welcome")

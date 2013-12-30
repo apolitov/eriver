@@ -1,99 +1,99 @@
 {
 	"template": "sections/proficiencies.jade",
-	"header": "ENG Что мы делаем",
+	"header": "OUR EXPERTISE",
 	"proficiencies": [
 		{
-			"name": "Креатив и стратегии",
+			"name": "CREATIVE AND STRATEGIES",
 			"class": "creative",
 			"icon" : "figures-item-cube",
 			"mobile": true,
 			"items": [
-				"Social media стратегии",
-				"Digital стратегии",
-				"Mobile стратегии",
-				"Креативные концепции",
-				"Концепции сообществ бренда",
-				"Social media гайдлайны",
-				"Вирусные компании",
-				"Кампании в геолокационных сервисах"
+				"Social media strategy",
+				"Digital strategy",
+				"Mobile strategy",
+				"Creative concepts",
+				"Brand pages concepts",
+				"Social media guidelines",
+				"Viral campaigns",
+				"Geolocation services campaigns"
 			]
 		},
 		{
-			"name": "Ведение каналов бренда",
+			"name": "BRAND PAGES IN SOCIAL MEDIA",
 			"icon" : "figures-item-pencil",
 			"mobile": false,
 			"items": [
-				"Ведение каналов бренда",
-				"Комьюнити-менеджмент",
-				"Проведение промо-активностей",
-				"Проведение конкурсов и акций",
-				"BTL поддержка"
+				"Content for brand pages",
+				"Community management",
+				"Conducting promotional activities",
+				"Holding competitions and promotions",
+				"BTL support"
 			]
 		},
 		{
-			"name": "Продвижение",
+			"name": "PROMOTION",
 			"icon" : "figures-item-plane",
 			"mobile": false,
 			"items": [
-				"Таргетированная реклама",
+				"Social target advertising",
 				"Rich-media ads",
-				"Размещения в сообществах и блогах",
-				"Брендинг сообществ",
-				"Брендированные интеграции в приложения",
-				"Спонсорство",
-				"Офферные системы",
-				"Работа с opinion-leaders"
+				"Brand placement in communities and blogs",
+				"Popular communities branding",
+				"Branded integration into applications",
+				"Sponsorship",
+				"Deals systems",
+				"Working with opinion-leaders"
 			]
 		},
 		{
-			"name": "Мониторинг",
+			"name": "MONITORING",
 			"icon" : "figures-item-glass",
 			"mobile": false,
 			"items": [
-				"Мониторинг упоминаний бренда",
-				"Работа с репутацией в блогах"
+				"Monitoring brand mentions",
+				"Work with a brand reputation in blogosphere"
 			]
 		},
 		{
-			"name": "Production",
+			"name": "PRODUCTION",
 			"class": "production",
 			"icon" : "figures-item-devices",
 			"mobile": true,
 			"items": [
-				"Web-дизайн",
-				"Создание интерфейсов",
-				"Разработка высокотехнологичных проектов",
-				"Разработка промо-сайтов",
-				"Дизайн и разработка для social media",
-				"Создание контента",
-				"Создание приложений (social, mobile, Smart&nbsp;TV)",
-				"Видео/фото production"
+				"Web-design",
+				"Creating interfaces",
+				"Development of high-tech web-project",
+				"Development of promotional website",
+				"Design and production for social media",
+				"Content creation",
+				"Applications (social, mobile, Smart TV)",
+				"Video / photo production"
 			]
 		},
 		{
-			"name": "Social media аналитика",
+			"name": "SOCIAL MEDIA ANALYTICS",
 			"icon" : "figures-item-chart",
 			"mobile": false,
 			"items": [
-				"Системный анализ присутствия бренда",
-				"Анализ упоминаемости бренда",
-				"Аналитика-промо-проектов (ROI и KPI)",
-				"Post-campaign аналитика",
-				"Исследование рынка",
-				"сследование конкурентов",
-				"Исследование аудитории"
+				"System brand social media analysis",
+				"Analysis of brand mentioning",
+				"Promotional campaign analytics (ROI and KPI)",
+				"Post-campaign analytics",
+				"Market research",
+				"Competitors research in social media",
+				"Audience research in social media"
 			]
 		},
 		{
-			"name": "Социальные сети",
+			"name": "SOCIAL NETWORKS IN RUSSIA",
 			"class": "social",
 			"icon" : "figures-item-dialog",
 			"mobile": true,
 			"pipe-separated": true,
 			"items": [
+				"Vk.com (VK)",
+				"Odnoklassniki (OK)",
 				"Facebook",
-				"Одноклассники",
-				"Vk.com",
 				"Twitter",
 				"G+",
 				"Foursquare",
@@ -101,7 +101,7 @@
 				"Youtube",
 				"LinkedIn",
 				"Pinterest",
-				"и другие, в т.ч. тематические сети"
+				"and others"
 			]
 		}
 	]

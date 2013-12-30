@@ -295,6 +295,9 @@ bubbleParallax = (selector, ratio, max_distance) ->
 
 # Swap places of footer blocks (feedback and hire)
 swapFooterBlocks = ->
+    # Set telephone mask at feedback form
+    $("#phoneNum").mask("+7 (999) 999-9999");
+
     # ie knows nothing of media queries
     if ieBrowser()
         return

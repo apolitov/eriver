@@ -2,23 +2,26 @@
 	"template": "footer.jade",
 	"contacts": {
 		"header": "Контакты",
-		"address": "Россия, Москва <br /> Старая&nbsp;Басманная 38/2, СТР.&nbsp;1",
-		"phone": "+7&nbsp;(495)&nbsp;781&nbsp;59&nbsp;80",
+		"address": "Россия, Москва",
+		"phone": "",
 		"emails": [
-			"we@nlomarketing.ru",
-			"hireme@nlomarketing.ru"
+			"КЛИЕНТАМ: <a href='mailto:hello@eriv.ru'>HELLO@ERIV.RU</a>",
+			"ПАРТНЕРАМ И ПЛОЩАДКАМ: <a href='mailto:partner@eriv.ru'>PARTNER@ERIV.RU</a>",
+			"ПРЕССА И МЕДИА: <a href='mailto:pr@eriv.ru'>PR@ERIV.RU</a>"
 		]
 	},
 	"feedback": {
 		"header": "Напишите нам",
-		"message": "Если у вас есть предложения, заполните форму и отправьте нам."
+		"message": "Если вы хотите с нами связаться, просто оставьте сообщение здесь и мы с вами свяжемся."
 	},
 	"job": {
 		"header": "Работа",
-		"message": "Если вы готовы делать интересные проекты, что&nbsp;ж... <a href=\"\">Супер!</a>"
+		"message": "Мы всегда ищем талантливых, креативных и думающих людей для пополнения нашей команды. Если вы чувствуете в себе силы, напишите нам.",
+		"email": "<a href='mailto:job@eriv.ru'>JOB@ERIV.RU</a>"
 	},
-	"emailPlaceholder": "E-mail",
-	"namePlaceholder": "Ваше имя",
-	"messagePlaceholder": "Сообщение",
-	"sendButton": "Отправить"
+	"emailPlaceholder": "E-MAIL",
+	"namePlaceholder": "ВАШЕ ИМЯ",
+	"messagePlaceholder": "СООБЩЕНИЕ",
+	"sendButton": "ОТПРАВИТЬ",
+	"telPlaceholder": "ТЕЛЕФОН ДЛЯ СВЯЗИ"
 }

@@ -1,9 +1,9 @@
 {
 	"template": "sections/showcase/lenovo.jade",
-	"header": "ENG Доступные технологии",
-	"subheader": "ENG LENOVO в social media",
+	"header": "For those who do",
+	"subheader": "LENOVO in russian social media",
 	"rows":[
-		"30&thinsp;000 фанов в сообществах в VK",
-		"Facebook и Twitter"
+		"more than 30k fans on Facebook,",
+		"VK and Twitter pages"
 	]
 }

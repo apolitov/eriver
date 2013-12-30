@@ -16,7 +16,7 @@
 			"path": "#about"
 		},
 		{
-			"name": "Showcase",
+			"name": "Work",
 			"path": "#showcase"
 		},
 		{
@@ -28,7 +28,7 @@
 			"path": "#clients"
 		},
 		{
-			"name": "Feedback",
+			"name": "Contact",
 			"path": "#feedback"
 		}
 	]
