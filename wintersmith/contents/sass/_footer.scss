@@ -184,6 +184,10 @@ footer {
 		@include respond-to(old-handheld) {
 			bottom: $footer-bottom-margin + $footer-small-bottom-margin - 20; // 20px is a magical value that depends on image
 		}
+
+		&:hover {
+			@extend .figures-scroll-up-white;
+		}
 	}
 
 	a {
