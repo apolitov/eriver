@@ -9,12 +9,12 @@ footer
     | <article class="contacts">
     h4= data.contacts.header
     address
-        p!= data.contacts.address
         - if (data.contacts.phone)
             p!= data.contacts.phone
         ul
             each email in data.contacts.emails
                 li!= email
+        p!= data.contacts.address
     | </article
     | ><article class="feedback" id="feedback">
     h4= data.feedback.header

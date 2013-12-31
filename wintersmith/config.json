@@ -6,7 +6,7 @@
     "description": "electric river agency: full scope of digital and social media on one shore"
   },
   "plugins": [
-    "wintersmith-livereload",
+    "./node_modules/wintersmith-livereload/src/index.coffee",
     "wintersmith-coffee",
     "./plugins/l10n_data.coffee"
   ],

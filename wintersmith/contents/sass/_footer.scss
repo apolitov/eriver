@@ -39,14 +39,6 @@ footer {
 		} 
 	}
 
-	p {
-		margin-bottom: 2.7em;
-
-		@include respond-to(small-screen) {
-			margin-bottom: 1em;
-		}
-	}
-
 	article {
 		@include inline-block;
 		@include box-sizing(content-box);
@@ -65,11 +57,18 @@ footer {
 	article.contacts {
 		width: 15%;
 		max-width: $article-contact-width;
+	}
 
-		ul {
-			@include no-bullets;
-			margin: 0;
-			padding: 0;
+	ul {
+		@include no-bullets;
+		padding: 0;
+	}
+
+	p, ul {
+		margin: 0 0 2.7em 0;
+
+		@include respond-to(small-screen) {
+			margin-bottom: 1em;
 		}
 	}
 
@@ -122,6 +121,10 @@ footer {
 				@include respond-to(small-screen) {
 					float: none;
 					padding: $offsets/1.5;
+				}
+
+				&:hover {
+					color: white;
 				}
 			}
 		}

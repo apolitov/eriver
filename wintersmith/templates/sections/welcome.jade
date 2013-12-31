@@ -1,22 +1,22 @@
 section.welcome#welcome
-	div.hero
-		img.logo(src="#{rootElement}img/logo/logo-big.png", alt="electric river")
-		div.message
-			- var rows = env.helpers.getLocalizedContent(contents, page, 'sections/welcome.json').rows
-			- for (var i=0; i <= rows.length; i++) {
-				p= rows[i]
-			- }
-		a.scroll-down.figures-arrow-down-with-hole(href='#showcase')
-	div.bubbles
-		div.back
-			img(src="#{rootElement}img/bubbles/back-left.png", class="left", alt="Bubbles");
-			img(src="#{rootElement}img/bubbles/back-right.png" class="right", alt="Bubbles");
-		div.middle
-			img(src="#{rootElement}img/bubbles/middle-left.png", class="left", alt="Bubbles");
-			img(src="#{rootElement}img/bubbles/middle-right.png" class="right", alt="Bubbles");
-		div.front-big
-			img(src="#{rootElement}img/bubbles/front-big-left.png", class="left", alt="Bubbles");
-			img(src="#{rootElement}img/bubbles/front-big-right.png" class="right", alt="Bubbles");
-		div.front-small
-			img(src="#{rootElement}img/bubbles/front-mini-left.png", class="left", alt="Bubbles");
-			img(src="#{rootElement}img/bubbles/front-mini-right.png" class="right", alt="Bubbles");
+    div.hero
+        img.logo(src="#{rootElement}img/logo/logo-big.png", alt="electric river")
+        div.message
+            - var rows = env.helpers.getLocalizedContent(contents, page, 'sections/welcome.json').rows
+            - for (var i=0; i <= rows.length; i++) {
+                p= rows[i]
+            - }
+        a.scroll-down.figures-arrow-down-with-hole(href='#showcase')
+    div.bubbles
+        div.back
+            img(src="#{rootElement}img/bubbles/back-left.png", class="left", alt="Bubbles")
+            img(src="#{rootElement}img/bubbles/back-right.png" class="right", alt="Bubbles")
+        div.middle
+            img(src="#{rootElement}img/bubbles/middle-left.png", class="left", alt="Bubbles")
+            img(src="#{rootElement}img/bubbles/middle-right.png" class="right", alt="Bubbles")
+        div.front-big
+            img(src="#{rootElement}img/bubbles/front-big-left.png", class="left", alt="Bubbles")
+            img(src="#{rootElement}img/bubbles/front-big-right.png" class="right", alt="Bubbles")
+        div.front-small
+            img(src="#{rootElement}img/bubbles/front-mini-left.png", class="left", alt="Bubbles")
+            img(src="#{rootElement}img/bubbles/front-mini-right.png" class="right", alt="Bubbles")
