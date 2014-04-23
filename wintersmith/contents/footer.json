@@ -2,13 +2,12 @@
 	"template": "footer.jade",
 	"contacts": {
 		"header": "Контакты",
-		"address": "Россия, Москва",
-		"phone": "",
+		"address": "Россия, Москва,<br>1-й Красносельский пер., д. 3",
+		"phone": "<a href='tel:0074993982018'>+7 (499) 398 20 18</a>",
 		"emails": [
 			"КЛИЕНТАМ: <a href='mailto:hello@eriv.ru'>HELLO@ERIV.RU</a>",
 			"ПАРТНЕРАМ И ПЛОЩАДКАМ: <a href='mailto:partner@eriv.ru'>PARTNER@ERIV.RU</a>",
-			"ПРЕССА И МЕДИА: <a href='mailto:pr@eriv.ru'>PR@ERIV.RU</a>",
-			"ТЕЛЕФОН: <a href='tel:74993982018'>(499) 398 20 18</a>"
+			"ПРЕССА И МЕДИА: <a href='mailto:pr@eriv.ru'>PR@ERIV.RU</a>"
 		]
 	},
 	"feedback": {

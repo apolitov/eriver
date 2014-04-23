@@ -2,8 +2,8 @@
 	"template": "footer.jade",
 	"contacts": {
 		"header": "CONTACT US",
-		"address": "Moscow, Russia.",
-		"phone": "",
+		"address": "Russia, Moscow,<br>1-st Krasnoselskiy lane, 3",
+		"phone": "<a href='tel:0074993982018'>007 499 398 20 18</a>",
 		"emails": [
 			"FOR CLIENTS: <a href='mailto:hello@eriv.ru'>HELLO@ERIV.RU</a>",
 			"FOR PARTNERS: <a href='mailto:partner@eriv.ru'>PARTNER@ERIV.RU</a>",
