@@ -13,7 +13,10 @@ html.no-js(lang="ru")
     meta(name='viewport', content='user-scalable=yes, width=device-width')
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    title=locals.name
+
+    - var data = env.helpers.getLocalizedContent(contents, page, 'index.json')
+
+    title=data.title
     meta(name='description', content=locals.description)
     link(rel='shortcut icon', type='image/x-icon', href='/favicon.ico')
     link(rel='stylesheet', href='#{rootElement}css/normalize.css')
