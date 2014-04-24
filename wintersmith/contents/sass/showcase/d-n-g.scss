@@ -16,5 +16,12 @@
 
 	figure {
 		@extend %showcase_hero;
+		@media only screen and (min-width: 1137px) {
+			top: 30px;
+
+			& > figcaption {
+				padding-bottom: 120px;
+			}
+		}		
 	}
 }
